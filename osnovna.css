@@ -1,0 +1,238 @@
+
+footer {
+   background-color: rgba(243, 233, 224, 0.7);
+   background-size: cover;
+   /*border-style: solid;*/
+   border-color: (243, 233, 224, 0.7);
+   text-align: center;
+   padding-top: 10px;
+   font-style: italic;
+}
+.format_strane {
+  height: 760px;
+  min-height: 760px;
+  max-height: 4000px;
+  height: auto;
+  /*overflow: hidden;*/
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.format_strane_levo {
+  height: 720px;
+  min-width: 250px;
+  max-height: 4000px;
+  height: auto !important;
+  /*width: 60%;*/
+  background-color: rgb(242, 242, 242);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.format_strane_desno {
+  height: 723px;
+  min-width: 250px;
+  max-height: 4000px;
+  display: inline-block;
+  /*float: left;*/
+  border-style: solid;
+  background-color: rgb(242, 242, 242);
+  border-width: 25px;
+  border-color: rgba(243, 233, 224, 0.7);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.pozadina1 {
+	background-image: url("slike/bridge1.png");
+	background-position: 50% 0%;
+}
+.pozadina2 {
+	background-image: url("slike/sitno.png");
+	background-position: 50% 0%;
+}
+
+.jumbotron {
+    background-color: rgba(243, 233, 224, 0.7);
+    margin-top: 50%;
+    padding: 15px;
+    -webkit-transition: width 2s;
+    transition: width 2s;
+}
+.jumbotron1 {
+	background-color: rgba(160, 160, 160, 0.7);
+    margin-top: 3%;
+}
+.naslov {
+   background-color: rgba(243, 233, 224, 0.7);
+   text-transform: uppercase;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+.naslov h2 {
+   font-weight: 700;
+   font-size: 1.75em;
+}
+.text-center{
+  margin-top: 10px;
+}
+#tekst {
+	color: rgb(243, 233, 224);
+}
+#tekst>p {
+	font-size: 1em;
+}
+#slika>img {
+	margin: 10%;
+}
+#slika>p {
+	margin: 10%;
+}
+#sasa{
+  position: fixed;
+  max-height: 100px;
+  top: 54px;
+  left: 4px;
+  z-index: 1;
+}
+.tehnologija {
+	width: 110px;
+	height: 110px;
+}
+.redjanje {
+	float: left;
+	padding-top: 13px;
+	padding-left: 20px;
+}
+.donja_crta {
+	border-bottom-style: solid;
+	border-color: rgb(243, 233, 224);
+	padding-bottom: 13px;
+}
+span {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  line-height: normal;
+  color: rgb(243, 233, 224);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.redjanje>a>img {
+	margin-top: 15px;
+}
+img{
+	border: 3px solid rgb(243, 233, 224);
+}
+/*pomeraj*/
+#github, #videoplayer {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+#github:hover{
+  -webkit-transform: translate(10px, 10px);
+  transform: translate(10px, 10px);
+}
+#videoplayer:hover{
+  -webkit-transform: translate(5px, 5px);
+  transform: translate(5px, 5px);
+}
+
+/*.transition{
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+.nontransition{
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+}*/
+
+/*animacija*/
+#start{
+  -webkit-animation-name: sitno;
+   animation-name: sitno;
+   -webkit-animation-duration: 1s;
+   animation-duration: 1s;
+   -webkit-animation-timing-function: linear;
+   animation-timing-function: linear;
+}
+@-webkit-keyframes sitno {
+  0% {
+    -webkit-transform: scale(0, 0);
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: none;
+    -webkit-opacity: 1;
+  }
+}
+@keyframes sitno {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+a {
+   position: relative;
+   color: #ffffff;
+   text-decoration: none;
+   z-index: 1;
+}
+a:focus,
+a:hover {
+   color: #333333;
+   text-decoration: none;
+   outline: 0;
+}
+.navbar-default {
+   background-color: #ffe6b3;
+   border-color: #ffe6b3;
+   border: none;
+   border-radius: 0px;
+   margin-bottom: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+   color: #ffffff;
+}
+.navbar-default .navbar-nav>li>a {
+   position: relative;
+   width: 100%;
+   font-weight: 700;
+   display: inline-block;
+   vertical-align: bottom;
+   white-space: nowrap;
+   overflow: hidden;
+}
+.navbar-default .navbar-nav>li>a::before {
+   position: absolute;
+   top: 0;
+   left: -1px;
+   z-index: -1;
+   width: 102%;
+   height: 100%;
+   background: #F3E9E0;
+   content: "";
+/*   -webkit-transition: -webkit-transform .3s;
+   transition: transform .3s;*/
+   -webkit-transform: translateX(-100%);
+   transform: translateX(-100%);
+}
+.navbar-default .navbar-nav>li>a:hover::before,
+.navbar-default .navbar-nav>li>a:focus::before {
+   -webkit-transform: translateX(0);
+   transform: translateX(0);
+}
+
+.navbar-default .navbar-brand {
+   color: #333333;
+}
+
