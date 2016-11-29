@@ -1,4 +1,4 @@
-# Proba
+# Personal web site
 Lični portfolio web sajt.
 Još uvek under construction.
 
