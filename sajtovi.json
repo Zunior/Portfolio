@@ -1,0 +1,26 @@
+{
+	"web_dizajn": [{
+		"link": "https://medium.com/@dancrisan/11-ways-to-improve-your-design-skills-when-you-are-not-a-designer-44d1759e7bb2#",
+		"slika": "slike_razno/11ways.png"
+	},
+	{
+		"link": "https://medium.freecodecamp.com/code-briefing-css-positioning-explained-by-building-an-ice-cream-sundae-f965f139deb9#",
+		"slika": "slike_razno/briefing.png"
+	},
+	{
+		"link": "https://medium.com/the-mission/19-incredibly-useful-websites-you-wish-you-knew-earlier-eda6f16752c8#",
+		"slika": "slike_razno/19inc.png"
+	}],
+	"opšte": [{
+		"link": "https://medium.com/the-mission/the-science-backed-guide-for-destroying-your-comfort-zone-and-optimizing-your-success-7ce0b12a1275#",
+		"slika": "slike_razno/destroy.png"
+	},
+	{
+		"link": "https://medium.freecodecamp.com/the-best-podcasts-for-new-coders-and-the-best-tools-for-listening-to-them-df393b1c8dc#",
+		"slika": "slike_razno/podcasts.png"
+	},
+	{
+		"link": "https://medium.com/the-mission/why-keeping-a-daily-journal-could-change-your-life-b9421a69912a#",
+		"slika": "slike_razno/journal.png"
+	}]
+}

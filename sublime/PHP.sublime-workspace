@@ -1,0 +1,707 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"inner",
+				"innerWidth"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"dropdown",
+				"dropdown-toggle"
+			],
+			[
+				"onmouse",
+				"onmouseenter\tAttr"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"borde",
+				"border-collapse"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"tabl",
+				"table-cell"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"border-top",
+				"border-top-style"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"objekat",
+				"objekatProjekti"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"cell",
+				"cellspacing\tAttr"
+			],
+			[
+				"padding",
+				"padding"
+			],
+			[
+				"scro",
+				"scrollTop"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"offse",
+				"col-xs-offset-6"
+			],
+			[
+				"img",
+				"img-responsive"
+			],
+			[
+				"slike",
+				"slike_razno"
+			],
+			[
+				"getEle",
+				"getElementsByClassName"
+			],
+			[
+				"font-s",
+				"font-size-adjust"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"font-st",
+				"font-style"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"objec",
+				"object-fit"
+			],
+			[
+				"co",
+				"cover"
+			],
+			[
+				"obj",
+				"object-fit"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"veliki",
+				"velikiNiz"
+			],
+			[
+				"dropd",
+				"dropdown-menu"
+			],
+			[
+				"tra",
+				"translateY()"
+			],
+			[
+				"onky",
+				"onkeyup\tAttr"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"border-",
+				"border-width"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"rgb",
+				"rgb()"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "compare",
+		"selected_items":
+		[
+			[
+				"compare",
+				"Compare selections"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"SublimeHighlight: convert to HTML"
+			],
+			[
+				"sublime",
+				"SublimeHighlight: convert to HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"add r",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"control",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Sasa.Popovic/Documents/NetBeansProjects/HTML5Application/public_html/index.html",
+		"/C/Users/Sasa.Popovic/Documents/NetBeansProjects/HTML5Application/public_html/contact.js",
+		"/C/Users/Sasa.Popovic/Documents/NetBeansProjects/HTML5Application/public_html/contact.php",
+		"/C/wamp64/www/jedan.html",
+		"/C/wamp64/www/validator.js",
+		"/C/wamp64/www/index.html",
+		"/C/wamp64/www/proba.php",
+		"/C/wamp64/www/contact.php",
+		"/C/wamp64/www/mail.php",
+		"/C/wamp64/www/index.css",
+		"/C/wamp64/www/contact.js",
+		"/C/wamp64/bin/sendmail/sendmail.ini",
+		"/C/wamp64/bin/php/php5.6.19/php.ini",
+		"/C/wamp64/www/test.php",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/indexJQ.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/indexJS.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index.css",
+		"/C/wamp64/bin/sendmail/source/sendmail.mes",
+		"/C/wamp64/bin/sendmail/source/sendmail.dpr",
+		"/C/wamp64/www/citajJSON.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index v7 - funk. još kontakt/index.css",
+		"/C/wamp64/www/index1.css",
+		"/C/Users/Sasa.Popovic/Desktop/contact-form/contact.php",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/citajJSON.js",
+		"/C/Users/Sasa.Popovic/Documents/NetBeansProjects/PhpProject1/fb.php",
+		"/C/wamp64/www/FirePHPCore/FirePHP.class.php",
+		"/C/Users/Sasa.Popovic/AppData/Roaming/Sublime Text 3/Packages/PHP Companion/PHP Companion.sublime-settings",
+		"/C/Users/Sasa.Popovic/Desktop/contact-form/index.html",
+		"/C/Users/Sasa.Popovic/Desktop/contact-form/custom.css",
+		"/C/wamp64/www/indexJS.js",
+		"/C/wamp64/www/indexJQ.js",
+		"/C/wamp64/www/indexMODAL.js",
+		"/C/Users/Sasa.Popovic/Desktop/contact-form/validator.js",
+		"/C/Users/Sasa.Popovic/Desktop/contact-form/contact.js",
+		"/C/wamp64/www/proba",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/indexMODAL.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/projekti.json",
+		"/C/Users/Sasa.Popovic/Desktop/proba.java",
+		"/C/Users/Sasa.Popovic/Desktop/proba.jsp",
+		"/C/Users/Sasa.Popovic/Desktop/proba.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/modal_content.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/slike_razno/csharp.png",
+		"/C/Users/Sasa.Popovic/Desktop/Mesecar/index.html",
+		"/C/Users/Sasa.Popovic/Desktop/Mesecar/css/bootstrap.css",
+		"/C/Users/Sasa.Popovic/Desktop/Mesecar/css/index.css",
+		"/C/Users/Sasa.Popovic/Desktop/probanovired.html",
+		"/C/Users/Sasa.Popovic/Desktop/proba.cs",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/sajtovi.json",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index1.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index1/index1.css",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index1.css",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index1/index1.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index1/sajtovi.json",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index1/index1.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index1/citajJSON.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index v3/indexMODAL.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index v3/modal_content.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index v3/index.html",
+		"/C/Users/Sasa.Popovic/Desktop/proba",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/radi modal sa jednom obrađenom slikom/index.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/radi modal sa jednom obrađenom slikom/indexJS.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/radi modal sa jednom obrađenom slikom/indexMODAL.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index/indexMODAL.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index/index.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/index v2/index.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/!backup/radi modal sa jednom obrađenom slikom/index.html",
+		"/C/Users/Sasa.Popovic/Desktop/jquery-popup-div/index.html",
+		"/C/Users/Sasa.Popovic/Desktop/new 1.css.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/style.css",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index.js",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/index1.js",
+		"/C/Users/Sasa.Popovic/Desktop/index1.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja stranica/Osnovna.html",
+		"/C/Users/Sasa.Popovic/Desktop/generated.json",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/!!Backup/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/MainPage.xaml",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/!!Backup/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/MainPage.xaml.cs",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/!!Backup/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/UnosPage.xaml.cs",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/!!Backup/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/UnosPage.xaml",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja stranica/osnovna.css",
+		"/C/Users/Sasa.Popovic/Desktop/ProbniJS.js",
+		"/C/Users/Sasa.Popovic/Desktop/ProbniJS.html",
+		"/C/Users/Sasa.Popovic/Desktop/index.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/proba",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja stranica/osnovna.js",
+		"/C/Users/Sasa.Popovic/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Sasa.Popovic/Desktop/zadatak5.py",
+		"/C/Users/Sasa.Popovic/Desktop/zadatak3.py",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/NetBeans projekti/WebAppGoogle/war/WEB-INF/web.xml",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/NetBeans projekti/WebAppGoogle/src/webappgoogle/WebAppGoogle.gwt.xml",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/Završni projekat/Zdravstvo app/web/WEB-INF/web.xml",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Dobra stranica/glavna.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Dobra stranica/glavna.css",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/osnovna.css",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/.htaccess",
+		"/C/Users/Sasa.Popovic/AppData/Roaming/Sublime Text 3/Packages/sublime-github/GitHub.sublime-settings",
+		"/C/Users/Sasa.Popovic/AppData/Roaming/Sublime Text 3/Packages/User/GitHub.sublime-settings",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Moja za web/mail.php",
+		"/C/Users/Sasa.Popovic/java-getting-started/pom.xml",
+		"/C/Program Files/appengine-java-sdk-1.9.48/bin/appcfg.sh",
+		"/C/Users/Sasa.Popovic/Desktop/netbeans.conf",
+		"/C/Program Files/NetBeans 8.1/etc/netbeans.conf",
+		"/F/!GitHub/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/WinApp_Vesti.Windows[Conflict].csproj",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/WinApp_Vesti/WinApp_Vesti/WinApp_Vesti.Windows/WinApp_Vesti.Windows.csproj",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/WinApp_Vesti/Proj 2 XAML proba.v12.suo",
+		"/F/!!!!Google drive/Viser - aktuelno/Tehnike vizuelnog programiranja - V semestar/Projekti/WinApp_Vesti/Proj 2 XAML proba.sln",
+		"/C/Users/Sasa.Popovic/Desktop/probni.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/Dobra stranica/glavna.js",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/galerija/Galerijadole.html",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/galerija/beerfest.html",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/Galerijafrejm.html",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/novosti.html",
+		"/C/Users/Sasa.Popovic/Desktop/bootstrap-4.0.0-alpha.2/bootstrap-4.0.0-alpha.2/scss/_jumbotron.scss",
+		"/C/Users/Sasa.Popovic/Desktop/BootstrapGrid.html",
+		"/C/Users/Sasa.Popovic/Desktop/magacinnnnn",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/GlavnaStrana.html",
+		"/F/!!!!Google drive/Viser - aktuelno/!!!VI semestar/Završni projekat/glavna.html",
+		"/C/Users/Sasa.Popovic/Desktop/BootstrapGrid.html.txt",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/Završni projekat/Zdravstvo app/web/admUnos.jsp",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/Završni projekat/Zdravstvo app/src/java/Servleti/Login.java",
+		"/F/!!!!Google drive/Viser - aktuelno/Internet programiranje - V semestar/Završni projekat/Zdravstvo app/web/index.jsp",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/dogadjajifrejm.html",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/frejmovi.html",
+		"/F/!!!!Google drive/Viser - aktuelno/UIT - IV semestar/Projekat/Glavna.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sendmail-path",
+			"log",
+			"error",
+			"mail",
+			"float",
+			"min",
+			"dropbtn",
+			"collaps",
+			">\n",
+			"contact",
+			">\n",
+			"php",
+			"label",
+			"collaps",
+			"274",
+			"header",
+			"media",
+			"menigore",
+			"keyframes",
+			"sitno",
+			"keyframes",
+			"animate",
+			"animatetop",
+			"media",
+			".in",
+			"collaps",
+			"span",
+			"li>a",
+			"ul>li",
+			"dropdown-menu",
+			"dropdown",
+			"ul>li",
+			"hover",
+			"drop",
+			"hover",
+			"dropdown",
+			"demo",
+			"FLIP",
+			"flip",
+			"sasa",
+			"poslednja",
+			";\n",
+			"slika",
+			"redjanje",
+			"menigore",
+			"start",
+			"menigore",
+			"sitno",
+			"social1",
+			"contact",
+			"radius",
+			"contact",
+			"contac",
+			"h3",
+			"contact",
+			"poslednja",
+			"contact",
+			"redjanje",
+			"custom",
+			"redjanje",
+			"redjanje1",
+			"redjanje",
+			"frame",
+			"redj",
+			";\n",
+			"redjanje",
+			"blob-num",
+			"blob",
+			"latest",
+			"redjanje",
+			"media",
+			"redja",
+			"media",
+			"redjanje",
+			"media",
+			"float",
+			"display: inli",
+			"media",
+			"display: inl",
+			"donja",
+			"media",
+			"social",
+			"foot",
+			"media",
+			"flex",
+			"margin-bo",
+			"img",
+			"border",
+			"contact",
+			"redjanj",
+			"flex",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"animimg",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\r",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"animimg",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n",
+			"\"",
+			"\\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"'\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"'",
+			"\\\\n",
+			"\\\\t",
+			"\\\\n",
+			"\\n",
+			"\\\\n",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "PHP.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"F:\\!!!!Google drive\\Viser - aktuelno\\!!!VI semestar\\Završni projekat\\Moja za web\\Sublime\\drugaStrana.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
