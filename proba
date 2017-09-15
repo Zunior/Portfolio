@@ -1,0 +1,11 @@
+var a = [1,2,4,5,120,12];
+for (var val in a) {
+    console.log(a[val]);
+}
+
+var b = ['S','M','L'];
+var both = [a,b];
+
+for (var val in both) {
+     for(val2 in both[val]){console.log(both[val][val2])}
+}

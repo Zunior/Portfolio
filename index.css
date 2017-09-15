@@ -4,6 +4,15 @@ body {
     margin: 0 auto;
     font-family: "Droid", "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
+    background-image: url("slike/background/space5.png");
+    background-position: 50% 0%;
+    background-position: top 227px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .contact {
@@ -59,7 +68,7 @@ footer p {
   height: 760px;
   min-height: 760px;
   max-height: 4000px;
-  background-position: 50% 50%;
+  background-position: top 227px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -90,7 +99,7 @@ footer p {
   display: inline-block;
   /*border-left-style: solid;
   border-right-style: solid;*/
-  background-color: rgb(242, 242, 242);
+  /*background-color: rgb(242, 242, 242);
   border-width: 25px;
   border-color: rgba(243, 233, 224, 0.7);
   background-position: 50% 50%;
@@ -99,39 +108,96 @@ footer p {
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover;*/
 }
 .pozadina1 {
-	background-image: url("slike/bridge1.png");
+	background-image: url("slike/background/space5.png");
 	background-position: 50% 0%;
 }
 .pozadina2 {
-	background-image: url("slike/sitno.png");
+	background-image: url("slike/background/planet4.png");
 	background-position: 50% 0%;
+  background-size: cover;
 }
 .pozadina3 {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right top, black, black 20%, rgb(175,165,149)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom left, black, black 20%, rgb(175,165,149)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom left, black, black 20%, rgb(175,165,149)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom left, black, black 20%, rgb(175,165,149)); /* Standard syntax */
+
+  /*background-image: url("slike/background/plavo3.png");
+  background-position: 50% 0%;*/
+}
+.pozadina4 {
   background-image: url("slike/ironMan1.png");
   background-position: 50% 0%;
 }
 
 .jumbotron {
-    background-color: rgba(243, 233, 224, 0.7);
+    background-color: rgba(89, 89, 89, 0.2);
+    border: solid;
+    border-color: rgba(243, 233, 224, 0.7);
     margin-top: 50%;
     padding: 15px;
     -webkit-transition: width 2s;
     transition: width 2s;
     height: 100%;
+    padding-bottom: 0;
+}
+#toggledugme, #toggledugme:after {
+  background-color: rgba(243, 233, 224, 0);
+}
+.dropdown-content {
+  z-index: 5;
+}
+.dropdown-content > a:hover {
+  transition: transform .3s linear;
+  -webkit-transition: transform .3s linear;
+  -moz-transition: transform .3s linear;
+  transform: translateX(10%);
+}
+
+.dropdown-content > a:nth-child(n + 1):nth-child(-n + 3):hover {
+  transform: translateX(10%);
+}
+.navbar-nav > li {
+  text-align: center;
+}
+
+.navbar-nav > li:nth-child(n + 2):nth-child(-n + 5) {
+  position: relative;
+  text-align: center;
+}
+.navbar-nav > li:nth-child(n + 2):nth-child(-n + 5) > svg {
+  position: absolute;
+  transform:translate(-33%, -31%);
+}
+
+#svgPocetna, #svgOmeni, #svgProjekti, #svgKontakt {
+  visibility: hidden;
+}
+svg {
+  text-align: center;
+}
+
+svg text {
+  cursor: context-menu;
+  position: relative;
 }
 
 .jumbotron1 {
-	background-color: rgba(160, 160, 160, 0.7) !important;
     margin-top: 3%;
 }
 .naslov {
-   background-color: rgba(243, 233, 224, 0.8); /*f3e9e0*/
+   /*background-color: rgba(243, 233, 224, 0.8);*/ /*f3e9e0*/
+   background-color: rgb(0, 0, 0);
    text-transform: uppercase;
    padding-top: 0;
    padding-bottom: 0;
+   color: white;
+   border: solid;
+   border-color: rgba(243, 233, 224, 0.7);
 }
 .naslov h2 {
    font-weight: 700;
@@ -141,7 +207,29 @@ footer p {
   padding-left: 0;
   padding-right: 0;
 }
+#crveno {
+  color: red;
+  text-decoration: underline;
+}
+#plavo {
+  color: blue;
+  text-decoration: underline;
+}
+/*canvas {
+  height: 760px;
+  min-height: 760px;
+  max-height: 4000px;
 
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:100;
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity:0.5;
+  opacity: 0.5;  
+}*/
 .text-center{
   margin-top: 10px;
   text-align: center;
@@ -223,13 +311,20 @@ footer p {
   width: expression((this.parentNode.clientWidth*0.60 - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px');
 }*/
 
-#sasa{
-  position: fixed;
-  max-height: 100px;
-  top: 54px;
-  left: 4px;
-  z-index: 1;
+
+.progress {
+  height: 10px !important;
+  margin-bottom: -10px;
+  margin-top: -5px;
+  background-color: white;
 }
+.progress-bar {
+  background-color: #e9d8c8;
+}
+.text-left {
+  margin: 0;
+}
+
 .social1 {
   text-align: center;
   vertical-align: middle;
@@ -329,11 +424,7 @@ iframe {border:0px solid #000;
   -webkit-transition-duration: 2s;
   transition-duration: 2s;
 }*/
-#skolica:hover{
-  -moz-box-shadow: 0 0 20px #fff;
-  -webkit-box-shadow: 0 0 20px #fff;
-  box-shadow: 0px 0px 20px #fff;
-}
+
 .pojavljivanje {
   -webkit-animation-name: pojavljivanje;
    animation-name: pojavljivanje;
@@ -364,12 +455,16 @@ iframe {border:0px solid #000;
 }
 .sasagore{
    -webkit-animation-name: sasagore;
+   -moz-animation-name: sasagore;
    animation-name: sasagore;
    -webkit-animation-duration: 0.4s;
+   -moz-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
+   -moz-animation-timing-function: linear;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
 }
 .sasadole{
    -webkit-animation-name: sasadole;
@@ -399,6 +494,74 @@ iframe {border:0px solid #000;
    animation-fill-mode: forwards;
 }
 
+/*--------- Pojavljivanje slike sa krugom ---------------*/
+
+#trigger {
+  z-index: 1500;
+}
+#sasa{
+  position: fixed;
+  max-height: 115px;
+  top: 54px;
+  left: 23px;
+  z-index: 1500;
+  border-radius: 60px;
+  opacity:0;/*
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;     
+  transition: opacity 1s; */
+  /*display: none;*/
+}
+
+#container {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  top: 52px;
+  left: 20px;
+  z-index: 2;
+   /*border: solid red 1px;*/
+   animation: colors .25s infinite;
+}
+
+#halfclip {
+  width: 50%;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+   overflow: hidden;
+   transform-origin: left center;
+   animation: cliprotate .5s steps(2) infinite;
+   -webkit-animation: cliprotate .5s steps(2) infinite;
+   z-index: 2;
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 5px transparent;
+   border-top-color: white;
+   border-left-color: white;
+   border-radius: 50%;
+   z-index: 2;
+}
+#clipped {
+  width: 200%;
+   animation: rotate .25s linear infinite;
+   -webkit-animation: rotate .25s linear infinite;
+   z-index: 2;
+}
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+   animation: showfixed .5s steps(2) infinite;
+   -webkit-animation: showfixed .5s linear infinite;
+   z-index: 2;
+}
+/*-------------------------------------------------------*/
+
 /*animacija*/
 #start{
   display: table;
@@ -408,9 +571,10 @@ iframe {border:0px solid #000;
   /*transform: translate(-50%,-50%);*/
   height: 35%;
   width: 30%;
-  background-color: rgba(243, 233, 224, 1);
+  background-color: rgba(89, 89, 89, 1);
   /*background-color: #D3C3AD;*/
   /*font-size: 1.5em;*/
+  color: white;
   border-radius: 25px;
   text-align: center;
   min-width: 200px;
@@ -418,7 +582,28 @@ iframe {border:0px solid #000;
   opacity: 0.7;
   padding-left: 10px;
   padding-right: 10px;
+  cursor: pointer;
+  border: solid;
+  border-color: white;
 }
+.elegantshadow {
+  color: white;
+  background-color: rgba(231, 229, 228, 0);
+  /*letter-spacing: .15em;*/
+  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d;
+}
+.sijanje {
+  -moz-box-shadow: 0 0 20px #fff;
+  -webkit-box-shadow: 0 0 20px #fff;
+  box-shadow: 0px 0px 20px #fff;
+}
+.sijanjePlavo {
+  -moz-box-shadow: 0 0 20px rgb(230, 255, 255);
+  -webkit-box-shadow: 0 0 20px rgb(230, 255, 255);
+  box-shadow: 0px 0px 20px rgb(230, 255, 255);
+  background-color: rgba(230, 255, 255, 0.4);
+}
+
 #textcenter {
   /*display: inline-block;*/
   display: table-cell;
@@ -427,7 +612,28 @@ iframe {border:0px solid #000;
   text-align: center;
   overflow: hidden;
   text-shadow: 0px 1px 0px rgba(255,255,255,.5);
+  font-size: 1rem;
+  font-weight: 400;
 }
+.podlinija {
+  text-decoration: underline;
+}
+.novo {
+  display: none;
+}
+.staro>span:first-child {
+  font-size: 2em;
+}
+.staro, .novo {
+  transition: opacity 0.2s linear;
+}
+#start:hover p .staro {
+  display: none;
+}
+#start:hover p .novo {
+  display: inline;
+}
+
 .social {
   display: table-cell;
    padding-top: 50px;
@@ -493,6 +699,19 @@ iframe {border:0px solid #000;
   }
 }
 
+/*@-webkit-keyframes pomeraj {
+  from {-webkit-transform: translateX(0);}
+  to {-webkit-transform: translateX(10%);}
+}
+@-moz-keyframes pomeraj {
+  from {transform: translateX(0);}
+  to {transform: translateX(10%);}
+}
+@keyframes pomeraj {
+  from {transform: translateX(0);}
+  to {transform: translateX(10%);}
+}*/
+
 @-webkit-keyframes pojavljivanje {
   from {opacity: 0.1;}
   to {opacity: 0.7;}
@@ -524,6 +743,14 @@ iframe {border:0px solid #000;
    from {top: 54px;}
     to {top: 4px;}
 }
+@keyframes sasagore {
+   from {top: 54px;}
+    to {top: 4px;}
+}
+@-webkit-keyframes sasadole {
+   from {top: 4px;}
+    to {top: 54px;}
+}
 @keyframes sasadole {
    from {top: 4px;}
     to {top: 54px;}
@@ -549,8 +776,30 @@ a:hover {
    text-decoration: none;
    outline: 0;
 }
+
+.navbar-default .navbar-toggle:hover{
+    background-color: #ddd !important;
+}
+.navbar-default .navbar-toggle:focus{
+    background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  background-color: transparent;
+}
+
+
+.navbar-nav {
+  overflow: initial;
+}
+.navbar-default, .navbar, .navbar-collapse {
+  background-image:url("slike/background/space5.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+}
+
 .navbar-default {
-  background-color: rgba(243, 233, 224, 1);
+  background-color: rgba(243, 233, 224, 0);
   /*background-color: rgba(255, 230, 179, 0.8);*/
    /*background-color: #ffe6b3;*/
    border-color: #ffe6b3;
@@ -558,10 +807,9 @@ a:hover {
    border-radius: 0px;
    margin-bottom: 0;
 }
-
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>ul>li>a, .navbar-default .navbar-nav>li .dropbtn {
    color: #ffffff;
-   background-color: rgba(243, 233, 224, 1);
+   background-color: rgba(243, 233, 224, 0);
    /*background-color: #ffe6b3;*/
 }
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li .dropbtn {
@@ -575,10 +823,10 @@ a:hover {
 }
 .navbar-default .navbar-nav>li, .navbar-default .navbar-nav>li li {
   width: 120px;
-  text-align: center;
+  text-align: left;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav>li>ul>li>a, .navbar-default .navbar-nav>li .dropbtn:hover, 
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav>li>ul>li>a:focus {background-color: #d3cbc5;}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav>li>ul>li>a:focus {background-color: rgba(211, 203, 197, 0);}
 .navbar-default .navbar-nav>li>a::before {
    position: absolute;
    top: 0;
@@ -586,7 +834,7 @@ a:hover {
    z-index: -1;
    width: 102%;
    height: 100%;
-   background: #d3cbc5;
+   background: rgba(211, 203, 197, 0);
    content: "";
 /*   -webkit-transition: -webkit-transform .3s;
    transition: transform .3s;*/
@@ -611,6 +859,16 @@ a:hover {
 .navbar-default .navbar-brand {
    color: #333333;
 }
+.navbar-default .navbar-nav > .active{
+    color: white;
+   background: rgba(211, 203, 197, 0);
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: white;
+      background: rgba(211, 203, 197, 0);
+ }
 
 .dropdown-menu {
   width: 120px;
@@ -618,7 +876,7 @@ a:hover {
 }
 .dropdown-menu a, .dropdown-content{
   font-size: 0.9em;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 /*------------Padajuci meni-----------------*/
@@ -638,11 +896,14 @@ a:hover {
     display: inline-block;
     width: 100%;
 }
+.dropdown > .dropdown-toggle, .dropdown > .dropdown-toggle:focus {
+  background-color: transparent !important;
+}
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(243, 233, 224, 1);
+    background-color: rgba(243, 233, 224, 0);
     /*background-color: #f9f9f9;*/
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -657,7 +918,7 @@ a:hover {
 }
 
 .dropdown-content a:hover {
-  background-color: #d3cbc5;
+  background-color: rgba(211, 203, 197, 0);
   color: #555;
 }
 
@@ -670,20 +931,24 @@ a:hover {
 }*/
 /*----------------------------------------------------------------*/
 
+.start {
+  background-color: transparent;
+}
+
 
 @media (min-width: 0px) {
     #textcenter {
-        font-size: 1em;
+        font-size: .8em !important;
     }
 }
 @media (min-width: 568px) {
     #textcenter {
-        font-size: 1.2em;
+        font-size: .9em !important;
     }
 }
 @media (min-width: 892px) {
     #textcenter {
-        font-size: 1.5em;
+        font-size: 1em !important;
     }
 }
 @media screen and (max-width: 400px) {
@@ -711,12 +976,21 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-.collapsing, .in {background-color: #d3cbc5;}
+.collapsing, .in {
+  background-image:url("slike/background/space5.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+  background-color: rgba(211, 203, 197, 0); 
+  /*background-image: url("slike/background/space5.png");*/
+  /*background-position: 50% 0%;*/
+}
 .collapsing ul li a, .in ul li a, .collapsing ul li .dropbtn, .in ul li .dropbtn {color: white!important;}
 .collapsing ul li a:hover, .in ul li a:hover, .collapsing ul li .dropbtn, .in ul li .dropbtn:hover {color: #555!important;}
 .navbar-default .navbar-nav > li, .navbar-default .navbar-nav > li li {
     width: 100%;
     text-align: center;
+    background-color: rgba(211, 203, 197, 0);
 }
 }
 
@@ -794,15 +1068,19 @@ a:hover {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
     box-shadow: 0px 0px 5px 0px rgba(164, 164, 164, 1);
     font-size: 0.8em;
+    border-radius: 0 30px 0 0;
 }
 .popbox h2 {
     background-color: #4D4F53;
     color: #E3E5DD;
     font-size: 14px;
     display: block;
-    width: 101%;
+    width: 91%;
     margin: -10px 0px 0px -10px;
     padding: 5px 10px;
+}
+.popbox h2:nth-of-type(2) {
+  width: 100% !important;
 }
 
 /*Tabelica prozora sa statistikom*/
@@ -825,70 +1103,13 @@ a:hover {
   display: table-header-group;
 }
 
-.str{
-  background: linear-gradient(0deg, #e9d8c8 60%, white 40%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 60%, white 40%);
-}
-.per{
-  background: linear-gradient(0deg, #e9d8c8 85%, white 15%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 85%, white 15%);
-}
-.agi{
-  background: linear-gradient(0deg, #e9d8c8 90%, white 10%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 90%, white 10%);
-}
-.int{
-  background: linear-gradient(0deg, #e9d8c8 90%, white 10%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 90%, white 10%);
-}
-.cha{
-  background: linear-gradient(0deg, #e9d8c8 70%, white 30%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 70%, white 30%);
-}
-.end{
-  background: linear-gradient(0deg, #e9d8c8 95%, white 5%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 95%, white 5%);
-}
-.cre{
-  background: linear-gradient(0deg, #e9d8c8 55%, white 45%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 55%, white 45%);
-}
-.mot{
-  background: linear-gradient(0deg, #e9d8c8 100%, white 0%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 100%, white 0%);
-}
-.comm{
-  background: linear-gradient(0deg, #e9d8c8 75%, white 25%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 75%, white 25%);
-}
-.coll{
-  background: linear-gradient(0deg, #e9d8c8 80%, white 20%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 80%, white 20%);
-}
-.gexp{
-  background: linear-gradient(0deg, #e9d8c8 75%, white 25%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 75%, white 25%);
-}
-.prob{
-  background: linear-gradient(0deg, #e9d8c8 80%, white 20%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 80%, white 20%);
-}
-.ssp{
-  background: linear-gradient(0deg, #e9d8c8 70%, white 30%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 70%, white 30%);
-}
-.ssh{
-  background: linear-gradient(0deg, #e9d8c8 85%, white 15%);
-  background: -webkit-linear-gradient(0deg, #e9d8c8 85%, white 15%);
-}
-
 /*------------------------------SVE ZA MODAL BOX----------------------------------*/
 
 /* The Modal (background) */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1500;
   padding-top: 100px;
   left: 0;
   top: 0;
@@ -1068,6 +1289,9 @@ img.hover-shadow {
 #kontakt {
   height: 100%;
 }
+#kontakt .naslov {
+  background-color: rgba(97,92,83, 0.7) !important;
+}
 #poslednjavisina .row.contact {
   display: table;
 }
@@ -1089,3 +1313,35 @@ label {
 .lead {
   padding-top: 100px;
 }
+
+/*--------------Rotacija oko slike------------------------*/
+
+@-webkit-keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@-webkit-keyframes showfixed {
+  0% {opacity: 0;}
+  49.9% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}
+
+/*-----------------------------------------*/

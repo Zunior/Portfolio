@@ -1,10 +1,68 @@
 
-window.onload = promena;
+window.onload = start;
+window.onresize = promena;
+
+function start(){
+	// kanvas();
+	// var elniz = Array.prototype.slice.call(document.getElementsByClassName('navbar-nav'))
+	// elNiz.forEach(function(item){
+ //    	console.log(item);
+	// });
+	promena();
+	init();
+	initProjekti();
+}
 
 var lastScrollTop = 0;
 var skrivanje
 var sasaslika
 var foot
+
+
+// var c, ctx, ctx1
+
+// function kanvas() {
+// 	c = document.getElementById("myCanvas");
+
+// 	ctx = c.getContext("2d");
+// 	ctx1 = c.getContext("2d");
+	
+// 	// initCanvas();
+// }
+
+// function initCanvas() {
+// 	window.addEventListener('resize', resizeCanvas, false);
+// 	// window.addEventListener('scroll', resizeCanvas, false);
+//     resizeCanvas();
+// }
+// function redraw() {
+// 	c = document.getElementById("myCanvas");
+// 	var elemStart = document.getElementById('start');
+// 	var elemSasa = document.getElementById('sasa');
+
+// 	ctx = c.getContext("2d");
+// 	ctx1 = c.getContext("2d");
+
+// 	ctx.beginPath(); 
+// 	ctx.lineWidth = "2";
+// 	ctx.strokeStyle = "blue"; 
+// 	ctx.moveTo(parseInt(elemStart.style.left, 10),parseInt(elemStart.style.top, 10));
+// 	ctx.lineTo(50, 50);
+// 	// ctx.lineTo(parseInt(elemSasa.style.left, 10),parseInt(elemSasa.style.top, 10));
+// 	ctx.stroke();
+
+// 	ctx1.beginPath();
+// 	ctx1.strokeStyle = "red";
+// 	ctx.moveTo(parseInt(elemStart.style.left, 10),parseInt(elemStart.style.top, 10));
+// 	ctx1.lineTo(1000,30); 
+// 	ctx1.stroke();
+// }
+// function resizeCanvas() {
+// 	c.width = window.innerWidth;
+//     c.height = window.innerHeight;
+//     redraw();
+// }
+
 
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 /*var eventList = ["scroll", "resize"];
@@ -51,8 +109,7 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
    
 }, false);
 
-		window.onload = start;
-		window.onresize = promena;
+		
 
 		// function flicker() {
 		// 	var element = document.getElementById('start');
@@ -61,11 +118,6 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
 		//
 		// }
 
-		function start(){
-			promena();
-			init();
-			initProjekti();
-		}
 
 		function stanje(broj){
 			if(broj===1){
@@ -83,7 +135,7 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
 				var brj = 2;
 				brj = Math.floor(Math.random()*2)+1;
 				stanje(brj);
-				var rand = Math.round(Math.random() * (150 - 50)) + 50;
+				var rand = Math.round(Math.random() * (100 - 50)) + 50;
 				if(counter>40 && brj===2)
 		    	return;
 				else
@@ -94,14 +146,14 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
 		}
 		
 		function promena(){
-			var element = document.getElementById('start');
-			var positionInfo = element.getBoundingClientRect();
-			var sirina = positionInfo.width;
-			var visina = positionInfo.height;
+			var elemStart = document.getElementById('start');
+			var posStart = elemStart.getBoundingClientRect();
+			var sirina = posStart.width;
+			var visina = posStart.height;
 
-			element.style.visibility = "visible";
-			element.style.top = window.innerHeight/2 - visina/2 + "px";
-			element.style.left = window.innerWidth/2 - sirina/2 + "px";
+			elemStart.style.visibility = "visible";
+			elemStart.style.top = window.innerHeight/2 - visina/2 + "px";
+			elemStart.style.left = window.innerWidth/2 - sirina/2 + "px";
 		}
 
 

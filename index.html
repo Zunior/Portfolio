@@ -16,6 +16,9 @@
 	<!-- <script type="text/javascript" src="collapse.js"></script> -->
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Personal webpage - portfolio">
+	<meta name="keywords" content="programming, projects, java, javascript, svg, modalbox">
+	<meta name="author" content="Saša Popović">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> -->
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
@@ -34,7 +37,7 @@
 		        <span class="icon-bar custom_span"></span>
 		        <span class="icon-bar custom_span"></span>
       		</button>
-         	<a class="navbar-brand" href="#"><b>Saša Popović</b></a>
+         	<a class="navbar-brand elegantshadow" href="#" style="color: white;"><b>Saša Popović</a>
 		</div>
 		<div class="collapse navbar-collapse" id="nav_traka">
          <ul class="nav navbar-nav navbar-right" role="tablist">
@@ -57,10 +60,75 @@
                     <li><a href="#">Dropdown Link 3</a></li>
                 </ul>
             </li> -->
-            <li id="home_page" class="active"><a href="#pocetna" onclick="init();">Početna</a></li>
-            <li id="about_page"><a href="#omeni" >Malo o meni</a></li>
-            <li class="portfolio_page"><a href="#projekti" >Projekti</a></li>
-            <li id="contact_page"><a href="#kontakt" >Kontakt</a></li>
+            <li id="home_page" class="active">
+            	<svg width="265" height="300" id="svgPocetna">
+					<defs>
+						<path id="testPathPocetna" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+					</defs>
+					<desc>Kruzno kretanje teksta</desc>
+					<text x="20" y="20" fill="white" font-size="14">
+						<textPath class="please" xlink:href="#testPathPocetna" startOffset="70%">Početna
+							<animate id="anim1" attributeName="startOffset" from="70%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+								<animate id="anim2" attributeName="startOffset" from="0%" to ="70%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath> 
+					</text> 
+				</svg>
+            	<a href="#pocetna" onclick="init();">
+            		<span>Početna</span>  
+		            <span class="sr-only">(current)</span>
+            	</a></li>
+            <li id="about_page">
+				<svg width="265" height="300" id="svgOmeni">
+					<defs>
+						<path id="testPathOmeni" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+					</defs>
+					<desc>Kruzno kretanje teksta</desc>
+					<text x="20" y="20" fill="white" font-size="14">
+						<textPath class="please" xlink:href="#testPathOmeni" startOffset="67%">O meni
+							<animate id="anim3" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+								<animate id="anim4" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath> 
+					</text> 
+				</svg>
+	            <a href="#omeni" >
+	            	<span>O meni</span>
+			            
+	            </a>
+            </li>
+            <li class="portfolio_page">
+            	<svg width="265" height="300" id="svgProjekti">
+					<defs>
+						<path id="testPathProjekti" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+					</defs>
+					<desc>Kruzno kretanje teksta</desc>
+					<text x="20" y="20" fill="white" font-size="14">
+						<textPath class="please" xlink:href="#testPathProjekti" startOffset="67%">Projekti
+							<animate id="anim5" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+							<animate id="anim6" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath> 
+					</text>
+				</svg>
+	            <a href="#projekti" >
+	            	<span>Projekti</span>   
+	            </a>
+            </li>
+            <li id="contact_page">
+            	<svg width="265" height="300" id="svgKontakt">
+					<defs>
+						<path id="testPathKontakt" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+					</defs>
+					<desc>Kruzno kretanje teksta</desc>
+					<text x="20" y="20" fill="white" font-size="14">
+						<textPath class="please" xlink:href="#testPathKontakt" startOffset="67%">Kontakt
+							<animate id="anim7" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+							<animate id="anim8" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath> 
+					</text> 
+				</svg>
+	            <a href="#kontakt" >
+	            	<span>Kontakt</span>  
+	            </a>
+            </li>
          </ul>
       </div>
 	</div>
@@ -68,12 +136,23 @@
 <!-- <div class="col-xs-2"> -->
 	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="slike_razno/sasa.jpg"/></a>
 <!-- </div> -->
+	<div id="container">
+	    <div id="halfclip">
+	        <div class="halfcircle" id="clipped">
+	        </div>
+	    </div>
+	    <div class="halfcircle" id="fixed">
+	    </div>
+	</div>
 
+<!-- <canvas id="myCanvas"></canvas> -->
 <div class="container-fluid format_strane pozadina1" id="pocetna">
     <div id="start" class="pojavljivanje">
-        <p id="textcenter"><b>Zdravo, moje ime je Saša Popović. <br>
-            Posedujem iskustvo u mnogim IT oblastima, ali trenutno završavam višu školu novih računarskih tehnologija i orijentišem se na programiranje.</b></p>
-    </div>
+	    <p id="textcenter">
+		    <b class="staro"><span>Dobrodošli</span> <br> Ovom prilikom bih želeo ukratko da se predstavim <br> <span class="podlinija">Molim vas, priđite bliže sa kurzorom</span></b><br>
+		    <b class="novo">Posedujem iskustvo u mnogim IT oblastima, ali trenutno završavam višu školu novih računarskih tehnologija i orijentišem se na programiranje. <br> <br> Neke moje karakteristike možete videti prelazom preko <span id="crveno">slike</span>, a za ostale informacije možete pogledati na <span id="plavo">sajtu</span></b>
+	    </p>
+	</div>
 </div>
 
 <div class="container-fluid pozadina2">
@@ -144,7 +223,7 @@
 	</div>
 </div>
 
-<div class="container-fluid format_strane pozadina2" id="projekti">
+<div class="container-fluid format_strane pozadina3" id="projekti">
 	<div class="row">
 	    	<div class="col-xs-12 naslov">
 	        	<h2 class="text-center">Projekti</h2>
@@ -187,22 +266,23 @@
 						<img class="tehnologija" src="slike_razno/sqlvbnet.png" alt="sqlvbnet">
 					</div>
 					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<img class="tehnologija hover-shadow cursor" src="slike_razno/razno.jpg" alt="Nova prezentacija"  />
+						<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 					</div>
 				</div>
 				<div class="dvojka">
 					<div class="redjanje" id="proba">
-						<a href="#" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="slike_razno/git.png" /></a>
+						<a href="#" target="_blank" onclick="return false;"><img id="github" alt="GITHUB" style="height: 100%;" src="slike_razno/git.png" /></a>
 					</div>
 					<div class="redjanje1">
 						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper">
 								<div class="front">
 								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/vesti/csharpcode.png" alt="Animacija teksta" onclick="proj('xaml');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="slike_razno/npslika.jpg" alt="Animacija teksta"  />
 								</div>
 								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/vesti/vesti.png" alt="Animacija teksta" onclick="proj('xaml');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="slike_razno/npslika.jpg" alt="Animacija teksta"  />
 								</div>
 							</div>
 						</div>
@@ -215,22 +295,22 @@
 						<img class="tehnologija" src="slike_razno/cplusplus.png" alt="c++">
 					</div>
 					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<iframe src="https://player.vimeo.com/video/219826438" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="dvojka">
 					<div class="redjanje" id="proba">
-						<a href="#" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="slike_razno/git.png" /></a>
+						<a href="https://github.com/Zunior/Milioner" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="slike_razno/git.png" /></a>
 					</div>
 					<div class="redjanje1">
 						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 							<div class="flipper">
 								<div class="front">
 								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/vesti/csharpcode.png" alt="Animacija teksta" onclick="proj('xaml');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/milioner/pocetna.png" alt="Animacija teksta"  />
 								</div>
 								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/vesti/vesti.png" alt="Animacija teksta" onclick="proj('xaml');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/milioner/krajnja.png" alt="Animacija teksta"  />
 								</div>
 							</div>
 						</div>
@@ -271,7 +351,8 @@
 						<img class="tehnologija" src="slike_razno/hcq.png" alt="html\css\jquery">
 					</div>
 					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<img class="tehnologija hover-shadow cursor" src="Video/kratki/HTML/glavnazavideo.png" alt="Nova prezentacija"  />
+						<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 					</div>
 				</div>
 				<div class="dvojka">
@@ -283,10 +364,10 @@
 							<div class="flipper">
 								<div class="front">
 								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/HTML/htmlkod.png" alt="Animacija teksta" onclick="proj('html');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video\kratki\HTML/pocetna.png" alt="Animacija teksta"  />
 								</div>
 								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video/kratki/HTML/pocetna.png" alt="Animacija teksta" onclick="proj('html');openModal();currentSlide(1)" />
+									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="Video\kratki\HTML/krajnja.png" alt="Animacija teksta"  />
 								</div>
 							</div>
 						</div>
@@ -324,15 +405,13 @@
 			</div>
 		</div>
 		</div>
-		<div class="col-xs-12 col-md-5 format_strane_desno pozadina2 contact">
-			<div class="start">
+		<div class="col-xs-12 col-md-5 format_strane_desno contact">
 				<span class="text-center custom_span"><h3>Navedeni projekti su rađeni u okviru redovnog školovanja.<br><br><a href="http://www.viser.edu.rs" target="_blank"><img src="slike_razno/bachelorhat.png" height="100px" id="skolica" /></a><br><br><br>Funkcionalnost projekata je predstavljena video zapisima.<br><br><img src="slike_razno/filmstrip.gif" width="300px" id="slikamala"/></h3>
 				</span>
-			</div>
 		</div>
 	</div>
 </div>
-<div class="format_strane pozadina3" id="kontakt">
+<div class="format_strane pozadina4" id="kontakt">
     <div class="row">  
       <div class="col-xs-24 col-md-12 naslov">
          <h2 class="text-center">Kontakt</h2>
@@ -345,6 +424,7 @@
 		                    <p class="lead">Trenutno sam u pripremi za junior programera, ali sam otvoren i po pitanju privatnih projekata. Možete me kontaktirati mailom:</p>
 
 		                    <form id="contact-form" method="post" action="contact.php" role="form">
+		                    <input type="hidden" name="XDEBUG_SESSION_START" value="netbeans-xdebug" />
 		                        <div class="messages"></div>
 		                        <div class="controls">
 		                            <div class="row">
@@ -444,90 +524,174 @@
 	<div class="table">
 	    <div class="roww">
 		  	<div class="cell">
-		    	Strenght:
+		    	<p class="text-left">Strenght:</p>
 		  	</div>
-		  	<div class="cell str"></div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+				    <span class="sr-only">60% Complete</span>
+				  </div>
+				</div>
+			</div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Perception:
+		    	<p class="text-left">Perception:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+				    <span class="sr-only">85% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell per"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Agility:
+		    	<p class="text-left">Agility:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+				    <span class="sr-only">90% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell agi"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Intelligence:
+		    	<p class="text-left">Intelligence:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+				    <span class="sr-only">90% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell int"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Charisma:
+		    	<p class="text-left">Charisma:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+				    <span class="sr-only">70% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell cha"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Endurance:
+		    	<p class="text-left">Endurance:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+				    <span class="sr-only">95% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell cha"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Creativity:
+		    	<p class="text-left">Creativity:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
+				    <span class="sr-only">55% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell cre"></div>
 		</div>
 	</div>
 	<h2>Pro stats</h2>
 	<div class="table">
 	    <div class="roww">
 		  	<div class="cell">
-		    	Motivation:
+		    	<p class="text-left">Motivation:</p>
 		  	</div>
-		  	<div class="cell mot"></div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+				    <span class="sr-only">100% Complete</span>
+				  </div>
+				</div>
+			</div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Communication:
+		    	<p class="text-left">Communication:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+				    <span class="sr-only">75% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell comm"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Collaboration:
+		    	<p class="text-left">Collaboration:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+				    <span class="sr-only">80% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell coll"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    General exp:
+		    	<p class="text-left">General exp:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+				    <span class="sr-only">75% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell gexp"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Problem solving:
+		    	<p class="text-left">Problem solving:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+				    <span class="sr-only">80% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell prob"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Studying speed:
+		    	<p class="text-left">Studying speed:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+				    <span class="sr-only">70% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell ssp"></div>
 		</div>
 		<div class="roww">
 			<div class="cell">
-			    Stress handling:
+		    	<p class="text-left">Stress handling:</p>
+		  	</div>
+		  	<div class="cell">
+			  	<div class="progress">
+				  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+				    <span class="sr-only">85% Complete</span>
+				  </div>
+				</div>
 			</div>
-			<div class="cell ssh"></div>
 		</div>
 	</div>
 </div>

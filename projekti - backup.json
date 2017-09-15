@@ -1,0 +1,68 @@
+{
+	"xaml": [{
+		"ceo_kod": [{
+			"ime": "xaml.cs",
+			"kod": "<pre style='line-height: 125%'> <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerEntered</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTeksta2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+
+				        <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerExited</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTekstaNazad2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+					</pre>",
+			"slika": "Video/kratki/vesti/meniproba.gif"
+			},
+			{
+			"ime": "xaml",
+			"kod": "<pre style='line-height: 125%'><span style='color: #008000; font-weight: bold'>&lt;Page.Resources&gt;</span>
+				        <span style='color: #008000; font-weight: bold'>&lt;Storyboard</span> <span style='color: #7D9029'>x:Key=</span><span style='color: #BA2121'>&quot;AnimacijaTeksta1&quot;</span><span style='color: #008000; font-weight: bold'>&gt;</span>
+				            <span style='color: #008000; font-weight: bold'>&lt;DoubleAnimation</span> <span style='color: #7D9029'>Storyboard</span><span style='border: 1px solid #FF0000'>.</span><span style='color: #7D9029'>TargetName=</span><span style='color: #BA2121'>&quot;tb1&quot;</span> <span style='color: #7D9029'>Storyboard</span><span style='border: 1px solid #FF0000'>.</span><span style='color: #7D9029'>TargetProperty=</span><span style='color: #BA2121'>&quot;FontSize&quot;</span>
+				                <span style='color: #7D9029'>EnableDependentAnimation=</span><span style='color: #BA2121'>&quot;True&quot;</span> <span style='color: #7D9029'>From=</span><span style='color: #BA2121'>&quot;40&quot;</span> <span style='color: #7D9029'>To=</span><span style='color: #BA2121'>&quot;45&quot;</span> <span style='color: #7D9029'>Duration=</span><span style='color: #BA2121'>&quot;0:0:0.1&quot;</span> <span style='color: #008000; font-weight: bold'>/&gt;</span>
+				        <span style='color: #008000; font-weight: bold'>&lt;/Storyboard&gt;</span>
+				        <span style='color: #008000; font-weight: bold'>&lt;Storyboard</span> <span style='color: #7D9029'>x:Key=</span><span style='color: #BA2121'>&quot;AnimacijaTekstaNazad1&quot;</span><span style='color: #008000; font-weight: bold'>&gt;</span>
+				            <span style='color: #008000; font-weight: bold'>&lt;DoubleAnimation</span> <span style='color: #7D9029'>Storyboard</span><span style='border: 1px solid #FF0000'>.</span><span style='color: #7D9029'>TargetName=</span><span style='color: #BA2121'>&quot;tb1&quot;</span> <span style='color: #7D9029'>Storyboard</span><span style='border: 1px solid #FF0000'>.</span><span style='color: #7D9029'>TargetProperty=</span><span style='color: #BA2121'>&quot;FontSize&quot;</span>
+				                <span style='color: #7D9029'>EnableDependentAnimation=</span><span style='color: #BA2121'>&quot;True&quot;</span> <span style='color: #7D9029'>From=</span><span style='color: #BA2121'>&quot;45&quot;</span> <span style='color: #7D9029'>To=</span><span style='color: #BA2121'>&quot;40&quot;</span> <span style='color: #7D9029'>Duration=</span><span style='color: #BA2121'>&quot;0:0:0.1&quot;</span> <span style='color: #008000; font-weight: bold'>/&gt;</span>
+				        <span style='color: #008000; font-weight: bold'>&lt;/Storyboard&gt;</span>
+					</pre>",
+			"slika": "Video/kratki/vesti/meniproba.gif"
+		}]
+	},
+	{
+		"ceo_kod": [{
+			"ime": "xaml.cs",
+			"kod": "<pre style='line-height: 125%'> <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerEntered</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTeksta2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+
+				        <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerExited</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTekstaNazad2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+					</pre>",
+			"slika": "Video/kratki/vesti/meniproba.gif"
+			},
+			{
+			"ime": "xaml.cs",
+			"kod": "<pre style='line-height: 125%'> <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerEntered</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTeksta2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+
+				        <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>tb2_PointerExited</span>(<span style='color: #B00040'>object</span> sender, PointerRoutedEventArgs e)
+				        {
+				            <span style='color: #B00040'>var</span> sb = Resources[<span style='color: #BA2121'>&quot;AnimacijaTekstaNazad2&quot;</span>] <span style='color: #008000; font-weight: bold'>as</span> Storyboard;
+				            sb.Begin();
+				        }
+					</pre>",
+			"slika": "Video/kratki/vesti/meniproba.gif"
+		}]
+	}]
+}
