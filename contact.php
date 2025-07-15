@@ -11,21 +11,21 @@ require 'PHPMailer-master/PHPMailerAutoload.php';
 */
 
 // an email address that will be in the From field of the email.
-$fromEmail = 'demo@domain.com';
-$fromName = 'Demo contact form';
+$fromEmail = getenv('MAIL_FROM_EMAIL');
+$fromName = getenv('MAIL_FROM_NAME');
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'demo@domain.com';
-$sendToName = 'Demo contact form';
+$sendToEmail = getenv('MAIL_TO_EMAIL');
+$sendToName = getenv('MAIL_TO_NAME');
 
 // subject of the email
 $subject = 'New message from contact form';
 
 // smtp credentials and server
 
-$smtpHost = '10.70.27.172';
-$smtpUsername = 'sasa';
-$smtpPassword = 'sasa';
+$smtpHost = getenv('MAIL_HOST');
+$smtpUsername = getenv('MAIL_USERNAME');
+$smtpPassword = getenv('MAIL_PASSWORD');
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
@@ -65,7 +65,7 @@ try
     
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
-    $mail->addReplyTo($from);
+    $mail->addReplyTo($_POST['email'], $_POST['name']);
     
     $mail->isHTML(true);
     
@@ -90,16 +90,16 @@ try
     $mail->Host = gethostbyname($smtpHost);
     
     //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 25;
+    $mail->Port = 587;
     
     //Set the encryption system to use - ssl (deprecated) or tls
     $mail->SMTPSecure = 'tls';
     
     //Whether to use SMTP authentication
-    $mail->SMTPAuth = false;
+    $mail->SMTPAuth = true;
     
     //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = $smtpHost;
+    $mail->Username = $smtpUsername;
     
     //Password to use for SMTP authentication
     $mail->Password = $smtpPassword;
