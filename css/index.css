@@ -115,7 +115,7 @@ footer p {
 	background-position: 50% 0%;
 }
 .pozadina2 {
-	background-image: url("slike/background/planet4.png");
+	background-image: url("../assets/planet4.png");
 	background-position: 50% 0%;
   background-size: cover;
 }

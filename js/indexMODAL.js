@@ -50,10 +50,16 @@ function loadJSON(file, callback) {
     xobj.send(null);
 }
 
-function initProjekti(){
-	loadJSON("projekti.json", function(response) {
+function initProjekti(callback){
+     if (objekatProjekti) {
+            callback(); // If data exists, just run the callback immediately
+            return;
+        }
+	loadJSON("../projekti.json", function(response) {
 		//objekatProjekti = JSON.parse(response.replace(/\r/g, "\\\\r"));
     objekatProjekti = JSON.parse(response);
+
+    callback();
 });
 }
 
