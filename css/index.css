@@ -825,7 +825,7 @@ a:hover {
   width: 120px;
   text-align: left;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav>li>ul>li>a, .navbar-default .navbar-nav>li .dropbtn:hover, 
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav>li>ul>li>a, .navbar-default .navbar-nav>li .dropbtn:hover,
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav>li>ul>li>a:focus {background-color: rgba(211, 203, 197, 0);}
 .navbar-default .navbar-nav>li>a::before {
    position: absolute;
