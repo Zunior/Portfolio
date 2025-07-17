@@ -227,7 +227,7 @@ $('#skolica').hover(
 )
 $('#crveno').hover(
       function(){ $('#sasa').css('transition', 'box-shadow 0.5s ease-in-out');
-      $('#sasa').css('box-shadow', '0 0 50px red'); },
+      $('#sasa').css('box-shadow', '0 0 50px 20px red'); },
       function(){ $('#sasa').css('transition', 'box-shadow 0.5s ease-in-out');
       $('#sasa').css('box-shadow', '0 0 0 #fff'); }
 )
