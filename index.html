@@ -4,6 +4,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/language.css"/>
 	<script src="https://www.w3schools.com/lib/w3data.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/indexMODAL.js"></script>
@@ -22,6 +23,7 @@
 	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> -->
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+<script type="text/javascript" src="js/i18n.js"></script>
 </head>
 
 <!--Scroll - za update linkova pri kretanju-->
@@ -37,7 +39,15 @@
 		        <span class="icon-bar custom_span"></span>
 		        <span class="icon-bar custom_span"></span>
       		</button>
-         	<a class="navbar-brand elegantshadow" href="#" style="color: white;"><b>Saša Popović</a>
+         	<a class="navbar-brand elegantshadow" href="#" style="color: white;"><b id="author-name"></b></a>
+			<div style="text-align: center; float: left; position: relative;">
+				<div class="switch">
+					<input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" checked>
+					<label for="language-toggle"></label>
+					<span class="on">EN</span>
+					<span class="off">SR</span>
+				</div>
+			</div>
 		</div>
 		<div class="collapse navbar-collapse" id="nav_traka">
          <ul class="nav navbar-nav navbar-right" role="tablist">
@@ -47,7 +57,7 @@
 	         	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><button class="dropbtn">Dropdown</button></a>
 
 				  <div class="dropdown-content">
-				    <a href="index1.html" target="_blank">Moje preporuke</a>
+				    <a href="index1.html" target="_blank" id="recommendations"></a>
 				    <a href="#">Link 2</a>
 				    <a href="#">Link 3</a>
 				  </div>
@@ -61,14 +71,15 @@
 					</defs>
 					<desc>Kruzno kretanje teksta</desc>
 					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathPocetna" startOffset="70%">Početna
+						<textPath class="please" xlink:href="#testPathPocetna" startOffset="70%">
+							<tspan id="home-menu-item"></tspan>
 							<animate id="anim1" attributeName="startOffset" from="70%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-								<animate id="anim2" attributeName="startOffset" from="0%" to ="70%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath> 
+							<animate id="anim2" attributeName="startOffset" from="0%" to ="70%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath>
 					</text> 
 				</svg>
             	<a href="#pocetna" onclick="init();">
-            		<span>Početna</span>  
+            		<span id="home-menu-item-2"></span>  
 		            <span class="sr-only">(current)</span>
             	</a></li>
             <li id="about_page">
@@ -78,14 +89,15 @@
 					</defs>
 					<desc>Kruzno kretanje teksta</desc>
 					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathOmeni" startOffset="67%">O meni
+						<textPath class="please" xlink:href="#testPathOmeni" startOffset="67%">
+							<tspan id="about-menu-item"></tspan>
 							<animate id="anim3" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-								<animate id="anim4" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath> 
+							<animate id="anim4" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
+						</textPath>
 					</text> 
 				</svg>
 	            <a href="#omeni" >
-	            	<span>O meni</span>
+	            	<span id="about-menu-item-2"></span>
 			            
 	            </a>
             </li>
@@ -96,14 +108,15 @@
 					</defs>
 					<desc>Kruzno kretanje teksta</desc>
 					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathProjekti" startOffset="67%">Projekti
+						<textPath class="please" xlink:href="#testPathProjekti" startOffset="67%">
+							<tspan id="projects-menu-item"></tspan>
 							<animate id="anim5" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
 							<animate id="anim6" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath> 
+						</textPath>
 					</text>
 				</svg>
 	            <a href="#projekti" >
-	            	<span>Projekti</span>   
+	            	<span id="projects-menu-item-2"></span>   
 	            </a>
             </li>
             <li id="contact_page">
@@ -113,14 +126,15 @@
 					</defs>
 					<desc>Kruzno kretanje teksta</desc>
 					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathKontakt" startOffset="67%">Kontakt
+						<textPath class="please" xlink:href="#testPathKontakt" startOffset="67%">
+							<tspan id="contact-menu-item"></tspan>
 							<animate id="anim7" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
 							<animate id="anim8" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath> 
+						</textPath>
 					</text> 
 				</svg>
 	            <a href="#kontakt" >
-	            	<span>Kontakt</span>  
+	            	<span id="contact-menu-item-2"></span>  
 	            </a>
             </li>
          </ul>
@@ -143,8 +157,16 @@
 <div class="container-fluid format_strane pozadina1" id="pocetna">
     <div id="start" class="pojavljivanje">
 	    <p id="textcenter">
-		    <b class="staro"><span>Dobrodošli</span> <br> Ovom prilikom bih želeo ukratko da se predstavim <br> <span class="podlinija">Molim vas, priđite bliže sa kurzorom</span></b><br>
-		    <b class="novo">Posedujem iskustvo u mnogim IT oblastima, ali trenutno završavam višu školu novih računarskih tehnologija i orijentišem se na programiranje. <br> <br> Neke moje karakteristike možete videti prelazom preko <span id="crveno">slike</span>, a za ostale informacije možete pogledati na <span id="plavo">sajtu</span></b>
+		    <b class="staro"><span id="welcome-message"></span> <br> <span id="intro-message"></span> <br> <span class="podlinija" id="cursor-message"></span></b><br>
+		    <b class="novo">
+				<tspan id="experience-message1"></tspan>
+				<br>
+				<br>
+				<tspan id="experience-message2"></tspan>
+				<span id="crveno"></span>
+				<tspan id="experience-message3"></tspan>
+				<span id="plavo">website</span>
+			</b>
 	    </p>
 	</div>
 </div>
@@ -153,7 +175,7 @@
 	<div class="row format_strane" id="omeni">
 	    <div class="row">
 	    	<div class="col-xs-12 naslov">
-	        	<h2 class="text-center">Nešto o meni</h2>
+	        	<h2 class="text-center" id="about-me-title"></h2>
 	    	</div>
 	    </div>
 	    <div class="container-fluid" style="margin-top: 2%">
@@ -168,7 +190,7 @@
 				            </div>
 				            <div id="tekst" class="grid-golden-2">
 					            <div class="grid-content">
-					            	<p><b>Volim timski rad. Kao druželjubiva osoba, volim da pomažem drugima, a ne libim se i da pitam ako mi nešto nije jasno. Uvek se zalažem za dobru atmosferu i kolegijalnost.</b></p>
+					            	<p><b id="teamwork-message"></b></p>
 					            </div>
 				            </div>
 			            </div>
@@ -187,7 +209,7 @@
 				            </div>
 				            <div id="tekst" class="grid-golden-2">
 					            <div class="grid-content">
-				               		<p><b>Nakon dugogodišnjeg iskustva, tokom koga sam učestvovao u okviru nekoliko IT oblasti, naučio sam da sagledavam širu sliku o činjenicama i problemima.</b></p>
+				               		<p><b id="experience-message-2"></b></p>
 				               </div>
 				            </div>
 			            </div>
@@ -206,7 +228,7 @@
 				            </div>
 				            <div id="tekst" class="grid-golden-2">
 					            <div class="grid-content">
-				               		<p><b>Smatram da je moja najveća snaga želja da konstantno učim nove stvari i da ne odustajem lako pred zadatim problemima.</b></p>
+				               		<p><b id="strength-message"></b></p>
 				               </div>
 				            </div>
 			            </div>
@@ -220,7 +242,7 @@
 <div class="container-fluid format_strane pozadina3" id="projekti">
 	<div class="row">
 	    	<div class="col-xs-12 naslov">
-	        	<h2 class="text-center">Projekti</h2>
+	        	<h2 class="text-center" id="projects-title"></h2>
 	    	</div>
 	</div>
 	<div class="row">
@@ -400,39 +422,37 @@
 		</div>
 		</div>
 		<div class="col-xs-12 col-md-5 format_strane_desno contact">
-				<span class="text-center custom_span"><h3>Navedeni projekti su rađeni u okviru redovnog školovanja.<br><br><a href="http://www.viser.edu.rs" target="_blank"><img src="assets/bachelorhat.png" height="100px" id="skolica" /></a><br><br><br>Funkcionalnost projekata je predstavljena video zapisima.<br><br><img src="assets/filmstrip.gif" width="300px" id="slikamala"/></h3>
-				</span>
+				<span class="text-center custom_span"><h3 id="projects-description"></h3></span>
 		</div>
 	</div>
 </div>
 <div class="format_strane pozadina4" id="kontakt">
     <div class="row">  
       <div class="col-xs-24 col-md-12 naslov">
-         <h2 class="text-center">Kontakt</h2>
+         <h2 class="text-center" id="contact-title"></h2>
       </div>
      </div>
      	<div class="row">
          <div class="container-fluid" id="poslednjaVisina">
             <div class="col-xs-12 col-md-6 contact">
             <!-- <div class="col-lg-6 col-md-8 col-xs-12"> -->
-		                    <p class="lead">Trenutno sam u pripremi za junior programera, ali sam otvoren i po pitanju privatnih projekata. Možete me kontaktirati mailom:</p>
+		                    <p class="lead" id="contact-intro"></p>
 
-		                    <form id="contact-form" method="post" action="contact.php" role="form">
-		                    <input type="hidden" name="XDEBUG_SESSION_START" value="netbeans-xdebug" />
+		                    <form id="contact-form" method="POST" action="https://formspree.io/f/xgvzeggd" role="form">
 		                        <div class="messages"></div>
 		                        <div class="controls">
 		                            <div class="row">
 		                                <div class="col-md-6">
 		                                    <div class="form-group">
-		                                        <label for="form_name">Ime *</label>
-		                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Ovde možete upisati vaše ime *" required="required" data-error="Molim vas, upišite vaše ime.">
+		                                        <label for="form_name" id="form-name-label"></label>
+		                                        <input id="form_name" type="text" name="name" class="form-control" required="required" data-error="Molim vas, upišite vaše ime.">
 		                                        <div class="help-block with-errors"></div>
 		                                    </div>
 		                                </div>
 		                                <div class="col-md-6">
 		                                    <div class="form-group">
-		                                        <label for="form_lastname">Prezime *</label>
-		                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Ovde možete upisati vaše prezime *" required="required" data-error="Molim vas, upišite vaše prezime.">
+		                                        <label for="form_lastname" id="form-lastname-label"></label>
+		                                        <input id="form_lastname" type="text" name="surname" class="form-control" required="required" data-error="Molim vas, upišite vaše prezime.">
 		                                        <div class="help-block with-errors"></div>
 		                                    </div>
 		                                </div>
@@ -440,15 +460,15 @@
 		                            <div class="row">
 		                                <div class="col-md-6">
 		                                    <div class="form-group">
-		                                        <label for="form_email">Email *</label>
-		                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Ovde možete upisati vašu e-mail adresu *" required="required" data-error="Molim vas da upišete validan mail.">
+		                                        <label for="form_email" id="form-email-label"></label>
+		                                        <input id="form_email" type="email" name="email" class="form-control" required="required" data-error="Molim vas da upišete validan mail.">
 		                                        <div class="help-block with-errors"></div>
 		                                    </div>
 		                                </div>
 		                                <div class="col-md-6">
 		                                    <div class="form-group">
-		                                        <label for="form_phone">Telefon</label>
-		                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Ovde možete upisati vaš telefon.">
+		                                        <label for="form_phone" id="form-phone-label"></label>
+		                                        <input id="form_phone" type="tel" name="phone" class="form-control">
 		                                        <div class="help-block with-errors"></div>
 		                                    </div>
 		                                </div>
@@ -456,18 +476,18 @@
 		                            <div class="row">
 		                                <div class="col-md-12">
 		                                    <div class="form-group">
-		                                        <label for="form_message">Poruka *</label>
-		                                        <textarea id="form_message" name="message" class="form-control" placeholder="Pošaljite mi poruku *" rows="4" required="required" data-error="Molim vas da upišete poruku."></textarea>
+		                                        <label for="form_message" id="form-message-label"></label>
+		                                        <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Molim vas da upišete poruku."></textarea>
 		                                        <div class="help-block with-errors"></div>
 		                                    </div>
 		                                </div>
 		                                <div class="col-md-12">
-		                                    <input type="submit" class="btn btn-success btn-send" value="Pošalji">
+		                                    <button type="submit" class="btn btn-success btn-send" value="Pošalji" id="form-submit-button"/>
 		                                </div>
 		                            </div>
 		                            <div class="row">
 		                                <div class="col-md-12">
-		                                    <p class="text-muted"><strong>*</strong> Ova polja su obavezna u slučaju slanja mail poruke.</p>
+		                                    <p class="text-muted"><strong id="required-fields-message">*</strong></p>
 		                                </div>
 		                            </div>
 		                        </div>
