@@ -1345,3 +1345,11 @@ label {
 }
 
 /*-----------------------------------------*/
+
+
+/* --- Form Validation Styling --- */
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+    border-width: 3px;
+}

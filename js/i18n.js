@@ -1,3 +1,5 @@
+
+let currentTranslations = {};
 // This function runs when the page is ready
 document.addEventListener('DOMContentLoaded', () => {
     // Find the language toggle checkbox by its ID
@@ -39,10 +41,24 @@ function loadLanguage(lang) {
     fetch(`lang/${lang}.json`)
         .then(response => response.json())
         .then(data => {
+            currentTranslations = data;
             for (const key in data) {
-                const element = document.getElementById(key) || document.querySelector(`[data-content-key="${key}"]`) || document.querySelector(`#${key}`);
-                if (element) {
-                    element.textContent = data[key];
+                // Check if the key is for a placeholder
+                if (key.endsWith('_placeholder')) {
+                    // Get the element ID by removing the suffix
+                    const elementId = key.replace('_placeholder', '');
+                    const element = document.getElementById(elementId);
+
+                    if (element) {
+                        // Set the placeholder attribute instead of textContent
+                        element.placeholder = data[key];
+                    }
+                } else {
+                    // This is the original logic for all other text elements
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.textContent = data[key];
+                    }
                 }
             }
         })

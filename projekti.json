@@ -9,7 +9,7 @@
 			"ime": "xaml.cs fajl",
 			"kod": "<pre style='line-height: 125%'> private <span style='color: #B00040'>void</span> <span style='color: #0000FF'>tb1_PointerEntered</span>(object sender, PointerRoutedEventArgs e)\n        {\n            var sb <span style='color: #666666'>=</span> Resources[<span style='color: #BA2121'>&quot;AnimacijaTeksta1&quot;</span>] as Storyboard;\n            sb.Begin();\n        }\n\n        private <span style='color: #B00040'>void</span> <span style='color: #0000FF'>tb1_PointerExited</span>(object sender, PointerRoutedEventArgs e)\n        {\n            var sb <span style='color: #666666'>=</span> Resources[<span style='color: #BA2121'>&quot;AnimacijaTekstaNazad1&quot;</span>] as Storyboard;\n            sb.Begin();\n        }\n</pre>"
 		}],
-		"slika": "Video/kratki/vesti/animMeni.gif"
+		"slika": "assets/Video/kratki/vesti/animMeni.gif"
 	},
 	{
 		"imeKoda": "Prikaz poslednja 3 komentara",
@@ -25,7 +25,7 @@
 			"ime": "xaml.cs fajl",
 			"kod": "...\nTextboxText komen = new TextboxText(sviK[sviK.Length - 1], null, null);\njedan.DataContext = komen;\nif (sviK.Length > 1)\n    {\n        komen = new TextboxText(sviK[sviK.Length - 1], sviK[sviK.Length - 2], null);\n        dva.DataContext = komen;\n    }\nif (sviK.Length > 2)\n    {\n        komen = new TextboxText(sviK[sviK.Length - 1], sviK[sviK.Length - 2], sviK[sviK.Length - 3]);\n        tri.DataContext = komen;\n    }\n..."
 		}],
-		"slika": "Video/kratki/vesti/komentari.gif"
+		"slika": "assets/Video/kratki/vesti/komentari.gif"
 	},
 	{
 		"imeKoda": "Odabir slike za unos",
@@ -37,7 +37,7 @@
 			"ime": "xaml.cs fajl metoda",
 			"kod": "<pre style='line-height: 125%'><span style='color: #008000; font-weight: bold'>async</span> <span style='color: #008000; font-weight: bold'>private</span> <span style='color: #008000; font-weight: bold'>void</span> <span style='color: #0000FF'>OdabirS_Click</span>(<span style='color: #B00040'>object</span> sender, RoutedEventArgs e)\n        {\n            <span style='color: #B00040'>var</span> filepicker = <span style='color: #008000; font-weight: bold'>new</span> FileOpenPicker();\n            filepicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;\n            filepicker.ViewMode = PickerViewMode.Thumbnail;\n            filepicker.FileTypeFilter.Add(<span style='color: #BA2121'>&quot;.jpg&quot;</span>);\n            filepicker.FileTypeFilter.Add(<span style='color: #BA2121'>&quot;.png&quot;</span>);\n            filepicker.FileTypeFilter.Add(<span style='color: #BA2121'>&quot;.bmp&quot;</span>);\n\n            IAsyncOperation&lt;StorageFile&gt; asyncOp = filepicker.PickSingleFileAsync();\n            StorageFile file = <span style='color: #008000; font-weight: bold'>await</span> asyncOp;\n\n            <span style='color: #008000; font-weight: bold'>if</span>(file != <span style='color: #008000; font-weight: bold'>null</span>)\n            {\n                <span style='color: #B00040'>var</span> stream = <span style='color: #008000; font-weight: bold'>await</span> file.OpenAsync(Windows.Storage.FileAccessMode.Read);\n                <span style='color: #B00040'>var</span> image = <span style='color: #008000; font-weight: bold'>new</span> BitmapImage();\n                <span style='color: #008000; font-weight: bold'>await</span> image.SetSourceAsync(stream);\n                <span style='color: #B00040'>var</span> decoder = <span style='color: #008000; font-weight: bold'>await</span> Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(stream);\n                imgPhoto.Source = image;\n                putanjaSlike.Text = file.Path;\n            }\n        }\n</pre>"
 			}],
-		"slika": "Video/kratki/vesti/odabirslike.gif"
+		"slika": "assets/Video/kratki/vesti/odabirslike.gif"
 	}],
 	"jsp": [{
 		"imeKoda": "Provera JMBG broja (i ostale provere)",

@@ -12,6 +12,9 @@
   "welcome-message": "Dobrodošli",
   "intro-message": "Ovom prilikom bih želeo ukratko da se predstavim",
   "cursor-message": "Molim vas, priđite bliže sa kurzorom",
+  "form_name_placeholder": "Molim vas, upišite vaše ime.",
+  "form_lastname_placeholder": "Molim vas, upišite vaše prezime.",
+  "form_message_placeholder": "Molim vas da upišete poruku.",
   "experience-message1": "Posedujem iskustvo u mnogim IT oblastima, kao što su mreže, hardver, prodaja itd, a razvojem softvera se bavim poslednjih 5 godina.",
   "experience-message2": "Neke moje karakteristike možete videti prelazom preko ",
   "crveno": "slike",
@@ -22,7 +25,8 @@
   "experience-message-2": "Nakon dugogodišnjeg iskustva, tokom koga sam učestvovao u okviru nekoliko IT oblasti, naučio sam da sagledavam širu sliku o činjenicama i problemima.",
   "strength-message": "Smatram da je moja najveća snaga želja da konstantno učim nove stvari i da ne odustajem lako pred zadatim problemima.",
   "projects-title": "Projekti",
-  "projects-description": "Navedeni projekti su rađeni u okviru redovnog školovanja.<br><br><a href=\"http://www.viser.edu.rs\" target=\"_blank\"><img src=\"assets/bachelorhat.png\" height=\"100px\" id=\"skolica\" /></a><br><br><br>Funkcionalnost projekata je predstavljena video zapisima.<br><br><img src=\"assets/filmstrip.gif\" width=\"300px\" id=\"slikamala\"/>",
+  "projects-description1": "Navedeni projekti su rađeni u okviru redovnog školovanja.",
+  "projects-description2": "Funkcionalnost projekata je predstavljena video zapisima.",
   "contact-title": "Kontakt",
   "contact-intro": "Trenutno sam zaposlen kao senior developer, ali sam otvoren i po pitanju privatnih projekata. Možete me kontaktirati preko ove forme:",
   "form-name-label": "Ime *",
@@ -31,5 +35,9 @@
   "form-phone-label": "Telefon",
   "form-message-label": "Poruka *",
   "form-submit-button": "Pošalji",
-  "required-fields-message": "* Ova polja su obavezna u slučaju slanja mail poruke."
+  "required-fields-message": "* Ova polja su obavezna u slučaju slanja mail poruke.",
+  "form_success_message": "Hvala! Vaša poruka je poslata.",
+  "form_error_message": "Oops! Došlo je do greške pri slanju podataka!",
+  "form_networkerror_message": "Oops! Došlo je do greške sa mrežom!",
+  "form_validation_message": "Molim vas, ispravite greške u obeleženim poljima."
 }
