@@ -438,28 +438,28 @@ iframe {border:0px solid #000;
    animation-fill-mode: forwards;
 }
 
-.menigore{
-   -webkit-animation-name: menigore;
-   animation-name: menigore;
+.menuUp{
+   -webkit-animation-name: menuUp;
+   animation-name: menuUp;
    -webkit-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
-.menidole{
-   -webkit-animation-name: menidole;
-   animation-name: menidole;
+.menuDown{
+   -webkit-animation-name: menuDown;
+   animation-name: menuDown;
    -webkit-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
-.sasagore{
-   -webkit-animation-name: sasagore;
-   -moz-animation-name: sasagore;
-   animation-name: sasagore;
+.profileUp{
+   -webkit-animation-name: profileUp;
+   -moz-animation-name: profileUp;
+   animation-name: profileUp;
    -webkit-animation-duration: 0.4s;
    -moz-animation-duration: 0.4s;
    animation-duration: 0.4s;
@@ -469,27 +469,27 @@ iframe {border:0px solid #000;
    animation-fill-mode: forwards;
    -moz-animation-fill-mode: forwards;
 }
-.sasadole{
-   -webkit-animation-name: sasadole;
-   animation-name: sasadole;
+.profileDown{
+   -webkit-animation-name: profileDown;
+   animation-name: profileDown;
    -webkit-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
-.footgore{
-   -webkit-animation-name: footgore;
-   animation-name: footgore;
+.footerUp{
+   -webkit-animation-name: footerUp;
+   animation-name: footerUp;
    -webkit-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
    animation-timing-function: linear;
    animation-fill-mode: forwards;
 }
-.footdole{
-   -webkit-animation-name: footdole;
-   animation-name: footdole;
+.footerDown{
+   -webkit-animation-name: footerDown;
+   animation-name: footerDown;
    -webkit-animation-duration: 0.4s;
    animation-duration: 0.4s;
    -webkit-animation-timing-function: linear;
@@ -724,45 +724,45 @@ iframe {border:0px solid #000;
   to {opacity: 0.7;}
 }
 
-@-webkit-keyframes menigore {
+@-webkit-keyframes menuUp {
    from {top: 0px;}
     to {top: -60px;}
 }
-@keyframes menigore {
+@keyframes menuUp {
    from {top: 0px;}
     to {top: -60px;}
 }
 
-@-webkit-keyframes menidole {
+@-webkit-keyframes menuDown {
    from {top: -60px;}
     to {top: 0px;}
 }
-@keyframes menidole {
+@keyframes menuDown {
    from {top: -60px;}
     to {top: 0px;}
 }
 
-@-webkit-keyframes sasagore {
+@-webkit-keyframes profileUp {
    from {top: 54px;}
     to {top: 4px;}
 }
-@keyframes sasagore {
+@keyframes profileUp {
    from {top: 54px;}
     to {top: 4px;}
 }
-@-webkit-keyframes sasadole {
+@-webkit-keyframes profileDown {
    from {top: 4px;}
     to {top: 54px;}
 }
-@keyframes sasadole {
+@keyframes profileDown {
    from {top: 4px;}
     to {top: 54px;}
 }
-@-webkit-keyframes footgore {
+@-webkit-keyframes footerUp {
    from {bottom: -60px;}
     to {bottom: 0px;}
 }
-@keyframes footdole {
+@keyframes footerDown {
    from {bottom: 0px;}
     to {bottom: -60px;}
 }

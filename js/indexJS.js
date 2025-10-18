@@ -1,24 +1,24 @@
 window.onload = start;
-window.onresize = promena;
+window.onresize = handleResize;
 
 function start() {
-  // kanvas();
-  // var elniz = Array.prototype.slice.call(document.getElementsByClassName('navbar-nav'))
-  // elNiz.forEach(function(item){
+  // canvas();
+  // var elList = Array.prototype.slice.call(document.getElementsByClassName('navbar-nav'))
+  // elList.forEach(function(item){
   //    	console.log(item);
   // });
-  promena();
+  handleResize();
   init();
-  // Pre-load projekti data (optional callback)
-  initProjekti(function () {
+  // Pre-load projects data (optional callback)
+  initProjects(function () {
     // Data loaded successfully
   });
 }
 
 var lastScrollTop = 0;
-var skrivanje;
-var sasaslika;
-var foot;
+var menuElement;
+var profileImage;
+var footerElement;
 
 // var c, ctx, ctx1
 
@@ -99,25 +99,25 @@ window.addEventListener(
         Math.abs(st - pP) < 5 ||
         Math.abs(st - kP) < 5
       ) {
-        skryvanje = document.getElementById("meni");
-        skryvanje.classList.remove("menigore");
-        skryvanje.classList.add("menidole");
-        sasaslika = document.getElementById("sasa");
-        sasaslika.classList.remove("sasagore");
-        sasaslika.classList.add("sasadole");
-        foot = document.getElementById("foot");
-        foot.classList.remove("footgore");
-        foot.classList.add("footdole");
+        menuElement = document.getElementById("meni");
+        menuElement.classList.remove("menuUp");
+        menuElement.classList.add("menuDown");
+        profileImage = document.getElementById("sasa");
+        profileImage.classList.remove("profileUp");
+        profileImage.classList.add("profileDown");
+        footerElement = document.getElementById("foot");
+        footerElement.classList.remove("footerUp");
+        footerElement.classList.add("footerDown");
       } else {
-        skryvanje = document.getElementById("meni");
-        skryvanje.classList.remove("menidole");
-        skryvanje.classList.add("menigore");
-        sasaslika = document.getElementById("sasa");
-        sasaslika.classList.remove("sasadole");
-        sasaslika.classList.add("sasagore");
-        foot = document.getElementById("foot");
-        foot.classList.remove("footdole");
-        foot.classList.add("footgore");
+        menuElement = document.getElementById("meni");
+        menuElement.classList.remove("menuDown");
+        menuElement.classList.add("menuUp");
+        profileImage = document.getElementById("sasa");
+        profileImage.classList.remove("profileDown");
+        profileImage.classList.add("profileUp");
+        footerElement = document.getElementById("foot");
+        footerElement.classList.remove("footerDown");
+        footerElement.classList.add("footerUp");
       }
 
       lastScrollTop = st;
@@ -133,35 +133,35 @@ window.addEventListener(
 //
 // }
 
-function stanje(broj) {
-  if (broj === 1) {
+function setState(number) {
+  if (number === 1) {
     document.getElementById("start").style.visibility = "hidden";
-  } else if (broj === 2) {
+  } else if (number === 2) {
     document.getElementById("start").style.visibility = "visible";
   }
 }
 
 function init() {
   var counter = 0;
-  var funkcija = function () {
+  var flickerFunction = function () {
     counter++;
-    var brj = 2;
-    brj = Math.floor(Math.random() * 2) + 1;
-    stanje(brj);
+    var num = 2;
+    num = Math.floor(Math.random() * 2) + 1;
+    setState(num);
     var rand = Math.round(Math.random() * (100 - 50)) + 50;
-    if (counter > 40 && brj === 2) return;
-    else setTimeout(funkcija, rand);
+    if (counter > 40 && num === 2) return;
+    else setTimeout(flickerFunction, rand);
   };
-  funkcija();
+  flickerFunction();
 }
 
-function promena() {
-  var elemStart = document.getElementById("start");
-  var posStart = elemStart.getBoundingClientRect();
-  var sirina = posStart.width;
-  var visina = posStart.height;
+function handleResize() {
+  var startElement = document.getElementById("start");
+  var startPosition = startElement.getBoundingClientRect();
+  var width = startPosition.width;
+  var height = startPosition.height;
 
-  elemStart.style.visibility = "visible";
-  elemStart.style.top = window.innerHeight / 2 - visina / 2 + "px";
-  elemStart.style.left = window.innerWidth / 2 - sirina / 2 + "px";
+  startElement.style.visibility = "visible";
+  startElement.style.top = window.innerHeight / 2 - height / 2 + "px";
+  startElement.style.left = window.innerWidth / 2 - width / 2 + "px";
 }

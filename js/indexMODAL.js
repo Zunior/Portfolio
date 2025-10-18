@@ -1,4 +1,4 @@
-var objekatProjekti;
+var projectsObject;
 
 function openModal() {
   document.getElementById("myModal").style.display = "block";
@@ -39,50 +39,50 @@ function showSlides(n) {
   // captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-function initProjekti(callback) {
-  if (objekatProjekti) {
+function initProjects(callback) {
+  if (projectsObject) {
     callback(); // If data exists, just run the callback immediately
     return;
   }
   Utils.loadJSON("projekti.json", function (response) {
-    //objekatProjekti = JSON.parse(response.replace(/\r/g, "\\\\r"));
-    objekatProjekti = JSON.parse(response);
+    //projectsObject = JSON.parse(response.replace(/\r/g, "\\\\r"));
+    projectsObject = JSON.parse(response);
 
     callback();
   });
 }
 
-function proj(tip) {
+function showProject(type) {
   var html = "";
-  var projekat = objekatProjekti[tip];
+  var project = projectsObject[type];
   //var count = 0
-  for (item in projekat) {
-    var xamlpr = projekat[item];
+  for (item in project) {
+    var projectItem = project[item];
     //count = 0
     html += '<div class="mySlides">';
     html +=
-      '<div class="row" id="naslov"><p>' +
-      xamlpr.imeKoda +
+      '<div class="row" id="title"><p>' +
+      projectItem.codeName +
       '</p><span class="close cursor" onclick="closeModal()">&times;</span></div>';
-    html += '<div class="row" id="preglednired">';
-    html += '<div class="col-md-7" id="modalkodovi">';
-    for (deoKoda in xamlpr.ceo_kod) {
+    html += '<div class="row" id="previewRow">';
+    html += '<div class="col-md-7" id="modalCodes">';
+    for (codePart in projectItem.fullCode) {
       //count++
-      html += "<div>" + xamlpr.ceo_kod[deoKoda].ime + "<br>";
-      html += xamlpr.ceo_kod[deoKoda].kod;
+      html += "<div>" + projectItem.fullCode[codePart].name + "<br>";
+      html += projectItem.fullCode[codePart].code;
       html += "</div>";
     }
     html += "</div>";
-    html += '<div class="col-md-5" id="modalslika">';
+    html += '<div class="col-md-5" id="modalImage">';
     html +=
-      '<img class="img-responsive" id="slikica" src="' +
-      xamlpr.slika +
-      '" alt="animacija">';
+      '<img class="img-responsive" id="smallImage" src="' +
+      projectItem.image +
+      '" alt="animation">';
     html += "</div>";
     html += "</div>";
     html += "</div>";
     html += '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>';
     html += '<a class="next" onclick="plusSlides(1)">&#10095;</a>';
   }
-  document.getElementById("dintekst").innerHTML = html;
+  document.getElementById("dynamicText").innerHTML = html;
 }
