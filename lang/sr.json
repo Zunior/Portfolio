@@ -39,5 +39,9 @@
   "form_success_message": "Hvala! Vaša poruka je poslata.",
   "form_error_message": "Oops! Došlo je do greške pri slanju podataka!",
   "form_networkerror_message": "Oops! Došlo je do greške sa mrežom!",
-  "form_validation_message": "Molim vas, ispravite greške u obeleženim poljima."
+  "form_validation_message": "Molim vas, ispravite greške u obeleženim poljima.",
+  "form_name_placeholder": "Unesite vaše ime",
+  "form_lastname_placeholder": "Unesite vaše prezime",
+  "form_email_placeholder": "Unesite vašu email adresu",
+  "form_message_placeholder": "Unesite vašu poruku"
 }

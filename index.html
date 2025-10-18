@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-	<link rel="stylesheet" type="text/css" href="css/language.css"/>
-	<script src="https://www.w3schools.com/lib/w3data.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="js/indexMODAL.js"></script>
-    <script type="text/javascript" src="js/indexJQ.js"></script>
-    <script type="text/javascript" src="js/indexJS.js"></script>
-    <script src="js/validatorNew.js"></script>
-<!--    <script src="js/contact.js"></script>-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!-- <script type="text/javascript" src="collapse.js"></script> -->
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Personal webpage - portfolio">
 	<meta name="keywords" content="programming, projects, java, javascript, svg, modalbox">
 	<meta name="author" content="Saša Popović">
-	<!-- <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'> -->
+
+	<title>Sasa Popovic - Portfolio</title>
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
-<script type="text/javascript" src="js/i18n.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/language.css"/>
 </head>
 
 <!--Scroll - za update linkova pri kretanju-->
@@ -142,7 +133,7 @@
 	</div>
 </nav>
 <!-- <div class="col-xs-2"> -->
-	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg"/></a>
+	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg" alt="Saša Popović" onerror="this.style.display='none'"/></a>
 <!-- </div> -->
 	<div id="container">
 	    <div id="halfclip">
@@ -474,7 +465,7 @@
 														name="email"
 														class="form-control"
 														required
-														placeholder="Molim vas da upišete validan mail."
+														placeholder=""
 														pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
 														title="Please enter a valid email address (e.g., user@example.com)">
 		                                    </div>
@@ -723,6 +714,31 @@
 	</div>
 </div>
 <!--___________________________________________________-->
+
+<!-- Loading Indicator -->
+<div id="loader" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:9999; background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
+    <div style="border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;"></div>
+</div>
+
+<style>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+
+<!-- Core Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Application Scripts -->
+<script src="js/utils.js"></script>
+<script src="js/indexMODAL.js"></script>
+<script src="js/indexJQ.js"></script>
+<script src="js/indexJS.js"></script>
+<script src="js/validatorNew.js"></script>
+<script src="js/i18n.js"></script>
+
 </body>
 
 <!--          PRIKAZ MODAL BOX-a          -->

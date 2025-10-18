@@ -1,40 +1,38 @@
-# 🧠 IntelliJ IDEA project files
-.idea/
-*.iml
-*.iws
-.idea/workspace.xml
+# Dependencies
+node_modules/
 
-# 🧹 OS-generated files
+# Build outputs
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# 🔧 Node.js / npm / yarn (if applicable)
-node_modules/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# 📦 Build artifacts
-dist/
-build/
-
-# ⚙️ Optional: local config or env files
-.env
-*.local
-
-# 🚀 Front-end cache/assets
-.cache/
-coverage/
-
-# ✅ Temp files
-*.log
+# Temporary files
 *.tmp
+*.temp
 
-# 💡 Optional: If you're using Vite, Next.js, or other tools
-.vite/
-.next/
-
-# 🔒 Editor config backups
-*.bak
-*.swp
-*.swo
+# Python
+__pycache__/
+*.py[cod]
+*$py.class

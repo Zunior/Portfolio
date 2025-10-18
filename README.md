@@ -1,11 +1,34 @@
 # Portfolio
+
 Personal web site
 
 ### Hello World 👋
-I am a fullstack software engineer from Belgrade 
+
+I am a fullstack software engineer from Belgrade
 
 - 🔭 Working on multiple frontend and backend project using Java and Angular
 - 🌱 Learning design patterns in depth
+
+<br>
+
+## 🚀 Running Locally
+
+### Windows
+
+```bash
+start-server.bat
+```
+
+### Mac/Linux
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open your browser to: **http://localhost:8000**
+
+**⚠️ Important:** Do NOT open `index.html` directly in your browser using the `file://` protocol. This will cause CORS errors and prevent the site from loading properly. Always use a local web server.
+
 <br>
 
 ## Connect with me
@@ -17,6 +40,7 @@ I am a fullstack software engineer from Belgrade
 <br>
 
 ## Expertise
+
 <img align="left" alt="Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white" />
 <img align="left" alt="Javascript" src="https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square" height="28" />
 <img align="left" alt="Angular" src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" />

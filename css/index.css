@@ -173,6 +173,9 @@ footer p {
   position: absolute;
   transform:translate(-33%, -31%);
 }
+.navbar-nav > li:nth-child(n + 2):nth-child(-n + 5) > a > span {
+  visibility: visible !important;
+}
 
 #svgPocetna, #svgOmeni, #svgProjekti, #svgKontakt {
   visibility: hidden;

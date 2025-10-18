@@ -39,5 +39,9 @@
   "form_success_message": "Thank you! Your message has been sent.",
   "form_error_message": "Oops! There was a problem submitting your form!",
   "form_networkerror_message": "Oops! There was a network error!",
-  "form_validation_message": "Please correct the errors in the highlighted fields."
+  "form_validation_message": "Please correct the errors in the highlighted fields.",
+  "form_name_placeholder": "Enter your first name",
+  "form_lastname_placeholder": "Enter your last name",
+  "form_email_placeholder": "Enter your email address",
+  "form_message_placeholder": "Enter your message"
 }
