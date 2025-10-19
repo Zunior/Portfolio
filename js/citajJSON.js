@@ -1,114 +1,164 @@
-var objekatSajtovi;
+/**
+ * Website Gallery Manager
+ * Manages website portfolio items with carousel functionality
+ * Uses IIFE pattern to avoid global variable pollution
+ */
+const WebsiteGallery = (function () {
+  // Private variables
+  let websitesData = null;
+  let designItems = [];
+  let generalItems = [];
+  let designCounter = 1;
+  let generalCounter = 1;
+  let maxDesign = 0;
+  let maxGeneral = 0;
+  let currentDesign = 0;
+  let currentGeneral = 0;
 
-var velikiNizD = [];
-var velikiNizO = [];
-var counterD = 1;
-var counterO = 1;
-var maxD = 0;
-var maxO = 0;
-var krajD = 0;
-var krajO = 0;
+  /**
+   * Initialize the gallery by loading website data
+   */
+  function init() {
+    Utils.loadJSON("sajtovi.json", function (response) {
+      websitesData = JSON.parse(response);
 
-// Call to function with anonymous callback
-function initSajtovi() {
-  Utils.loadJSON("sajtovi.json", function (response) {
-    objekatSajtovi = JSON.parse(response);
-    for (i in objekatSajtovi.web_dizajn) {
-      velikiNizD.push(
-        new Array(
-          objekatSajtovi.web_dizajn[i].slika,
-          objekatSajtovi.web_dizajn[i].link
-        )
-      );
-      maxD++;
+      // Load design items
+      if (websitesData.web_dizajn) {
+        for (let i in websitesData.web_dizajn) {
+          designItems.push([
+            websitesData.web_dizajn[i].slika,
+            websitesData.web_dizajn[i].link,
+          ]);
+          maxDesign++;
+        }
+      }
+
+      // Load general items
+      if (websitesData.opšte) {
+        for (let i in websitesData.opšte) {
+          generalItems.push([
+            websitesData.opšte[i].slika,
+            websitesData.opšte[i].link,
+          ]);
+          maxGeneral++;
+        }
+      }
+    });
+  }
+
+  /**
+   * Update image element with new background and link
+   * @param {HTMLElement} element - The image element to update
+   * @param {Array} item - Array containing [imageUrl, linkUrl]
+   */
+  function updateImageElement(element, item) {
+    if (!element || !item) return;
+
+    element.style.background =
+      "-webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,0) 30%,rgba(255,255,255,1) 70%), url('" +
+      item[0] +
+      "')";
+    element.style.backgroundSize = "cover";
+    element.href = item[1];
+  }
+
+  /**
+   * Navigate to next design item
+   */
+  function nextDesignItem() {
+    designCounter++;
+    const imageElement = document.getElementById("srednjiD");
+    if (!imageElement) return;
+
+    if (designCounter <= maxDesign) {
+      currentDesign = designCounter;
+    } else {
+      currentDesign = designCounter = 1;
     }
-    for (i in objekatSajtovi.opšte) {
-      velikiNizO.push(
-        new Array(objekatSajtovi.opšte[i].slika, objekatSajtovi.opšte[i].link)
-      );
-      maxO++;
+
+    updateImageElement(imageElement, designItems[currentDesign - 1]);
+  }
+
+  /**
+   * Navigate to previous design item
+   */
+  function previousDesignItem() {
+    designCounter--;
+    const imageElement = document.getElementById("srednjiD");
+    if (!imageElement) return;
+
+    if (designCounter >= 1) {
+      currentDesign = designCounter;
+    } else {
+      currentDesign = designCounter = maxDesign;
     }
-  });
-}
 
-initSajtovi();
+    updateImageElement(imageElement, designItems[currentDesign - 1]);
+  }
 
-window.onload = start;
+  /**
+   * Navigate to next general item
+   */
+  function nextGeneralItem() {
+    generalCounter++;
+    const imageElement = document.getElementById("srednjiO");
+    if (!imageElement) return;
 
-function start() {
-  dPromeniNaDesno();
-  oPromeniNaDesno();
-}
+    if (generalCounter <= maxGeneral) {
+      currentGeneral = generalCounter;
+    } else {
+      currentGeneral = generalCounter = 1;
+    }
 
-//Funkcije za listanje
-function dPromeniNaDesno() {
-  counterD++;
-  var slikaD = document.getElementById("srednjiD");
-  if (counterD <= maxD) krajD = counterD;
-  else krajD = counterD = 1;
+    updateImageElement(imageElement, generalItems[currentGeneral - 1]);
+  }
 
-  slikaD.style.background =
-    "-webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,0) " +
-    '30%,rgba(255,255,255,1) 70%), url("' +
-    velikiNizD[krajD - 1][0] +
-    '")';
-  slikaD.style.backgroundSize = "cover";
-  // slika.style.backgroundImage = 'url("' + velikiNiz[kraj-1][0] + '")'
-  slikaD.href = velikiNizD[krajD - 1][1];
-}
-function dPromeniNaLevo() {
-  counterD--;
-  var slikaD = document.getElementById("srednjiD");
-  if (counterD >= 1) krajD = counterD;
-  else krajD = counterD = maxD;
+  /**
+   * Navigate to previous general item
+   */
+  function previousGeneralItem() {
+    generalCounter--;
+    const imageElement = document.getElementById("srednjiO");
+    if (!imageElement) return;
 
-  slikaD.style.background =
-    "-webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,0) " +
-    '30%,rgba(255,255,255,1) 70%), url("' +
-    velikiNizD[krajD - 1][0] +
-    '")';
-  slikaD.style.backgroundSize = "cover";
-  slikaD.href = velikiNizD[krajD - 1][1];
-}
+    if (generalCounter >= 1) {
+      currentGeneral = generalCounter;
+    } else {
+      currentGeneral = generalCounter = maxGeneral;
+    }
 
-function oPromeniNaDesno() {
-  counterO++;
-  var slikaO = document.getElementById("srednjiO");
-  if (counterO <= maxO) krajO = counterO;
-  else krajO = counterO = 1;
+    updateImageElement(imageElement, generalItems[currentGeneral - 1]);
+  }
 
-  slikaO.style.background =
-    "-webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,0) " +
-    '30%,rgba(255,255,255,1) 70%), url("' +
-    velikiNizO[krajO - 1][0] +
-    '")';
-  slikaO.style.backgroundSize = "cover";
-  // slika.style.backgroundImage = 'url("' + velikiNiz[kraj-1][0] + '")'
-  slikaO.href = velikiNizO[krajO - 1][1];
-}
-function oPromeniNaLevo() {
-  counterO--;
-  var slikaO = document.getElementById("srednjiO");
-  if (counterO >= 1) krajO = counterO;
-  else krajO = counterO = maxO;
+  /**
+   * Start the gallery - show first items
+   */
+  function start() {
+    nextDesignItem();
+    nextGeneralItem();
+  }
 
-  slikaO.style.background =
-    "-webkit-radial-gradient(center center, ellipse cover, rgba(0,0,0,0) " +
-    '30%,rgba(255,255,255,1) 70%), url("' +
-    velikiNizO[krajO - 1][0] +
-    '")';
-  slikaO.style.backgroundSize = "cover";
-  slikaO.href = velikiNizO[krajO - 1][1];
-}
+  // Public API
+  return {
+    init: init,
+    start: start,
+    nextDesignItem: nextDesignItem,
+    previousDesignItem: previousDesignItem,
+    nextGeneralItem: nextGeneralItem,
+    previousGeneralItem: previousGeneralItem,
+  };
+})();
 
-// $(document).ready(function(){
+// Initialize gallery
+WebsiteGallery.init();
 
-// 	$.getJSON("sajtovi.json", function(json) {
-// 		//alert("dobro je procitao");
-// 		for(i in json.web_dizajn) {
-// 			velikiNizD.push(new Array(json.web_dizajn[i].slika, json.web_dizajn[i].link))
-// 			maxD++;
-// 		};
-// 	});
+// Start on window load
+window.addEventListener("load", function () {
+  WebsiteGallery.start();
+});
 
-// });
+// Expose functions globally for onclick handlers (backward compatibility)
+window.dPromeniNaDesno = WebsiteGallery.nextDesignItem;
+window.dPromeniNaLevo = WebsiteGallery.previousDesignItem;
+window.oPromeniNaDesno = WebsiteGallery.nextGeneralItem;
+window.oPromeniNaLevo = WebsiteGallery.previousGeneralItem;

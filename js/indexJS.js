@@ -1,167 +1,216 @@
-window.onload = start;
-window.onresize = handleResize;
+/**
+ * Main Application Controller
+ * Handles page initialization, scroll effects, and animations
+ * Uses module pattern to avoid global pollution
+ */
+const App = (function () {
+  // Private variables
+  let lastScrollTop = 0;
+  const MOBILE_BREAKPOINT = 768;
+  const SCROLL_OFFSET = 50;
+  const FLICKER_MAX_COUNT = 40;
 
-function start() {
-  // canvas();
-  // var elList = Array.prototype.slice.call(document.getElementsByClassName('navbar-nav'))
-  // elList.forEach(function(item){
-  //    	console.log(item);
-  // });
-  handleResize();
-  init();
-  // Pre-load projects data (optional callback)
-  initProjects(function () {
-    // Data loaded successfully
-  });
-}
+  // Cache DOM elements
+  let elements = {
+    menu: null,
+    profile: null,
+    footer: null,
+    startBox: null,
+  };
 
-var lastScrollTop = 0;
-var menuElement;
-var profileImage;
-var footerElement;
+  /**
+   * Cache DOM elements for better performance
+   */
+  function cacheElements() {
+    elements.menu = document.getElementById("meni");
+    elements.profile = document.getElementById("sasa");
+    elements.footer = document.getElementById("foot");
+    elements.startBox = document.getElementById("start");
 
-// var c, ctx, ctx1
+    // Force menu to be visible on desktop (Bootstrap 5 fix)
+    const navCollapse = document.getElementById("nav_traka");
+    if (navCollapse && window.innerWidth > 768) {
+      navCollapse.classList.add("show");
+    }
+  }
 
-// function kanvas() {
-// 	c = document.getElementById("myCanvas");
+  /**
+   * Get section position relative to viewport
+   * @param {string} sectionId - ID of the section element
+   * @returns {number} Position from top of page
+   */
+  function getSectionPosition(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return 0;
+    return (
+      window.pageYOffset + section.getBoundingClientRect().top - SCROLL_OFFSET
+    );
+  }
 
-// 	ctx = c.getContext("2d");
-// 	ctx1 = c.getContext("2d");
+  /**
+   * Toggle element classes for animation
+   * @param {HTMLElement} element - Element to animate
+   * @param {string} removeClass - Class to remove
+   * @param {string} addClass - Class to add
+   */
+  function toggleElementClass(element, removeClass, addClass) {
+    if (!element) return;
+    element.classList.remove(removeClass);
+    element.classList.add(addClass);
+  }
 
-// 	// initCanvas();
-// }
+  /**
+   * Show UI elements (menu, profile, footer)
+   */
+  function showUIElements() {
+    toggleElementClass(elements.menu, "menuUp", "menuDown");
+    toggleElementClass(elements.profile, "profileUp", "profileDown");
+    toggleElementClass(elements.footer, "footerUp", "footerDown");
+  }
 
-// function initCanvas() {
-// 	window.addEventListener('resize', resizeCanvas, false);
-// 	// window.addEventListener('scroll', resizeCanvas, false);
-//     resizeCanvas();
-// }
-// function redraw() {
-// 	c = document.getElementById("myCanvas");
-// 	var elemStart = document.getElementById('start');
-// 	var elemSasa = document.getElementById('sasa');
+  /**
+   * Hide UI elements (menu, profile, footer)
+   */
+  function hideUIElements() {
+    toggleElementClass(elements.menu, "menuDown", "menuUp");
+    toggleElementClass(elements.profile, "profileDown", "profileUp");
+    toggleElementClass(elements.footer, "footerDown", "footerUp");
+  }
 
-// 	ctx = c.getContext("2d");
-// 	ctx1 = c.getContext("2d");
+  /**
+   * Handle scroll events for UI animations
+   */
+  function handleScroll() {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) return;
 
-// 	ctx.beginPath();
-// 	ctx.lineWidth = "2";
-// 	ctx.strokeStyle = "blue";
-// 	ctx.moveTo(parseInt(elemStart.style.left, 10),parseInt(elemStart.style.top, 10));
-// 	ctx.lineTo(50, 50);
-// 	// ctx.lineTo(parseInt(elemSasa.style.left, 10),parseInt(elemSasa.style.top, 10));
-// 	ctx.stroke();
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
 
-// 	ctx1.beginPath();
-// 	ctx1.strokeStyle = "red";
-// 	ctx.moveTo(parseInt(elemStart.style.left, 10),parseInt(elemStart.style.top, 10));
-// 	ctx1.lineTo(1000,30);
-// 	ctx1.stroke();
-// }
-// function resizeCanvas() {
-// 	c.width = window.innerWidth;
-//     c.height = window.innerHeight;
-//     redraw();
-// }
+    // Get section positions
+    const aboutPos = getSectionPosition("omeni");
+    const projectsPos = getSectionPosition("projekti");
+    const contactPos = getSectionPosition("kontakt");
 
-// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-/*var eventList = ["scroll", "resize"];
-for(event of eventList) {
-    element.addEventListener(event, function() {
-        
-    });
-}*/
+    // Check if we're at the bottom of the page
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const isAtBottom = currentScroll + windowHeight >= documentHeight - 10;
 
-window.addEventListener(
-  "scroll",
-  function () {
-    // or window.addEventListener("scroll"....
-    if (window.innerWidth > 768) {
-      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-      var oP =
-        window.pageYOffset +
-        document.getElementById("omeni").getBoundingClientRect().top -
-        50;
-      var pP =
-        window.pageYOffset +
-        document.getElementById("projekti").getBoundingClientRect().top -
-        50;
-      var kP = Math.floor(
-        window.pageYOffset +
-          document.getElementById("kontakt").getBoundingClientRect().top -
-          50
-      );
-      /// var aPoz = aP.getBoundingClientRect().bottom - 100
+    // Check if we're near a section or scrolling up
+    const nearSection =
+      Math.abs(currentScroll - aboutPos) < 5 ||
+      Math.abs(currentScroll - projectsPos) < 5 ||
+      Math.abs(currentScroll - contactPos) < 5;
 
-      if (
-        st < lastScrollTop ||
-        Math.abs(st - oP) < 5 ||
-        Math.abs(st - pP) < 5 ||
-        Math.abs(st - kP) < 5
-      ) {
-        menuElement = document.getElementById("meni");
-        menuElement.classList.remove("menuUp");
-        menuElement.classList.add("menuDown");
-        profileImage = document.getElementById("sasa");
-        profileImage.classList.remove("profileUp");
-        profileImage.classList.add("profileDown");
-        footerElement = document.getElementById("foot");
-        footerElement.classList.remove("footerUp");
-        footerElement.classList.add("footerDown");
-      } else {
-        menuElement = document.getElementById("meni");
-        menuElement.classList.remove("menuDown");
-        menuElement.classList.add("menuUp");
-        profileImage = document.getElementById("sasa");
-        profileImage.classList.remove("profileDown");
-        profileImage.classList.add("profileUp");
-        footerElement = document.getElementById("foot");
-        footerElement.classList.remove("footerDown");
-        footerElement.classList.add("footerUp");
+    // Show menu when: scrolling up, near a section, or at bottom
+    if (currentScroll < lastScrollTop || nearSection || isAtBottom) {
+      showUIElements();
+    } else {
+      hideUIElements();
+    }
+
+    lastScrollTop = currentScroll;
+  }
+
+  /**
+   * Set visibility state of start box
+   * @param {number} state - 1 for hidden, 2 for visible
+   */
+  function setStartBoxState(state) {
+    const startBox = document.getElementById("start");
+    if (!startBox) return;
+
+    if (state === 1) {
+      startBox.style.visibility = "hidden";
+    } else if (state === 2) {
+      startBox.style.visibility = "visible";
+    }
+  }
+
+  /**
+   * Initialize flicker animation for start box
+   */
+  function initFlickerAnimation() {
+    let counter = 0;
+
+    const flicker = function () {
+      counter++;
+      const randomState = Math.floor(Math.random() * 2) + 1;
+      setStartBoxState(randomState);
+
+      const randomDelay = Math.round(Math.random() * 50) + 50;
+
+      // Stop after max count and when visible
+      if (counter > FLICKER_MAX_COUNT && randomState === 2) {
+        return;
       }
 
-      lastScrollTop = st;
-    }
-  },
-  false
-);
+      setTimeout(flicker, randomDelay);
+    };
 
-// function flicker() {
-// 	var element = document.getElementById('start');
-//   var treperenje = setInterval(function(){element.toggleClass('hidden');}, 200);
-//   	setTimeout(function(){clearInterval(treperenje);}, 1000);
-//
-// }
-
-function setState(number) {
-  if (number === 1) {
-    document.getElementById("start").style.visibility = "hidden";
-  } else if (number === 2) {
-    document.getElementById("start").style.visibility = "visible";
+    flicker();
   }
-}
 
-function init() {
-  var counter = 0;
-  var flickerFunction = function () {
-    counter++;
-    var num = 2;
-    num = Math.floor(Math.random() * 2) + 1;
-    setState(num);
-    var rand = Math.round(Math.random() * (100 - 50)) + 50;
-    if (counter > 40 && num === 2) return;
-    else setTimeout(flickerFunction, rand);
+  /**
+   * Handle window resize - reposition start box
+   */
+  function handleResize() {
+    const startBox = document.getElementById("start");
+    if (!startBox) return;
+
+    const rect = startBox.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    startBox.style.visibility = "visible";
+    startBox.style.top = window.innerHeight / 2 - height / 2 + "px";
+    startBox.style.left = window.innerWidth / 2 - width / 2 + "px";
+  }
+
+  /**
+   * Initialize the application
+   */
+  function init() {
+    cacheElements();
+    handleResize();
+    initFlickerAnimation();
+
+    // Show UI elements initially (menu should be visible on page load)
+    showUIElements();
+
+    // Pre-load projects data (with delay to ensure ProjectModal is loaded)
+    setTimeout(function () {
+      if (typeof ProjectModal !== "undefined" && ProjectModal.initProjects) {
+        ProjectModal.initProjects(function () {
+          console.log("Projects data loaded successfully");
+        });
+      }
+    }, 100);
+  }
+
+  /**
+   * Start the application
+   */
+  function start() {
+    // Small delay to ensure DOM is fully ready
+    setTimeout(function () {
+      init();
+    }, 50);
+  }
+
+  // Set up event listeners
+  window.addEventListener("load", start);
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("scroll", handleScroll, false);
+
+  // Public API
+  return {
+    init: init,
+    start: start,
+    handleResize: handleResize,
   };
-  flickerFunction();
-}
+})();
 
-function handleResize() {
-  var startElement = document.getElementById("start");
-  var startPosition = startElement.getBoundingClientRect();
-  var width = startPosition.width;
-  var height = startPosition.height;
-
-  startElement.style.visibility = "visible";
-  startElement.style.top = window.innerHeight / 2 - height / 2 + "px";
-  startElement.style.left = window.innerWidth / 2 - width / 2 + "px";
-}
+// Expose for backward compatibility
+window.init = App.init;
+window.handleResize = App.handleResize;

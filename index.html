@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Saša Popović - Senior Full Stack Developer Portfolio. Experienced in Java, Angular, Spring, and modern web technologies.">
-	<meta name="keywords" content="programming, projects, java, javascript, angular, spring, full stack developer, portfolio">
+	<meta name="description"
+		content="Saša Popović - Senior Full Stack Developer Portfolio. Experienced in Java, Angular, Spring, and modern web technologies.">
+	<meta name="keywords"
+		content="programming, projects, java, javascript, angular, spring, full stack developer, portfolio">
 	<meta name="author" content="Saša Popović">
-	
+
 	<!-- Security Headers -->
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://player.vimeo.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://player.vimeo.com https://challenges.cloudflare.com; connect-src 'self' https://formspree.io;">
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src 'self'; script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://player.vimeo.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://player.vimeo.com https://challenges.cloudflare.com; connect-src 'self' https://formspree.io;">
 	<meta http-equiv="X-Content-Type-Options" content="nosniff">
 	<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 	<meta http-equiv="X-XSS-Protection" content="1; mode=block">
-	
+
 	<!-- SEO Meta Tags -->
 	<meta property="og:title" content="Saša Popović - Full Stack Developer Portfolio">
-	<meta property="og:description" content="Senior Full Stack Developer specializing in Java, Angular, Spring, and modern web technologies.">
+	<meta property="og:description"
+		content="Senior Full Stack Developer specializing in Java, Angular, Spring, and modern web technologies.">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="assets/sasa.jpg">
 	<meta name="twitter:card" content="summary_large_image">
@@ -27,26 +32,25 @@
 	<link rel="alternate icon" type="image/x-icon" href="assets/favicon.ico">
 
 	<!-- Updated to latest stable versions for security and features -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/index.css"/>
-	<link rel="stylesheet" type="text/css" href="css/language.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/language.css" />
 </head>
 
 <!--Scroll - za update linkova pri kretanju-->
+
 <body data-bs-spy="scroll" data-bs-offset="52" data-bs-target="#nav_traka" style="height: 100%">
 
-<nav class="navbar navbar-default navbar-fixed-top navbar-collapse" id="meni">
-	<div class="container-fluid">
-	<!--Elementi koje stavljamo u minimizirani izbor-->
-		<div class="navbar-header">
-			<button id="togledugme" type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#nav_traka" aria-expanded="false" aria-label="Toggle navigation">
-		        <span class="visually-hidden custom_span">Toggle navigation</span>
-		        <span class="navbar-toggler-icon custom_span"></span>
-      		</button>
-         	<a class="navbar-brand elegantshadow" href="#" style="color: white;"><b id="author-name"></b></a>
-			<div style="text-align: center; float: left; position: relative;">
+	<nav class="navbar navbar-expand-md navbar-dark" id="meni">
+		<div class="container-fluid">
+			<!--Elementi koje stavljamo u minimizirani izbor-->
+			<a class="navbar-brand elegantshadow" href="#" style="color: white;"><b id="author-name"></b></a>
+			<div style="display: inline-flex; align-items: center; margin-left: 15px; margin-right: auto;">
 				<div class="switch">
 					<input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" checked>
 					<label for="language-toggle"></label>
@@ -54,371 +58,216 @@
 					<span class="off">SR</span>
 				</div>
 			</div>
+			<button id="togledugme" type="button" class="navbar-toggler" data-bs-toggle="collapse"
+				data-bs-target="#nav_traka" aria-expanded="false" aria-controls="nav_traka"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="nav_traka">
+				<ul class="navbar-nav ms-auto" role="tablist">
+					<!--hidden element-->
+					<li>
+						<div class="dropdown" style="display:none">
+							<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><button
+									class="dropbtn">Dropdown</button></a>
+
+							<div class="dropdown-content">
+								<a href="index1.html" target="_blank" id="recommendations"></a>
+								<a href="#">Link 2</a>
+								<a href="#">Link 3</a>
+							</div>
+						</div>
+					</li>
+
+					<li id="home_page" class="active">
+						<svg width="265" height="300" id="svgPocetna">
+							<defs>
+								<path id="testPathPocetna"
+									d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+							</defs>
+							<desc>Kruzno kretanje teksta</desc>
+							<text x="20" y="20" fill="white" font-size="14">
+								<textPath class="please" xlink:href="#testPathPocetna" startOffset="70%">
+									<tspan id="home-menu-item"></tspan>
+									<animate id="anim1" attributeName="startOffset" from="70%" to="100%" begin="click"
+										dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+									<animate id="anim2" attributeName="startOffset" from="0%" to="70%"
+										begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+								</textPath>
+							</text>
+						</svg>
+						<a href="#pocetna" onclick="init();">
+							<span id="home-menu-item-2"></span>
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li id="about_page">
+						<svg width="265" height="300" id="svgOmeni">
+							<defs>
+								<path id="testPathOmeni"
+									d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+							</defs>
+							<desc>Kruzno kretanje teksta</desc>
+							<text x="20" y="20" fill="white" font-size="14">
+								<textPath class="please" xlink:href="#testPathOmeni" startOffset="67%">
+									<tspan id="about-menu-item"></tspan>
+									<animate id="anim3" attributeName="startOffset" from="67%" to="100%" begin="click"
+										dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+									<animate id="anim4" attributeName="startOffset" from="0%" to="67%"
+										begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+								</textPath>
+							</text>
+						</svg>
+						<a href="#omeni">
+							<span id="about-menu-item-2"></span>
+
+						</a>
+					</li>
+					<li class="portfolio_page">
+						<svg width="265" height="300" id="svgProjekti">
+							<defs>
+								<path id="testPathProjekti"
+									d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+							</defs>
+							<desc>Kruzno kretanje teksta</desc>
+							<text x="20" y="20" fill="white" font-size="14">
+								<textPath class="please" xlink:href="#testPathProjekti" startOffset="67%">
+									<tspan id="projects-menu-item"></tspan>
+									<animate id="anim5" attributeName="startOffset" from="67%" to="100%" begin="click"
+										dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+									<animate id="anim6" attributeName="startOffset" from="0%" to="67%"
+										begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+								</textPath>
+							</text>
+						</svg>
+						<a href="#projekti">
+							<span id="projects-menu-item-2"></span>
+						</a>
+					</li>
+					<li id="contact_page">
+						<svg width="265" height="300" id="svgKontakt">
+							<defs>
+								<path id="testPathKontakt"
+									d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
+							</defs>
+							<desc>Kruzno kretanje teksta</desc>
+							<text x="20" y="20" fill="white" font-size="14">
+								<textPath class="please" xlink:href="#testPathKontakt" startOffset="67%">
+									<tspan id="contact-menu-item"></tspan>
+									<animate id="anim7" attributeName="startOffset" from="67%" to="100%" begin="click"
+										dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+									<animate id="anim8" attributeName="startOffset" from="0%" to="67%"
+										begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline"
+										keySplines="0.1 0.2 .22 1" />
+								</textPath>
+							</text>
+						</svg>
+						<a href="#kontakt">
+							<span id="contact-menu-item-2"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="collapse navbar-collapse" id="nav_traka">
-         <ul class="nav navbar-nav navbar-right" role="tablist">
-			<!--hidden element-->
-			 <li>
-	         	<div class="dropdown" style="display:none">
-	         	<a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><button class="dropbtn">Dropdown</button></a>
-
-				  <div class="dropdown-content">
-				    <a href="index1.html" target="_blank" id="recommendations"></a>
-				    <a href="#">Link 2</a>
-				    <a href="#">Link 3</a>
-				  </div>
-				</div>
-			</li>
-
-            <li id="home_page" class="active">
-            	<svg width="265" height="300" id="svgPocetna">
-					<defs>
-						<path id="testPathPocetna" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
-					</defs>
-					<desc>Kruzno kretanje teksta</desc>
-					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathPocetna" startOffset="70%">
-							<tspan id="home-menu-item"></tspan>
-							<animate id="anim1" attributeName="startOffset" from="70%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-							<animate id="anim2" attributeName="startOffset" from="0%" to ="70%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath>
-					</text> 
-				</svg>
-            	<a href="#pocetna" onclick="init();">
-            		<span id="home-menu-item-2"></span>  
-		            <span class="sr-only">(current)</span>
-            	</a></li>
-            <li id="about_page">
-				<svg width="265" height="300" id="svgOmeni">
-					<defs>
-						<path id="testPathOmeni" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
-					</defs>
-					<desc>Kruzno kretanje teksta</desc>
-					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathOmeni" startOffset="67%">
-							<tspan id="about-menu-item"></tspan>
-							<animate id="anim3" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-							<animate id="anim4" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath>
-					</text> 
-				</svg>
-	            <a href="#omeni" >
-	            	<span id="about-menu-item-2"></span>
-			            
-	            </a>
-            </li>
-            <li class="portfolio_page">
-            	<svg width="265" height="300" id="svgProjekti">
-					<defs>
-						<path id="testPathProjekti" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
-					</defs>
-					<desc>Kruzno kretanje teksta</desc>
-					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathProjekti" startOffset="67%">
-							<tspan id="projects-menu-item"></tspan>
-							<animate id="anim5" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-							<animate id="anim6" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath>
-					</text>
-				</svg>
-	            <a href="#projekti" >
-	            	<span id="projects-menu-item-2"></span>   
-	            </a>
-            </li>
-            <li id="contact_page">
-            	<svg width="265" height="300" id="svgKontakt">
-					<defs>
-						<path id="testPathKontakt" d="m 204.81384,187.76113 a 65.187186,65.187186 0 0 1 -65.18718,65.18719 65.187186,65.187186 0 0 1 -65.187203,-65.18719 65.187186,65.187186 0 0 1 65.187203,-65.1872 65.187186,65.187186 0 0 1 65.18718,65.1872 z" />
-					</defs>
-					<desc>Kruzno kretanje teksta</desc>
-					<text x="20" y="20" fill="white" font-size="14">
-						<textPath class="please" xlink:href="#testPathKontakt" startOffset="67%">
-							<tspan id="contact-menu-item"></tspan>
-							<animate id="anim7" attributeName="startOffset" from="67%" to ="100%" begin="click" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-							<animate id="anim8" attributeName="startOffset" from="0%" to ="67%" begin="click + 0.15s" dur="1s" repeatCount="1" keyTimes="0;1" calcMode="spline" keySplines="0.1 0.2 .22 1"/>
-						</textPath>
-					</text> 
-				</svg>
-	            <a href="#kontakt" >
-	            	<span id="contact-menu-item-2"></span>  
-	            </a>
-            </li>
-         </ul>
-      </div>
-	</div>
-</nav>
-<!-- <div class="col-xs-2"> -->
-	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg" alt="Saša Popović" onerror="this.style.display='none'"/></a>
-<!-- </div> -->
+	</nav>
+	<!-- <div class="col-xs-2"> -->
+	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg" alt="Saša Popović"
+			onerror="this.style.display='none'" /></a>
+	<!-- </div> -->
 	<div id="container">
-	    <div id="halfclip">
-	        <div class="halfcircle" id="clipped">
-	        </div>
-	    </div>
-	    <div class="halfcircle" id="fixed">
-	    </div>
+		<div id="halfclip">
+			<div class="halfcircle" id="clipped">
+			</div>
+		</div>
+		<div class="halfcircle" id="fixed">
+		</div>
 	</div>
 
-<!-- <canvas id="myCanvas"></canvas> -->
-<div class="container-fluid format_strane pozadina1" id="pocetna">
-    <div id="start" class="pojavljivanje">
-	    <p id="textcenter">
-		    <b class="staro"><span id="welcome-message"></span> <br><br> <span id="intro-message"></span> <br><br> <span class="podlinija" id="cursor-message"></span></b><br>
-		    <b class="novo">
-				<tspan id="experience-message1"></tspan>
-				<br>
-				<br>
-				<tspan id="experience-message2"></tspan>
-				<span id="crveno"></span>
-				<tspan id="experience-message3"></tspan>
-				<span id="plavo">website</span>
-			</b>
-	    </p>
+	<!-- <canvas id="myCanvas"></canvas> -->
+	<div class="container-fluid format_strane pozadina1" id="pocetna">
+		<div id="start" class="pojavljivanje">
+			<p id="textcenter">
+				<b class="staro"><span id="welcome-message"></span> <br><br> <span id="intro-message"></span> <br><br>
+					<span class="podlinija" id="cursor-message"></span></b><br>
+				<b class="novo">
+					<tspan id="experience-message1"></tspan>
+					<br>
+					<br>
+					<tspan id="experience-message2"></tspan>
+					<span id="crveno"></span>
+					<tspan id="experience-message3"></tspan>
+					<span id="plavo">website</span>
+				</b>
+			</p>
+		</div>
 	</div>
-</div>
 
-<div class="container-fluid pozadina2">
-	<div class="row format_strane" id="omeni">
-	    <div class="row">
-	    	<div class="col-xs-12 naslov">
-	        	<h2 class="text-center" id="about-me-title"></h2>
-	    	</div>
-	    </div>
-	    <div class="container-fluid" style="margin-top: 2%">
-	        <div id="1" class="row">
-		        <div class="col-md-6">
-		            <div class="jumbotron jumbotron1">
-			            <div class="grid grid-floated grid-flex">
-				            <div id="slika" class="grid-golden-1">
-				            	<div class="grid-content">
-				            		<img class="img-responsive" src="assets/fg_charisma.jpg" alt="charisma">
-				            	</div>
-				            </div>
-				            <div id="tekst" class="grid-golden-2">
-					            <div class="grid-content">
-					            	<p><b id="teamwork-message"></b></p>
-					            </div>
-				            </div>
-			            </div>
-		            </div>
-		      	</div>
-	   		</div>
-	   		<div id="2" class="row">
-	            <div class="col-md-3"></div>
-		        <div class="col-md-6">
-		            <div class="jumbotron jumbotron1">
-		               <div class="grid grid-floated grid-flex">
-				            <div id="slika" class="grid-golden-1">
-				            	<div class="grid-content">
-				            		<img class="img-responsive" src="assets/fg_perception.jpg" alt="charisma">
-				            	</div>
-				            </div>
-				            <div id="tekst" class="grid-golden-2">
-					            <div class="grid-content">
-				               		<p><b id="experience-message-2"></b></p>
-				               </div>
-				            </div>
-			            </div>
-		            </div>
-		      	</div>
-	   		</div>
-	   		<div id="3" class="row">
-	            <div class="col-md-6"></div>
-		        <div class="col-md-6">
-		            <div class="jumbotron jumbotron1">
-		               <div class="grid grid-floated grid-flex">
-				            <div id="slika" class="grid-golden-1">
-				            	<div class="grid-content">
-				            		<img class="img-responsive" src="assets/fg_strength.jpg" alt="charisma">
-				            	</div>
-				            </div>
-				            <div id="tekst" class="grid-golden-2">
-					            <div class="grid-content">
-				               		<p><b id="strength-message"></b></p>
-				               </div>
-				            </div>
-			            </div>
-		            </div>
-		      	</div>
-	   		</div>
-	   </div>
-	</div>
-</div>
-
-<div class="container-fluid format_strane pozadina3" id="projekti">
-	<div class="row">
-	    	<div class="col-xs-12 naslov">
-	        	<h2 class="text-center" id="projects-title"></h2>
-	    	</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 col-md-7 format_strane_levo pozadina1 contact">
-		<div class="social1">
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/csharp.png" alt="csharp">
-					</div>
-					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					</div>
+	<div class="container-fluid pozadina2">
+		<div class="row format_strane" id="omeni">
+			<div class="row">
+				<div class="col-xs-12 naslov">
+					<h2 class="text-center" id="about-me-title"></h2>
 				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="https://github.com/Zunior/WinApp_Vesti/" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/vesti/csharpcode.png" alt="Animation text" onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+			</div>
+			<div class="container-fluid" style="margin-top: 2%">
+				<div id="1" class="row">
+					<div class="col-md-6">
+						<div class="jumbotron jumbotron1">
+							<div class="grid grid-floated grid-flex">
+								<div id="slika" class="grid-golden-1">
+									<div class="grid-content">
+										<img class="img-responsive" src="assets/fg_charisma.jpg" alt="charisma">
+									</div>
 								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/vesti/vesti.png" alt="Animation text" onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+								<div id="tekst" class="grid-golden-2">
+									<div class="grid-content">
+										<p><b id="teamwork-message"></b></p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/sqlvbnet.png" alt="sqlvbnet">
-					</div>
-					<div class="redjanje1">
-						<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg" alt="Nova prezentacija"  />
-						<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-					</div>
-				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="#" target="_blank" onclick="return false;"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta"  />
+				<div id="2" class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div class="jumbotron jumbotron1">
+							<div class="grid grid-floated grid-flex">
+								<div id="slika" class="grid-golden-1">
+									<div class="grid-content">
+										<img class="img-responsive" src="assets/fg_perception.jpg" alt="charisma">
+									</div>
 								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta"  />
+								<div id="tekst" class="grid-golden-2">
+									<div class="grid-content">
+										<p><b id="experience-message-2"></b></p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/cplusplus.png" alt="c++">
-					</div>
-					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/219826438" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="https://github.com/Zunior/Milioner" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/milioner/pocetna.png" alt="Animacija teksta"  />
+				<div id="3" class="row">
+					<div class="col-md-6"></div>
+					<div class="col-md-6">
+						<div class="jumbotron jumbotron1">
+							<div class="grid grid-floated grid-flex">
+								<div id="slika" class="grid-golden-1">
+									<div class="grid-content">
+										<img class="img-responsive" src="assets/fg_strength.jpg" alt="charisma">
+									</div>
 								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/milioner/krajnja.png" alt="Animacija teksta"  />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/java.png" alt="java">
-					</div>
-					<div class="redjanje1">
-						<iframe src="https://player.vimeo.com/video/209355763" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					</div>
-				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="https://github.com/Zunior/Zdravstvo" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/zdravstvo/javacode.png" alt="Animacija teksta" onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
-								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/zdravstvo/login.png" alt="Animacija teksta" onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/hcq.png" alt="html\css\jquery">
-					</div>
-					<div class="redjanje1">
-					<img class="tehnologija hover-shadow cursor" src="assets/Video/kratki/HTML/glavnazavideo.png" alt="Nova prezentacija"  />
-						<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-					</div>
-				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="https://github.com/Zunior/Portfolio" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/HTML/pocetna.png" alt="Animacija teksta"  />
-								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/Video/kratki/HTML/krajnja.png" alt="Animacija teksta"  />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row donja_crta">
-				<div class="dvojka">
-					<div class="redjanje">
-						<img class="tehnologija" src="assets/newproject.jpg" alt="tip tehnologije">
-					</div>
-					<div class="redjanje1">
-						<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg" alt="Nova prezentacija"  />
-						<!-- <iframe src="#" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-					</div>
-				</div>
-				<div class="dvojka">
-					<div class="redjanje" id="proba">
-						<a href="https://github.com/Zunior" target="_blank"><img id="github" alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
-					</div>
-					<div class="redjanje1">
-						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-							<div class="flipper">
-								<div class="front">
-								<!-- Modal -->
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta"  />
-								</div>
-								<div class="back">
-									<img id="animimg" class="tehnologija hover-shadow cursor" style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta"  />
+								<div id="tekst" class="grid-golden-2">
+									<div class="grid-content">
+										<p><b id="strength-message"></b></p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -426,344 +275,627 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="container-fluid format_strane pozadina3" id="projekti">
+		<div class="row">
+			<div class="col-xs-12 naslov">
+				<h2 class="text-center" id="projects-title"></h2>
+			</div>
 		</div>
-		<div class="col-xs-12 col-md-5 format_strane_desno contact">
-				<span class="text-center custom_span"><h3>
-					<tspan id="projects-description1"></tspan>
-					<br><br>
-					<a href="http://www.viser.edu.rs" target="_blank">
-						<img src="assets/bachelorhat.png" height="100px" id="skolica" />
-					</a>
-					<br><br><br>
-					<tspan id="projects-description2"></tspan>
-					<br><br><img src="assets/filmstrip.gif" width="300px" id="slikamala"/>
-				</h3></span>
+		<div class="row">
+			<div class="col-xs-12 col-md-7 format_strane_levo pozadina1 contact">
+				<div class="social1">
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/csharp.png" alt="csharp">
+							</div>
+							<div class="redjanje1">
+								<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120"
+									width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen
+									allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="https://github.com/Zunior/WinApp_Vesti/" target="_blank"><img id="github"
+										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/vesti/csharpcode.png"
+												alt="Animation text"
+												onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/vesti/vesti.png"
+												alt="Animation text"
+												onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/sqlvbnet.png" alt="sqlvbnet">
+							</div>
+							<div class="redjanje1">
+								<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg"
+									alt="Nova prezentacija" />
+								<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="#" target="_blank" onclick="return false;"><img id="github" alt="GITHUB"
+										style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/cplusplus.png" alt="c++">
+							</div>
+							<div class="redjanje1">
+								<iframe src="https://player.vimeo.com/video/219826438" id='vimeo-player' height="120"
+									width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen
+									allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="https://github.com/Zunior/Milioner" target="_blank"><img id="github"
+										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/milioner/pocetna.png"
+												alt="Animacija teksta" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/milioner/krajnja.png"
+												alt="Animacija teksta" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/java.png" alt="java">
+							</div>
+							<div class="redjanje1">
+								<iframe src="https://player.vimeo.com/video/209355763" id='vimeo-player' height="120"
+									width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen
+									allowfullscreen></iframe>
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="https://github.com/Zunior/Zdravstvo" target="_blank"><img id="github"
+										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/zdravstvo/javacode.png"
+												alt="Animacija teksta"
+												onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/zdravstvo/login.png"
+												alt="Animacija teksta"
+												onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/hcq.png" alt="html\css\jquery">
+							</div>
+							<div class="redjanje1">
+								<img class="tehnologija hover-shadow cursor"
+									src="assets/Video/kratki/HTML/glavnazavideo.png" alt="Nova prezentacija" />
+								<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="https://github.com/Zunior/Portfolio" target="_blank"><img id="github"
+										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/HTML/pocetna.png"
+												alt="Animacija teksta" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/Video/kratki/HTML/krajnja.png"
+												alt="Animacija teksta" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row donja_crta">
+						<div class="dvojka">
+							<div class="redjanje">
+								<img class="tehnologija" src="assets/newproject.jpg" alt="tip tehnologije">
+							</div>
+							<div class="redjanje1">
+								<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg"
+									alt="Nova prezentacija" />
+								<!-- <iframe src="#" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+							</div>
+						</div>
+						<div class="dvojka">
+							<div class="redjanje" id="proba">
+								<a href="https://github.com/Zunior" target="_blank"><img id="github" alt="GITHUB"
+										style="height: 100%;" src="assets/git.png" /></a>
+							</div>
+							<div class="redjanje1">
+								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+									<div class="flipper">
+										<div class="front">
+											<!-- Modal -->
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
+										</div>
+										<div class="back">
+											<img id="animimg" class="tehnologija hover-shadow cursor"
+												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-5 format_strane_desno contact">
+				<span class="text-center custom_span">
+					<h3>
+						<tspan id="projects-description1"></tspan>
+						<br><br>
+						<a href="http://www.viser.edu.rs" target="_blank">
+							<img src="assets/bachelorhat.png" height="100px" id="skolica" />
+						</a>
+						<br><br><br>
+						<tspan id="projects-description2"></tspan>
+						<br><br><img src="assets/filmstrip.gif" width="300px" id="slikamala" />
+					</h3>
+				</span>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="format_strane pozadina4" id="kontakt">
-    <div class="row">  
-      <div class="col-xs-24 col-md-12 naslov">
-         <h2 class="text-center" id="contact-title"></h2>
-      </div>
-     </div>
-     	<div class="row">
-         <div class="container-fluid" id="poslednjaVisina">
-            <div class="col-xs-12 col-md-6 contact">
-            <!-- <div class="col-lg-6 col-md-8 col-xs-12"> -->
-		                    <p class="lead" id="contact-intro"></p>
+	<div class="format_strane pozadina4" id="kontakt">
+		<div class="row">
+			<div class="col-xs-24 col-md-12 naslov">
+				<h2 class="text-center" id="contact-title"></h2>
+			</div>
+		</div>
+		<div class="container-fluid" id="poslednjaVisina">
+			<div class="row">
+				<div class="col-12 col-md-6 contact">
+					<!-- <div class="col-lg-6 col-md-8 col-xs-12"> -->
+					<p class="lead" id="contact-intro"></p>
 
-		                    <form id="contact-form" method="POST" action="https://formspree.io/f/xgvzeggd" role="form" novalidate>
-		                        <div class="messages"></div>
-		                        <div class="controls">
-		                            <div class="row">
-		                                <div class="col-md-6">
-		                                    <div class="form-group">
-		                                        <label for="form_name" id="form-name-label"></label>
-		                                        <input id="form_name" type="text" name="name" class="form-control" required placeholder="">
-		                                    </div>
-		                                </div>
-		                                <div class="col-md-6">
-		                                    <div class="form-group">
-		                                        <label for="form_lastname" id="form-lastname-label"></label>
-		                                        <input id="form_lastname" type="text" name="surname" class="form-control" required placeholder="">
-		                                    </div>
-		                                </div>
-		                            </div>
-		                            <div class="row">
-		                                <div class="col-md-6">
-		                                    <div class="form-group">
-		                                        <label for="form_email" id="form-email-label"></label>
-		                                        <input
-														id="form_email"
-														type="email"
-														name="email"
-														class="form-control"
-														required
-														placeholder=""
-														pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-														title="Please enter a valid email address (e.g., user@example.com)">
-		                                    </div>
-		                                </div>
-		                                <div class="col-md-6">
-		                                    <div class="form-group">
-		                                        <label for="form_phone" id="form-phone-label"></label>
-		                                        <input id="form_phone" type="tel" name="phone" class="form-control">
-		                                    </div>
-		                                </div>
-		                            </div>
-		                            <div class="row">
-		                                <div class="col-md-12">
-		                                    <div class="form-group">
-		                                        <label for="form_message" id="form-message-label"></label>
-		                                        <textarea id="form_message" name="message" class="form-control" rows="4" required placeholder=""></textarea>
-		                                    </div>
-		                                </div>
-		                                <div class="col-md-12">
-		                                    <button type="submit" class="btn btn-success btn-send" value="Pošalji" id="form-submit-button"/>
-		                                </div>
-		                            </div>
-		                            <div class="row">
-		                                <div class="col-md-12">
-		                                    <p class="text-muted"><strong id="required-fields-message">*</strong></p>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </form>
-							<div id="form-status"></div>
-		            
-		                
-            </div>
-            <div class="col-xs-8 col-xs-offset-4 col-md-4 col-md-offset-2 contact" style="height: 100%; padding: 200px 0 200px 0;">
-               <div class="social">
-                  <ul>
-                     <li><a class="btn btn-default dugmeBelo" href="https://github.com/zunior" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <b>Github</b></a></li>
-                     <li><a class="btn btn-default dugmePlavo" href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> <b>LinkedIn</b></a></li>
-                     <li><a class="btn btn-default dugmeSvPlavo" href="https://x.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> <b>Twitter</b></a></li>
-                     <li><a class="btn btn-default dugmeCrno" href="https://www.facebook.com/sasa.popovic.pos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-<footer id="foot" class="row">
-	<div class="col-md-5 col-xs-5" id="levi">
-		<div class="col-md-6 col-md-offset-8 col-xs-12 col-xs-offset-4">
-			<a href="https://www.facebook.com/sasa.popovic.pos" target="_blank"><img id="face" src="assets/facebook.png" /></a>
-			<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"><img id="face" src="assets/linkedin.png" /></a>
-			<a href="https://github.com/zunior" target="_blank"><img id="face" src="assets/git.png" /></a>
-			<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" src="assets/facebook.png" /></div>
+					<form id="contact-form" method="POST" action="https://formspree.io/f/xgvzeggd" role="form"
+						novalidate>
+						<div class="messages"></div>
+						<div class="controls">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form_name" id="form-name-label"></label>
+										<input id="form_name" type="text" name="name" class="form-control" required
+											placeholder="">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form_lastname" id="form-lastname-label"></label>
+										<input id="form_lastname" type="text" name="surname" class="form-control"
+											required placeholder="">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form_email" id="form-email-label"></label>
+										<input id="form_email" type="email" name="email" class="form-control" required
+											placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+											title="Please enter a valid email address (e.g., user@example.com)">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="form_phone" id="form-phone-label"></label>
+										<input id="form_phone" type="tel" name="phone" class="form-control">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="form_message" id="form-message-label"></label>
+										<textarea id="form_message" name="message" class="form-control" rows="4"
+											required placeholder=""></textarea>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-success btn-send" value="Pošalji"
+										id="form-submit-button" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p class="text-muted"><strong id="required-fields-message">*</strong></p>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div id="form-status"></div>
+
+
+				</div>
+				<div class="col-12 col-md-4 offset-md-2 contact" style="padding: 50px 0;">
+					<div class="social">
+						<ul>
+							<li><a class="btn btn-default dugmeBelo" href="https://github.com/zunior" target="_blank"
+									rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <b>Github</b></a></li>
+							<li><a class="btn btn-default dugmePlavo"
+									href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"
+									rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> <b>LinkedIn</b></a>
+							</li>
+							<li><a class="btn btn-default dugmeSvPlavo" href="https://x.com" target="_blank"
+									rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i> <b>Twitter</b></a>
+							</li>
+							<li><a class="btn btn-default dugmeCrno" href="https://www.facebook.com/sasa.popovic.pos"
+									target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i>
+									Facebook</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer id="foot" class="row">
+		<div class="col-md-5 col-xs-5" id="levi">
+			<div class="col-md-6 col-md-offset-8 col-xs-12 col-xs-offset-4">
+				<a href="https://www.facebook.com/sasa.popovic.pos" target="_blank"><img id="face"
+						src="assets/facebook.png" /></a>
+				<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"><img id="face"
+						src="assets/linkedin.png" /></a>
+				<a href="https://github.com/zunior" target="_blank"><img id="face" src="assets/git.png" /></a>
+				<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" src="assets/facebook.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" src="assets/linkedin.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" src="assets/linkedin.png" /></div> -->
+			</div>
 		</div>
-	</div>
-	<div class="col-md-2 col-xs-4" id="copyright">
-		<p>Copyright @2016<br>by Zunior</p>
-	</div>
-	<div class="col-md-4 col-xs-10" id="desni">
-	</div>
+		<div class="col-md-2 col-xs-4" id="copyright">
+			<p>Copyright @2016<br>by Zunior</p>
+		</div>
+		<div class="col-md-4 col-xs-10" id="desni">
+		</div>
 
 
-	<!-- <div class="col-xs-1 col-xs-offset-2"><img id="face" src="assets/facebook.png" /></div>
+		<!-- <div class="col-xs-1 col-xs-offset-2"><img id="face" src="assets/facebook.png" /></div>
 	<div class="col-xs-1"><img id="face" src="assets/facebook.png" /></div>
 	<div class="col-xs-4"><p>Copyright © 2016 </p></div>
 	<div class="col-xs-8">proba</div> -->
-</footer>
+	</footer>
 
-<!--______________PROZOR SA STATISTIKOM______________-->
-<div id="pop-up" class="popbox">
-	<h2>Basic stats</h2>
-	<div class="table">
-	    <div class="roww">
-		  	<div class="cell">
-		    	<p class="text-left">Strenght:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-				    <span class="sr-only">60% Complete</span>
-				  </div>
+	<!--______________PROZOR SA STATISTIKOM______________-->
+	<div id="pop-up" class="popbox">
+		<h2 id="stats-basic-title"></h2>
+		<div class="table">
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-strength"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+							aria-valuemax="100" style="width: 60%;">
+							<span class="sr-only">60% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-perception"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+							aria-valuemax="100" style="width: 85%;">
+							<span class="sr-only">85% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-agility"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+							aria-valuemax="100" style="width: 90%;">
+							<span class="sr-only">90% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-intelligence"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+							aria-valuemax="100" style="width: 90%;">
+							<span class="sr-only">90% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-charisma"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+							aria-valuemax="100" style="width: 70%;">
+							<span class="sr-only">70% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-endurance"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0"
+							aria-valuemax="100" style="width: 95%;">
+							<span class="sr-only">95% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-creativity"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0"
+							aria-valuemax="100" style="width: 55%;">
+							<span class="sr-only">55% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Perception:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-				    <span class="sr-only">85% Complete</span>
-				  </div>
+		<h2 id="stats-pro-title"></h2>
+		<div class="table">
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-motivation"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+							aria-valuemax="100" style="width: 100%;">
+							<span class="sr-only">100% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Agility:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-				    <span class="sr-only">90% Complete</span>
-				  </div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-communication"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 75%;">
+							<span class="sr-only">75% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Intelligence:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-				    <span class="sr-only">90% Complete</span>
-				  </div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-collaboration"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+							aria-valuemax="100" style="width: 80%;">
+							<span class="sr-only">80% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Charisma:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-				    <span class="sr-only">70% Complete</span>
-				  </div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-general-exp"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 75%;">
+							<span class="sr-only">75% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Endurance:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-				    <span class="sr-only">95% Complete</span>
-				  </div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-problem-solving"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+							aria-valuemax="100" style="width: 80%;">
+							<span class="sr-only">80% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Creativity:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-				    <span class="sr-only">55% Complete</span>
-				  </div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-studying-speed"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+							aria-valuemax="100" style="width: 70%;">
+							<span class="sr-only">70% Complete</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="cell">
+					<p class="text-left"><span id="stat-stress-handling"></span></p>
+				</div>
+				<div class="cell">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0"
+							aria-valuemax="100" style="width: 85%;">
+							<span class="sr-only">85% Complete</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<h2>Pro stats</h2>
-	<div class="table">
-	    <div class="roww">
-		  	<div class="cell">
-		    	<p class="text-left">Motivation:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-				    <span class="sr-only">100% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Communication:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-				    <span class="sr-only">75% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Collaboration:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-				    <span class="sr-only">80% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">General exp:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-				    <span class="sr-only">75% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Problem solving:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-				    <span class="sr-only">80% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Studying speed:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-				    <span class="sr-only">70% Complete</span>
-				  </div>
-				</div>
-			</div>
-		</div>
-		<div class="roww">
-			<div class="cell">
-		    	<p class="text-left">Stress handling:</p>
-		  	</div>
-		  	<div class="cell">
-			  	<div class="progress">
-				  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-				    <span class="sr-only">85% Complete</span>
-				  </div>
-				</div>
-			</div>
+	<!--___________________________________________________-->
+
+	<!-- Loading Indicator -->
+	<div id="loader"
+		style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:9999; background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
+		<div
+			style="border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;">
 		</div>
 	</div>
-</div>
-<!--___________________________________________________-->
 
-<!-- Loading Indicator -->
-<div id="loader" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); z-index:9999; background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
-    <div style="border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite;"></div>
-</div>
+	<style>
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
 
-<style>
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-</style>
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
 
-<!-- Core Libraries - Updated to latest stable versions -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<!-- Core Libraries - Updated to latest stable versions -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
 
-<!-- Application Scripts -->
-<script src="js/utils.js"></script>
-<script src="js/readJSON.js"></script>
-<script src="js/indexMODAL.js"></script>
-<script src="js/indexJQ.js"></script>
-<script src="js/indexJS.js"></script>
-<script src="js/validatorNew.js"></script>
-<script src="js/i18n.js"></script>
+	<!-- Application Scripts -->
+	<script src="js/utils.js"></script>
+	<script src="js/citajJSON.js"></script>
+	<script src="js/indexMODAL.js"></script>
+	<script src="js/indexJQ.js"></script>
+	<script src="js/indexJS.js"></script>
+	<script src="js/validatorNew.js"></script>
+	<script src="js/i18n.js"></script>
+	<script src="js/menuAnimation.js"></script>
+
+	<!-- Force menu to be visible on desktop -->
+	<script>
+		(function () {
+			function showMenu() {
+				const navCollapse = document.getElementById('nav_traka');
+				if (navCollapse && window.innerWidth > 768) {
+					navCollapse.classList.add('show');
+					navCollapse.style.display = 'block';
+				}
+			}
+
+			// Run immediately
+			showMenu();
+
+			// Run after DOM is fully loaded
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', showMenu);
+			}
+
+			// Run after everything is loaded
+			window.addEventListener('load', showMenu);
+		})();
+	</script>
 
 </body>
 
 <!--          PRIKAZ MODAL BOX-a          -->
 <div id="myModal" class="modal">
 	<div class="modal-content">
-  	<div class="modal-body" id="dintekst">
+		<div class="modal-body" id="dintekst">
 
-  		<!--OVDE KODOM DODAJEMO SADRŽAJ PREKO FAJLA indexMODAL.js-->
+			<!--OVDE KODOM DODAJEMO SADRŽAJ PREKO FAJLA indexMODAL.js-->
 
-    </div>
-  </div>
+		</div>
+	</div>
 </div>

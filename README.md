@@ -13,21 +13,33 @@ I am a fullstack software engineer from Belgrade
 
 ## 🚀 Running Locally
 
-### Windows
+### Option 1: With Auto-Refresh (Recommended for Development)
 
 ```bash
-start-server.bat
+# Install Node.js first from https://nodejs.org/
+# Then run:
+start-dev-server.bat
 ```
 
-### Mac/Linux
+✅ **Auto-refreshes** when you save files!
+
+### Option 2: Simple Server (No Auto-Refresh)
 
 ```bash
+# Windows
+start-server.bat
+
+# Mac/Linux
 python3 -m http.server 8000
 ```
+
+⚠️ **Manual refresh** required (press F5)
 
 Then open your browser to: **http://localhost:8000**
 
 **⚠️ Important:** Do NOT open `index.html` directly in your browser using the `file://` protocol. This will cause CORS errors and prevent the site from loading properly. Always use a local web server.
+
+📖 See `DEVELOPMENT_SETUP.md` for detailed setup instructions.
 
 <br>
 

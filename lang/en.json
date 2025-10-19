@@ -43,5 +43,21 @@
   "form_name_placeholder": "Enter your first name",
   "form_lastname_placeholder": "Enter your last name",
   "form_email_placeholder": "Enter your email address",
-  "form_message_placeholder": "Enter your message"
+  "form_message_placeholder": "Enter your message",
+  "stats-basic-title": "Basic stats",
+  "stats-pro-title": "Pro stats",
+  "stat-strength": "Strength",
+  "stat-perception": "Perception",
+  "stat-agility": "Agility",
+  "stat-intelligence": "Intelligence",
+  "stat-charisma": "Charisma",
+  "stat-endurance": "Endurance",
+  "stat-creativity": "Creativity",
+  "stat-motivation": "Motivation",
+  "stat-communication": "Communication",
+  "stat-collaboration": "Collaboration",
+  "stat-general-exp": "General exp",
+  "stat-problem-solving": "Problem solving",
+  "stat-studying-speed": "Studying speed",
+  "stat-stress-handling": "Stress handling"
 }

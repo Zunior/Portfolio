@@ -43,5 +43,21 @@
   "form_name_placeholder": "Unesite vaše ime",
   "form_lastname_placeholder": "Unesite vaše prezime",
   "form_email_placeholder": "Unesite vašu email adresu",
-  "form_message_placeholder": "Unesite vašu poruku"
+  "form_message_placeholder": "Unesite vašu poruku",
+  "stats-basic-title": "Osnovne statistike",
+  "stats-pro-title": "Profesionalne statistike",
+  "stat-strength": "Snaga",
+  "stat-perception": "Percepcija",
+  "stat-agility": "Agilnost",
+  "stat-intelligence": "Inteligencija",
+  "stat-charisma": "Karizma",
+  "stat-endurance": "Izdržljivost",
+  "stat-creativity": "Kreativnost",
+  "stat-motivation": "Motivacija",
+  "stat-communication": "Komunikacija",
+  "stat-collaboration": "Saradnja",
+  "stat-general-exp": "Opšte iskustvo",
+  "stat-problem-solving": "Rešavanje problema",
+  "stat-studying-speed": "Brzina učenja",
+  "stat-stress-handling": "Upravljanje stresom"
 }
