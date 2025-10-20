@@ -77,6 +77,9 @@ const App = (function () {
     toggleElementClass(elements.footer, "footerDown", "footerUp");
   }
 
+  // Scroll stop detection
+  let scrollTimeout;
+
   /**
    * Handle scroll events for UI animations
    */
@@ -86,28 +89,18 @@ const App = (function () {
     const currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
 
-    // Get section positions
-    const aboutPos = getSectionPosition("omeni");
-    const projectsPos = getSectionPosition("projekti");
-    const contactPos = getSectionPosition("kontakt");
+    // Hide menu immediately while scrolling (any direction)
+    hideUIElements();
 
-    // Check if we're at the bottom of the page
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const isAtBottom = currentScroll + windowHeight >= documentHeight - 10;
-
-    // Check if we're near a section or scrolling up
-    const nearSection =
-      Math.abs(currentScroll - aboutPos) < 5 ||
-      Math.abs(currentScroll - projectsPos) < 5 ||
-      Math.abs(currentScroll - contactPos) < 5;
-
-    // Show menu when: scrolling up, near a section, or at bottom
-    if (currentScroll < lastScrollTop || nearSection || isAtBottom) {
-      showUIElements();
-    } else {
-      hideUIElements();
+    // Clear existing timeout
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
     }
+
+    // Show menu when scrolling stops (after 150ms of no scroll)
+    scrollTimeout = setTimeout(() => {
+      showUIElements();
+    }, 150);
 
     lastScrollTop = currentScroll;
   }

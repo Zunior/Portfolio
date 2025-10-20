@@ -915,7 +915,7 @@ iframe {
   }
 
   to {
-    top: -60px;
+    top: -100px;
   }
 }
 
@@ -925,13 +925,13 @@ iframe {
   }
 
   to {
-    top: -60px;
+    top: -100px;
   }
 }
 
 @-webkit-keyframes menuDown {
   from {
-    top: -60px;
+    top: -100px;
   }
 
   to {
@@ -941,7 +941,7 @@ iframe {
 
 @keyframes menuDown {
   from {
-    top: -60px;
+    top: -100px;
   }
 
   to {
@@ -2055,10 +2055,48 @@ div#2.row,
 div#3.row {
   margin-bottom: 50px !important;
 }
+
 /* Override Bootstrap row margins for O meni section */
 #omeni #1.row,
 #omeni #2.row,
 #omeni #3.row {
   margin-bottom: 50px !important;
   margin-top: 20px !important;
+}
+
+/*
+ Prevent menu glitch when hiding */
+body {
+  overflow-y: auto;
+}
+
+#meni {
+  overflow: hidden;
+}
+
+
+/* Fix menu glitch - only clip when hiding */
+#meni {
+  overflow: visible;
+}
+
+#meni.menuUp {
+  overflow: hidden !important;
+  clip-path: inset(0 0 100% 0);
+}
+
+/* F
+ix Chrome-specific navbar border glitch */
+#meni,
+#meni *,
+#meni .container-fluid,
+#meni .navbar-collapse {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Ensure clean hiding in Chrome */
+#meni.menuUp {
+  transform: translateY(-100%);
 }

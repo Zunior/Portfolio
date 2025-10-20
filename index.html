@@ -31,6 +31,13 @@
 	<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 	<link rel="alternate icon" type="image/x-icon" href="assets/favicon.ico">
 
+	<!-- Resource Hints for Performance -->
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="preconnect" href="https://code.jquery.com" crossorigin>
+	<link rel="dns-prefetch" href="https://player.vimeo.com">
+	<link rel="dns-prefetch" href="https://formspree.io">
+
 	<!-- Updated to latest stable versions for security and features -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -223,7 +230,8 @@
 							<div class="grid grid-floated grid-flex">
 								<div id="slika" class="grid-golden-1">
 									<div class="grid-content">
-										<img class="img-responsive" src="assets/fg_charisma.jpg" alt="charisma">
+										<img class="img-responsive" loading="lazy" src="assets/fg_charisma.jpg"
+											alt="charisma">
 									</div>
 								</div>
 								<div id="tekst" class="grid-golden-2">
@@ -242,7 +250,8 @@
 							<div class="grid grid-floated grid-flex">
 								<div id="slika" class="grid-golden-1">
 									<div class="grid-content">
-										<img class="img-responsive" src="assets/fg_perception.jpg" alt="charisma">
+										<img class="img-responsive" loading="lazy" src="assets/fg_perception.jpg"
+											alt="charisma">
 									</div>
 								</div>
 								<div id="tekst" class="grid-golden-2">
@@ -261,7 +270,8 @@
 							<div class="grid grid-floated grid-flex">
 								<div id="slika" class="grid-golden-1">
 									<div class="grid-content">
-										<img class="img-responsive" src="assets/fg_strength.jpg" alt="charisma">
+										<img class="img-responsive" loading="lazy" src="assets/fg_strength.jpg"
+											alt="charisma">
 									</div>
 								</div>
 								<div id="tekst" class="grid-golden-2">
@@ -289,7 +299,7 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/csharp.png" alt="csharp">
+								<img class="tehnologija" loading="lazy" src="assets/csharp.png" alt="csharp">
 							</div>
 							<div class="redjanje1">
 								<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120"
@@ -307,13 +317,13 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/vesti/csharpcode.png"
 												alt="Animation text"
 												onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/vesti/vesti.png"
 												alt="Animation text"
 												onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
@@ -326,7 +336,7 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/sqlvbnet.png" alt="sqlvbnet">
+								<img class="tehnologija" loading="lazy" src="assets/sqlvbnet.png" alt="sqlvbnet">
 							</div>
 							<div class="redjanje1">
 								<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg"
@@ -344,11 +354,11 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
 										</div>
 									</div>
@@ -359,7 +369,7 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/cplusplus.png" alt="c++">
+								<img class="tehnologija" loading="lazy" src="assets/cplusplus.png" alt="c++">
 							</div>
 							<div class="redjanje1">
 								<iframe src="https://player.vimeo.com/video/219826438" id='vimeo-player' height="120"
@@ -377,12 +387,12 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/milioner/pocetna.png"
 												alt="Animacija teksta" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/milioner/krajnja.png"
 												alt="Animacija teksta" />
 										</div>
@@ -394,7 +404,7 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/java.png" alt="java">
+								<img class="tehnologija" loading="lazy" src="assets/java.png" alt="java">
 							</div>
 							<div class="redjanje1">
 								<iframe src="https://player.vimeo.com/video/209355763" id='vimeo-player' height="120"
@@ -412,13 +422,13 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/zdravstvo/javacode.png"
 												alt="Animacija teksta"
 												onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/zdravstvo/login.png"
 												alt="Animacija teksta"
 												onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
@@ -431,7 +441,7 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/hcq.png" alt="html\css\jquery">
+								<img class="tehnologija" loading="lazy" src="assets/hcq.png" alt="html\css\jquery">
 							</div>
 							<div class="redjanje1">
 								<img class="tehnologija hover-shadow cursor"
@@ -449,12 +459,12 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/HTML/pocetna.png"
 												alt="Animacija teksta" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/Video/kratki/HTML/krajnja.png"
 												alt="Animacija teksta" />
 										</div>
@@ -466,7 +476,8 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" src="assets/newproject.jpg" alt="tip tehnologije">
+								<img class="tehnologija" loading="lazy" src="assets/newproject.jpg"
+									alt="tip tehnologije">
 							</div>
 							<div class="redjanje1">
 								<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg"
@@ -484,11 +495,11 @@
 									<div class="flipper">
 										<div class="front">
 											<!-- Modal -->
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
 										</div>
 										<div class="back">
-											<img id="animimg" class="tehnologija hover-shadow cursor"
+											<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
 												style="width: 180px;" src="assets/npslika.jpg" alt="Animacija teksta" />
 										</div>
 									</div>
@@ -504,11 +515,11 @@
 						<tspan id="projects-description1"></tspan>
 						<br><br>
 						<a href="http://www.viser.edu.rs" target="_blank">
-							<img src="assets/bachelorhat.png" height="100px" id="skolica" />
+							<img loading="lazy" src="assets/bachelorhat.png" height="100px" id="skolica" />
 						</a>
 						<br><br><br>
 						<tspan id="projects-description2"></tspan>
-						<br><br><img src="assets/filmstrip.gif" width="300px" id="slikamala" />
+						<br><br><img loading="lazy" src="assets/filmstrip.gif" width="300px" id="slikamala" />
 					</h3>
 				</span>
 			</div>
@@ -614,10 +625,11 @@
 						src="assets/facebook.png" /></a>
 				<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"><img id="face"
 						src="assets/linkedin.png" /></a>
-				<a href="https://github.com/zunior" target="_blank"><img id="face" src="assets/git.png" /></a>
-				<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" src="assets/facebook.png" /></div>
-			<div class="col-xs-6 col-md-3"><img id="face" src="assets/linkedin.png" /></div>
-			<div class="col-xs-6 col-md-3"><img id="face" src="assets/linkedin.png" /></div> -->
+				<a href="https://github.com/zunior" target="_blank"><img id="face" loading="lazy"
+						src="assets/git.png" /></a>
+				<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" loading="lazy" src="assets/facebook.png" /></div>
+			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div>
+			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div> -->
 			</div>
 		</div>
 		<div class="col-md-2 col-xs-4" id="copyright">
@@ -627,8 +639,8 @@
 		</div>
 
 
-		<!-- <div class="col-xs-1 col-xs-offset-2"><img id="face" src="assets/facebook.png" /></div>
-	<div class="col-xs-1"><img id="face" src="assets/facebook.png" /></div>
+		<!-- <div class="col-xs-1 col-xs-offset-2"><img id="face" loading="lazy" src="assets/facebook.png" /></div>
+	<div class="col-xs-1"><img id="face" loading="lazy" src="assets/facebook.png" /></div>
 	<div class="col-xs-4"><p>Copyright © 2016 </p></div>
 	<div class="col-xs-8">proba</div> -->
 	</footer>
@@ -854,14 +866,14 @@
 		crossorigin="anonymous"></script>
 
 	<!-- Application Scripts -->
-	<script src="js/utils.js"></script>
-	<script src="js/citajJSON.js"></script>
-	<script src="js/indexMODAL.js"></script>
-	<script src="js/indexJQ.js"></script>
-	<script src="js/indexJS.js"></script>
-	<script src="js/validatorNew.js"></script>
-	<script src="js/i18n.js"></script>
-	<script src="js/menuAnimation.js"></script>
+	<script src="js/utils.js" defer></script>
+	<script src="js/citajJSON.js" defer></script>
+	<script src="js/indexMODAL.js" defer></script>
+	<script src="js/indexJQ.js" defer></script>
+	<script src="js/indexJS.js" defer></script>
+	<script src="js/validatorNew.js" defer></script>
+	<script src="js/i18n.js" defer></script>
+	<script src="js/menuAnimation.js" defer></script>
 
 	<!-- Force menu to be visible on desktop -->
 	<script>
