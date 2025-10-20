@@ -35,8 +35,15 @@
 	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 	<link rel="preconnect" href="https://code.jquery.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="https://player.vimeo.com">
 	<link rel="dns-prefetch" href="https://formspree.io">
+
+	<!-- Preload Critical Resources -->
+	<link rel="preload" href="css/index.css" as="style">
+	<link rel="preload" href="js/utils.js" as="script">
+	<link rel="preload" href="assets/sasa.jpg" as="image">
 
 	<!-- Updated to latest stable versions for security and features -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -47,6 +54,13 @@
 	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/language.css" />
+
+	<!-- PWA Manifest -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#000000">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Portfolio">
 </head>
 
 <!--Scroll - za update linkova pri kretanju-->
@@ -186,7 +200,7 @@
 	</nav>
 	<!-- <div class="col-xs-2"> -->
 	<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg" alt="Saša Popović"
-			onerror="this.style.display='none'" /></a>
+			fetchpriority="high" onerror="this.style.display='none'" /></a>
 	<!-- </div> -->
 	<div id="container">
 		<div id="halfclip">
@@ -299,7 +313,8 @@
 					<div class="row donja_crta">
 						<div class="dvojka">
 							<div class="redjanje">
-								<img class="tehnologija" loading="lazy" src="assets/csharp.png" alt="csharp">
+								<img class="tehnologija" loading="lazy" src="assets/csharp.png"
+									alt="C# Programming Language" width="180" height="180">
 							</div>
 							<div class="redjanje1">
 								<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120"
@@ -310,7 +325,8 @@
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
 								<a href="https://github.com/Zunior/WinApp_Vesti/" target="_blank"><img id="github"
-										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -346,8 +362,9 @@
 						</div>
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
-								<a href="#" target="_blank" onclick="return false;"><img id="github" alt="GITHUB"
-										style="height: 100%;" src="assets/git.png" /></a>
+								<a href="#" target="_blank" onclick="return false;"><img id="github"
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -380,7 +397,8 @@
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
 								<a href="https://github.com/Zunior/Milioner" target="_blank"><img id="github"
-										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -415,7 +433,8 @@
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
 								<a href="https://github.com/Zunior/Zdravstvo" target="_blank"><img id="github"
-										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -444,15 +463,16 @@
 								<img class="tehnologija" loading="lazy" src="assets/hcq.png" alt="html\css\jquery">
 							</div>
 							<div class="redjanje1">
-								<img class="tehnologija hover-shadow cursor"
-									src="assets/Video/kratki/HTML/glavnazavideo.png" alt="Nova prezentacija" />
+								<img class="tehnologija hover-shadow cursor" loading="lazy"
+									src="assets/Video/kratki/HTML/glavnazavideo.png" alt="HTML Project Preview" />
 								<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 							</div>
 						</div>
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
 								<a href="https://github.com/Zunior/Portfolio" target="_blank"><img id="github"
-										alt="GITHUB" style="height: 100%;" src="assets/git.png" /></a>
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -480,15 +500,16 @@
 									alt="tip tehnologije">
 							</div>
 							<div class="redjanje1">
-								<img class="tehnologija hover-shadow cursor" src="assets/razno.jpg"
-									alt="Nova prezentacija" />
+								<img class="tehnologija hover-shadow cursor" loading="lazy" src="assets/razno.jpg"
+									alt="Project Preview" />
 								<!-- <iframe src="#" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 							</div>
 						</div>
 						<div class="dvojka">
 							<div class="redjanje" id="proba">
-								<a href="https://github.com/Zunior" target="_blank"><img id="github" alt="GITHUB"
-										style="height: 100%;" src="assets/git.png" /></a>
+								<a href="https://github.com/Zunior" target="_blank"><img id="github"
+										alt="View on GitHub" loading="lazy" style="height: 100%;"
+										src="assets/git.png" /></a>
 							</div>
 							<div class="redjanje1">
 								<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -621,12 +642,13 @@
 	<footer id="foot" class="row">
 		<div class="col-md-5 col-xs-5" id="levi">
 			<div class="col-md-6 col-md-offset-8 col-xs-12 col-xs-offset-4">
-				<a href="https://www.facebook.com/sasa.popovic.pos" target="_blank"><img id="face"
-						src="assets/facebook.png" /></a>
-				<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"><img id="face"
-						src="assets/linkedin.png" /></a>
-				<a href="https://github.com/zunior" target="_blank"><img id="face" loading="lazy"
-						src="assets/git.png" /></a>
+				<a href="https://www.facebook.com/sasa.popovic.pos" target="_blank" rel="noopener noreferrer"><img
+						id="face" loading="lazy" src="assets/facebook.png" alt="Facebook Profile" /></a>
+				<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"
+					rel="noopener noreferrer"><img id="face" loading="lazy" src="assets/linkedin.png"
+						alt="LinkedIn Profile" /></a>
+				<a href="https://github.com/zunior" target="_blank" rel="noopener noreferrer"><img id="face"
+						loading="lazy" src="assets/git.png" alt="GitHub Profile" /></a>
 				<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" loading="lazy" src="assets/facebook.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div> -->
@@ -897,6 +919,22 @@
 			// Run after everything is loaded
 			window.addEventListener('load', showMenu);
 		})();
+	</script>
+
+	<!-- Service Worker Registration -->
+	<script>
+		// Register service worker for offline support and caching
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/sw.js')
+					.then(registration => {
+						console.log('[App] Service Worker registered successfully:', registration.scope);
+					})
+					.catch(error => {
+						console.error('[App] Service Worker registration failed:', error);
+					});
+			});
+		}
 	</script>
 
 </body>
