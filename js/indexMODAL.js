@@ -8,13 +8,29 @@ const ProjectModal = (function () {
   let projectsData = null;
   let slideIndex = 1;
 
+  // Cache DOM elements for better performance
+  let cachedElements = {
+    modal: null,
+    modalContent: null,
+    captionText: null,
+  };
+
+  /**
+   * Initialize cached elements
+   */
+  function initCachedElements() {
+    cachedElements.modal = document.getElementById("myModal");
+    cachedElements.modalContent = document.getElementById("dintekst");
+    cachedElements.captionText = document.getElementById("caption");
+  }
+
   /**
    * Open the modal
    */
   function openModal() {
-    const modal = document.getElementById("myModal");
-    if (modal) {
-      modal.style.display = "block";
+    if (!cachedElements.modal) initCachedElements();
+    if (cachedElements.modal) {
+      cachedElements.modal.style.display = "block";
     }
   }
 
@@ -22,9 +38,9 @@ const ProjectModal = (function () {
    * Close the modal
    */
   function closeModal() {
-    const modal = document.getElementById("myModal");
-    if (modal) {
-      modal.style.display = "none";
+    if (!cachedElements.modal) initCachedElements();
+    if (cachedElements.modal) {
+      cachedElements.modal.style.display = "none";
     }
   }
 
@@ -50,7 +66,6 @@ const ProjectModal = (function () {
    */
   function showSlides(n) {
     const slides = document.getElementsByClassName("mySlides");
-    const captionText = document.getElementById("caption");
 
     if (slides.length === 0) return;
 
@@ -61,15 +76,18 @@ const ProjectModal = (function () {
       slideIndex = slides.length;
     }
 
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+    // Use requestAnimationFrame for smooth transitions
+    Utils.requestAnimFrame(() => {
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
 
-    // Show current slide
-    if (slides[slideIndex - 1]) {
-      slides[slideIndex - 1].style.display = "block";
-    }
+      // Show current slide
+      if (slides[slideIndex - 1]) {
+        slides[slideIndex - 1].style.display = "block";
+      }
+    });
   }
 
   /**
@@ -147,10 +165,10 @@ const ProjectModal = (function () {
         '<a class="next" onclick="ProjectModal.plusSlides(1)">&#10095;</a>';
     }
 
-    // Insert HTML into modal
-    const modalContent = document.getElementById("dintekst");
-    if (modalContent) {
-      modalContent.innerHTML = html;
+    // Insert HTML into modal using cached element
+    if (!cachedElements.modalContent) initCachedElements();
+    if (cachedElements.modalContent) {
+      cachedElements.modalContent.innerHTML = html;
     }
   }
 

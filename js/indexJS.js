@@ -89,8 +89,11 @@ const App = (function () {
     const currentScroll =
       window.pageYOffset || document.documentElement.scrollTop;
 
-    // Hide menu immediately while scrolling (any direction)
-    hideUIElements();
+    // Use requestAnimationFrame for smooth animations
+    Utils.requestAnimFrame(() => {
+      // Hide menu immediately while scrolling (any direction)
+      hideUIElements();
+    });
 
     // Clear existing timeout
     if (scrollTimeout) {
@@ -99,7 +102,9 @@ const App = (function () {
 
     // Show menu when scrolling stops (after 150ms of no scroll)
     scrollTimeout = setTimeout(() => {
-      showUIElements();
+      Utils.requestAnimFrame(() => {
+        showUIElements();
+      });
     }, 150);
 
     lastScrollTop = currentScroll;
@@ -110,14 +115,19 @@ const App = (function () {
    * @param {number} state - 1 for hidden, 2 for visible
    */
   function setStartBoxState(state) {
-    const startBox = document.getElementById("start");
-    if (!startBox) return;
-
-    if (state === 1) {
-      startBox.style.visibility = "hidden";
-    } else if (state === 2) {
-      startBox.style.visibility = "visible";
+    if (!elements.startBox) {
+      elements.startBox = document.getElementById("start");
     }
+    if (!elements.startBox) return;
+
+    // Use requestAnimationFrame for smooth state changes
+    Utils.requestAnimFrame(() => {
+      if (state === 1) {
+        elements.startBox.style.visibility = "hidden";
+      } else if (state === 2) {
+        elements.startBox.style.visibility = "visible";
+      }
+    });
   }
 
   /**
@@ -148,16 +158,21 @@ const App = (function () {
    * Handle window resize - reposition start box
    */
   function handleResize() {
-    const startBox = document.getElementById("start");
-    if (!startBox) return;
+    if (!elements.startBox) {
+      elements.startBox = document.getElementById("start");
+    }
+    if (!elements.startBox) return;
 
-    const rect = startBox.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
+    // Use requestAnimationFrame for smooth repositioning
+    Utils.requestAnimFrame(() => {
+      const rect = elements.startBox.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
 
-    startBox.style.visibility = "visible";
-    startBox.style.top = window.innerHeight / 2 - height / 2 + "px";
-    startBox.style.left = window.innerWidth / 2 - width / 2 + "px";
+      elements.startBox.style.visibility = "visible";
+      elements.startBox.style.top = window.innerHeight / 2 - height / 2 + "px";
+      elements.startBox.style.left = window.innerWidth / 2 - width / 2 + "px";
+    });
   }
 
   /**
@@ -191,10 +206,12 @@ const App = (function () {
     }, 50);
   }
 
-  // Set up event listeners
+  // Set up event listeners with performance optimizations
   window.addEventListener("load", start);
-  window.addEventListener("resize", handleResize);
-  window.addEventListener("scroll", handleScroll, false);
+  window.addEventListener("resize", Utils.debounce(handleResize, 250));
+  window.addEventListener("scroll", Utils.throttle(handleScroll, 16), {
+    passive: true,
+  }); // 60fps throttling
 
   // Public API
   return {

@@ -15,6 +15,20 @@ const WebsiteGallery = (function () {
   let currentDesign = 0;
   let currentGeneral = 0;
 
+  // Cache DOM elements for better performance
+  let cachedElements = {
+    designElement: null,
+    generalElement: null,
+  };
+
+  /**
+   * Initialize cached elements
+   */
+  function initCachedElements() {
+    cachedElements.designElement = document.getElementById("srednjiD");
+    cachedElements.generalElement = document.getElementById("srednjiO");
+  }
+
   /**
    * Initialize the gallery by loading website data
    */
@@ -67,8 +81,8 @@ const WebsiteGallery = (function () {
    */
   function nextDesignItem() {
     designCounter++;
-    const imageElement = document.getElementById("srednjiD");
-    if (!imageElement) return;
+    if (!cachedElements.designElement) initCachedElements();
+    if (!cachedElements.designElement) return;
 
     if (designCounter <= maxDesign) {
       currentDesign = designCounter;
@@ -76,7 +90,13 @@ const WebsiteGallery = (function () {
       currentDesign = designCounter = 1;
     }
 
-    updateImageElement(imageElement, designItems[currentDesign - 1]);
+    // Use requestAnimationFrame for smooth updates
+    Utils.requestAnimFrame(() => {
+      updateImageElement(
+        cachedElements.designElement,
+        designItems[currentDesign - 1]
+      );
+    });
   }
 
   /**
@@ -84,8 +104,8 @@ const WebsiteGallery = (function () {
    */
   function previousDesignItem() {
     designCounter--;
-    const imageElement = document.getElementById("srednjiD");
-    if (!imageElement) return;
+    if (!cachedElements.designElement) initCachedElements();
+    if (!cachedElements.designElement) return;
 
     if (designCounter >= 1) {
       currentDesign = designCounter;
@@ -93,7 +113,13 @@ const WebsiteGallery = (function () {
       currentDesign = designCounter = maxDesign;
     }
 
-    updateImageElement(imageElement, designItems[currentDesign - 1]);
+    // Use requestAnimationFrame for smooth updates
+    Utils.requestAnimFrame(() => {
+      updateImageElement(
+        cachedElements.designElement,
+        designItems[currentDesign - 1]
+      );
+    });
   }
 
   /**
@@ -101,8 +127,8 @@ const WebsiteGallery = (function () {
    */
   function nextGeneralItem() {
     generalCounter++;
-    const imageElement = document.getElementById("srednjiO");
-    if (!imageElement) return;
+    if (!cachedElements.generalElement) initCachedElements();
+    if (!cachedElements.generalElement) return;
 
     if (generalCounter <= maxGeneral) {
       currentGeneral = generalCounter;
@@ -110,7 +136,13 @@ const WebsiteGallery = (function () {
       currentGeneral = generalCounter = 1;
     }
 
-    updateImageElement(imageElement, generalItems[currentGeneral - 1]);
+    // Use requestAnimationFrame for smooth updates
+    Utils.requestAnimFrame(() => {
+      updateImageElement(
+        cachedElements.generalElement,
+        generalItems[currentGeneral - 1]
+      );
+    });
   }
 
   /**
@@ -118,8 +150,8 @@ const WebsiteGallery = (function () {
    */
   function previousGeneralItem() {
     generalCounter--;
-    const imageElement = document.getElementById("srednjiO");
-    if (!imageElement) return;
+    if (!cachedElements.generalElement) initCachedElements();
+    if (!cachedElements.generalElement) return;
 
     if (generalCounter >= 1) {
       currentGeneral = generalCounter;
@@ -127,7 +159,13 @@ const WebsiteGallery = (function () {
       currentGeneral = generalCounter = maxGeneral;
     }
 
-    updateImageElement(imageElement, generalItems[currentGeneral - 1]);
+    // Use requestAnimationFrame for smooth updates
+    Utils.requestAnimFrame(() => {
+      updateImageElement(
+        cachedElements.generalElement,
+        generalItems[currentGeneral - 1]
+      );
+    });
   }
 
   /**

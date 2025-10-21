@@ -1,8 +1,8 @@
 let currentTranslations = {};
 // This function runs when the page is ready
 document.addEventListener("DOMContentLoaded", () => {
-  // Find the language toggle checkbox by its ID
-  const langToggle = document.getElementById("language-toggle");
+  // Find the language toggle checkbox by its ID using cached method
+  const langToggle = Utils.getElement("language-toggle");
 
   // --- Sync Toggle with Saved Language on Page Load ---
   // Check if a language is already saved in local storage
@@ -51,7 +51,7 @@ function loadLanguage(lang) {
         if (key.endsWith("_placeholder")) {
           // Get the element ID by removing the suffix
           const elementId = key.replace("_placeholder", "");
-          const element = document.getElementById(elementId);
+          const element = Utils.getElement(elementId);
 
           if (element) {
             // Set the placeholder attribute instead of textContent
@@ -59,7 +59,7 @@ function loadLanguage(lang) {
           }
         } else {
           // This is the original logic for all other text elements
-          const element = document.getElementById(key);
+          const element = Utils.getElement(key);
           if (element) {
             element.textContent = data[key];
           }
@@ -78,12 +78,21 @@ function loadLanguage(lang) {
 /**
  * Makes menu items visible by ensuring span elements are shown
  */
+// Cache menu spans for better performance
+let cachedMenuSpans = null;
+
 function makeMenuVisible() {
-  // Make sure all menu span elements are visible
-  const menuSpans = document.querySelectorAll(".navbar-nav > li > a > span");
-  menuSpans.forEach((span) => {
-    if (span.style.visibility !== "visible") {
-      span.style.visibility = "visible";
-    }
+  // Cache menu spans on first call
+  if (!cachedMenuSpans) {
+    cachedMenuSpans = document.querySelectorAll(".navbar-nav > li > a > span");
+  }
+
+  // Use requestAnimationFrame for smooth visibility changes
+  Utils.requestAnimFrame(() => {
+    cachedMenuSpans.forEach((span) => {
+      if (span.style.visibility !== "visible") {
+        span.style.visibility = "visible";
+      }
+    });
   });
 }
