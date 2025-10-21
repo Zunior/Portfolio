@@ -174,10 +174,12 @@ footer p {
   z-index: 5;
 }
 
+.dropdown-content>a {
+  will-change: transform;
+}
+
 .dropdown-content>a:hover {
   transition: transform .3s linear;
-  -webkit-transition: transform .3s linear;
-  -moz-transition: transform .3s linear;
   transform: translateX(10%);
 }
 
@@ -539,8 +541,8 @@ img {
 #github,
 .redjanje>#vimeo-player,
 .redjanje>a>img {
-  -webkit-transition: all .5s;
   transition: all .5s;
+  will-change: transform, opacity;
 }
 
 #github:hover {
@@ -582,67 +584,33 @@ iframe {
 }
 
 .menuUp {
-  -webkit-animation-name: menuUp;
-  animation-name: menuUp;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: menuUp 0.4s linear forwards;
+  will-change: transform;
 }
 
 .menuDown {
-  -webkit-animation-name: menuDown;
-  animation-name: menuDown;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: menuDown 0.4s linear forwards;
+  will-change: transform;
 }
 
 .profileUp {
-  -webkit-animation-name: profileUp;
-  -moz-animation-name: profileUp;
-  animation-name: profileUp;
-  -webkit-animation-duration: 0.4s;
-  -moz-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
+  animation: profileUp 0.4s linear forwards;
+  will-change: transform;
 }
 
 .profileDown {
-  -webkit-animation-name: profileDown;
-  animation-name: profileDown;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: profileDown 0.4s linear forwards;
+  will-change: transform;
 }
 
 .footerUp {
-  -webkit-animation-name: footerUp;
-  animation-name: footerUp;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: footerUp 0.4s linear forwards;
+  will-change: transform;
 }
 
 .footerDown {
-  -webkit-animation-name: footerDown;
-  animation-name: footerDown;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  animation: footerDown 0.4s linear forwards;
+  will-change: transform;
 }
 
 /*--------- Pojavljivanje slike sa krugom ---------------*/
@@ -909,103 +877,63 @@ iframe {
   }
 }
 
-@-webkit-keyframes menuUp {
-  from {
-    top: 0px;
-  }
-
-  to {
-    top: -100px;
-  }
-}
-
 @keyframes menuUp {
   from {
-    top: 0px;
+    transform: translateY(0);
   }
 
   to {
-    top: -100px;
-  }
-}
-
-@-webkit-keyframes menuDown {
-  from {
-    top: -100px;
-  }
-
-  to {
-    top: 0px;
+    transform: translateY(-100px);
   }
 }
 
 @keyframes menuDown {
   from {
-    top: -100px;
+    transform: translateY(-100px);
   }
 
   to {
-    top: 0px;
-  }
-}
-
-@-webkit-keyframes profileUp {
-  from {
-    top: 54px;
-  }
-
-  to {
-    top: 4px;
+    transform: translateY(0);
   }
 }
 
 @keyframes profileUp {
   from {
-    top: 54px;
+    transform: translateY(54px);
   }
 
   to {
-    top: 4px;
-  }
-}
-
-@-webkit-keyframes profileDown {
-  from {
-    top: 4px;
-  }
-
-  to {
-    top: 54px;
+    transform: translateY(4px);
   }
 }
 
 @keyframes profileDown {
   from {
-    top: 4px;
+    transform: translateY(4px);
   }
 
   to {
-    top: 54px;
+    transform: translateY(54px);
   }
 }
 
-@-webkit-keyframes footerUp {
+@keyframes footerUp {
   from {
-    bottom: -60px;
+    transform: translateY(60px);
   }
 
   to {
-    bottom: 0px;
+    transform: translateY(0);
   }
 }
 
 @keyframes footerDown {
   from {
-    bottom: 0px;
+    transform: translateY(0);
   }
 
   to {
-    bottom: -60px;
+    transform: translateY(60px);
   }
 }
 
@@ -1060,6 +988,7 @@ a:hover {
   border: none;
   border-radius: 0px;
   margin-bottom: 0;
+  will-change: transform, opacity;
 }
 
 .navbar-nav>li>a,
@@ -1548,7 +1477,8 @@ a:hover {
 }
 
 img.hover-shadow {
-  transition: 0.3s
+  transition: 0.3s;
+  will-change: transform, box-shadow;
 }
 
 .hover-shadow:hover {
@@ -1590,7 +1520,7 @@ img.hover-shadow {
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
+  will-change: transform;
   position: relative;
 }
 
