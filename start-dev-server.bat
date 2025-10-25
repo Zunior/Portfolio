@@ -1,7 +1,7 @@
 @echo off
 echo ========================================
 echo   Portfolio - Development Server
-echo   with LIVE RELOAD
+echo   with LIVE RELOAD & Security Headers
 echo ========================================
 echo.
 echo Checking for Node.js...
@@ -30,11 +30,12 @@ echo Server will start at: http://localhost:8000
 echo.
 echo Features:
 echo   - Auto-refresh on file changes
-echo   - Browser will open automatically
+echo   - Proper security headers (X-Frame-Options)
+echo   - WebP MIME type support
 echo.
 echo Press Ctrl+C to stop the server
 echo.
 echo ========================================
 echo.
 
-call npx live-server --port=8000 --open=/index.html
+call npm run dev

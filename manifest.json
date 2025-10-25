@@ -1,0 +1,30 @@
+{
+    "name": "Saša Popović - Portfolio",
+    "short_name": "Portfolio",
+    "description": "Senior Full Stack Developer Portfolio - Saša Popović",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": [
+        "portfolio",
+        "developer",
+        "technology"
+    ],
+    "lang": "en",
+    "dir": "ltr"
+}

@@ -91,10 +91,30 @@ const ProjectModal = (function () {
   }
 
   /**
-   * Initialize projects data
+   * Initialize projects data (modern async version)
+   * @returns {Promise<Object>} Promise that resolves to projects data
+   */
+  async function initProjects() {
+    // If data already exists, return it
+    if (projectsData) {
+      return projectsData;
+    }
+
+    try {
+      projectsData = await Utils.loadJSONAsync("projekti.json");
+      console.log("Projects data loaded successfully");
+      return projectsData;
+    } catch (error) {
+      console.error("Failed to load projects data:", error);
+      throw error;
+    }
+  }
+
+  /**
+   * Initialize projects data (legacy callback version for backward compatibility)
    * @param {Function} callback - Callback function to execute after loading
    */
-  function initProjects(callback) {
+  function initProjectsLegacy(callback) {
     // If data already exists, just run callback
     if (projectsData) {
       if (typeof callback === "function") {
@@ -105,6 +125,14 @@ const ProjectModal = (function () {
 
     // Load projects data
     Utils.loadJSON("projekti.json", function (response) {
+      if (!response) {
+        console.error("Failed to load projekti.json");
+        if (typeof callback === "function") {
+          callback();
+        }
+        return;
+      }
+
       try {
         projectsData = JSON.parse(response);
         if (typeof callback === "function") {
@@ -112,15 +140,83 @@ const ProjectModal = (function () {
         }
       } catch (error) {
         console.error("Error parsing projects data:", error);
+        if (typeof callback === "function") {
+          callback();
+        }
       }
     });
   }
 
   /**
-   * Display project modal for specific type
+   * Display project modal for specific type (modern async version)
    * @param {string} type - Project type (e.g., 'xaml', 'jsp')
    */
-  function showProject(type) {
+  async function showProject(type) {
+    try {
+      // Ensure projects data is loaded
+      if (!projectsData) {
+        await initProjects();
+      }
+
+      if (!projectsData || !projectsData[type]) {
+        console.error("Project type not found:", type);
+        return;
+      }
+
+      let html = "";
+      const project = projectsData[type];
+
+      // Build HTML for each project item
+      for (let item in project) {
+        const projectItem = project[item];
+
+        html += '<div class="mySlides">';
+        html +=
+          '<div class="row" id="naslov"><p>' +
+          projectItem.imeKoda +
+          '</p><span class="close cursor" onclick="ProjectModal.closeModal()">&times;</span></div>';
+        html += '<div class="row" id="preglednired">';
+        html += '<div class="col-md-7" id="modalkodovi">';
+
+        // Add code sections
+        if (projectItem.ceo_kod) {
+          for (let codeSection in projectItem.ceo_kod) {
+            html += "<div>" + projectItem.ceo_kod[codeSection].ime + "<br>";
+            html += projectItem.ceo_kod[codeSection].kod;
+            html += "</div>";
+          }
+        }
+
+        html += "</div>";
+        html += '<div class="col-md-5" id="modalslika">';
+        html +=
+          '<img class="img-responsive" id="slikica" src="' +
+          projectItem.slika +
+          '" alt="animacija">';
+        html += "</div>";
+        html += "</div>";
+        html += "</div>";
+        html +=
+          '<a class="prev" onclick="ProjectModal.plusSlides(-1)">&#10094;</a>';
+        html +=
+          '<a class="next" onclick="ProjectModal.plusSlides(1)">&#10095;</a>';
+      }
+
+      // Insert HTML into modal using cached element
+      if (!cachedElements.modalContent) initCachedElements();
+      if (cachedElements.modalContent) {
+        cachedElements.modalContent.innerHTML = html;
+      }
+    } catch (error) {
+      console.error("Failed to show project:", error);
+    }
+  }
+
+  /**
+   * Display project modal for specific type (legacy version)
+   * @param {string} type - Project type (e.g., 'xaml', 'jsp')
+   */
+  function showProjectLegacy(type) {
     if (!projectsData || !projectsData[type]) {
       console.error("Project type not found:", type);
       return;
@@ -183,7 +279,9 @@ const ProjectModal = (function () {
     currentSlide: currentSlide,
     showSlides: showSlides,
     initProjects: initProjects,
+    initProjectsLegacy: initProjectsLegacy,
     showProject: showProject,
+    showProjectLegacy: showProjectLegacy,
   };
 })();
 
@@ -192,5 +290,22 @@ window.openModal = ProjectModal.openModal;
 window.closeModal = ProjectModal.closeModal;
 window.plusSlides = ProjectModal.plusSlides;
 window.currentSlide = ProjectModal.currentSlide;
-window.initProjekti = ProjectModal.initProjects;
-window.proj = ProjectModal.showProject;
+window.initProjects = ProjectModal.initProjectsLegacy; // Keep legacy for onclick handlers
+
+window.showProject = ProjectModal.showProjectLegacy; // Keep legacy for onclick handlers
+
+// Debug logging to confirm functions are exposed
+console.log("ProjectModal functions exposed globally:");
+console.log("- initProjects:", typeof window.initProjects);
+console.log("- showProject:", typeof window.showProject);
+console.log("- openModal:", typeof window.openModal);
+console.log("- currentSlide:", typeof window.currentSlide);
+
+// Modern async initialization
+(async function () {
+  try {
+    await ProjectModal.initProjects();
+  } catch (error) {
+    console.error("Project modal initialization failed:", error);
+  }
+})();

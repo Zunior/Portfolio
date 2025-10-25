@@ -12,6 +12,26 @@
 }
 
 /* Image Optimization - Consistent sizing and aspect ratios */
+
+/* Picture element support for responsive images */
+picture {
+  display: inline-block;
+}
+
+picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Hero image specific styling */
+#sasa {
+  max-width: 460px;
+  max-height: 460px;
+  width: auto;
+  height: auto;
+}
+
 .tehnologija {
   width: 180px;
   height: 180px;
@@ -678,8 +698,8 @@ iframe {
 #sasa {
   position: fixed;
   max-height: 115px;
-  top: 54px;
-  left: 23px;
+  top: 20px;
+  left: 20px;
   z-index: 1500;
   border-radius: 60px;
   opacity: 0;
@@ -694,9 +714,9 @@ iframe {
   position: fixed;
   width: 120px;
   height: 120px;
-  top: 52px;
-  left: 20px;
-  z-index: 2;
+  top: 18px;
+  left: 17px;
+  z-index: 1;
   /*border: solid red 1px;*/
   animation: colors .25s infinite;
 }
@@ -2085,4 +2105,545 @@ ix Chrome-specific navbar border glitch */
 /* Ensure clean hiding in Chrome */
 #meni.menuUp {
   transform: translateY(-100%);
+}
+
+/* Enhanced WebP-Aware Lazy Loading Styles */
+
+/* Base lazy loading styles with smooth transitions */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease-out;
+  transform: translateY(10px);
+}
+
+img[loading="lazy"].lazy-loaded,
+img[loading="lazy"].loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Picture elements lazy loading */
+picture {
+  display: block;
+}
+
+picture.lazy-loaded img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Error state for failed lazy loads */
+img.lazy-error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  border: 1px solid #ff6b6b;
+}
+
+/* Loading placeholder shimmer effect */
+img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* WebP-specific optimizations */
+picture source[type="image/webp"] {
+  /* Ensure WebP sources are prioritized */
+  display: block;
+}
+
+/* Performance optimizations for lazy loading */
+img[loading="lazy"] {
+  /* Improve paint performance */
+  will-change: opacity, transform;
+  /* Ensure proper aspect ratio during loading */
+  object-fit: cover;
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  img[loading="lazy"] {
+    transition: opacity 0.1s ease-in-out;
+    transform: none;
+  }
+
+  img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+    animation: none;
+    background: #f0f0f0;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  img.lazy-error {
+    border: 2px solid #ff0000;
+    filter: contrast(150%);
+  }
+}
+
+/* Dark mode support for loading states */
+@media (prefers-color-scheme: dark) {
+  img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+  }
+}
+
+/* Focus states for keyboard navigation */
+img[loading="lazy"]:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Ensure proper stacking context for picture elements */
+picture {
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading state for critical images (hero image) */
+img[fetchpriority="high"][loading="lazy"] {
+  /* Faster transition for critical images */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* ===
+=====================================
+   WEBP IMAGE OPTIMIZATION STYLES
+   ======================================== */
+
+/* Picture Element Enhancements */
+picture {
+  display: inline-block;
+  position: relative;
+  /* Ensure proper stacking context */
+  z-index: 1;
+}
+
+picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Improve paint performance during loading */
+  will-change: opacity, transform;
+}
+
+/* WebP-specific optimizations */
+picture source[type="image/webp"] {
+  /* Ensure WebP sources are prioritized */
+  display: block;
+}
+
+/* Enhanced Lazy Loading with WebP Awareness */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease-out;
+  transform: translateY(10px);
+  /* Improve paint performance */
+  will-change: opacity, transform;
+  /* Ensure proper aspect ratio during loading */
+  object-fit: cover;
+}
+
+img[loading="lazy"].lazy-loaded,
+img[loading="lazy"].loaded {
+  opacity: 1;
+  transform: translateY(0);
+  /* Remove will-change after loading for performance */
+  will-change: auto;
+}
+
+/* Picture elements lazy loading */
+picture.lazy-loaded img {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+/* Error state for failed lazy loads */
+img.lazy-error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  border: 1px solid #ff6b6b;
+  background-color: #ffe6e6;
+}
+
+/* Loading placeholder shimmer effect */
+img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive Image Optimizations */
+
+/* Hero image responsive enhancements */
+#sasa {
+  /* Ensure smooth transitions for responsive images */
+  transition: opacity 0.3s ease-in-out;
+  /* Optimize for different pixel densities */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Technology icons WebP optimizations */
+.tehnologija {
+  /* Ensure consistent sizing across formats */
+  width: 180px;
+  height: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  /* Smooth loading transitions */
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-out;
+  /* Optimize rendering */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.tehnologija:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-out;
+}
+
+/* Project screenshots WebP optimizations */
+.project-screenshot {
+  /* Maintain 4:3 aspect ratio */
+  width: 180px;
+  height: 135px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* Smooth interactions */
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  /* Optimize for code readability */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.project-screenshot.hover-shadow:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* GitHub icons WebP optimizations */
+.github-icon {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-out;
+  /* Ensure crisp rendering for icons */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.github-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Skill badges WebP optimizations */
+.skill-badge {
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-out;
+  /* Optimize for badge details */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.skill-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Education icon WebP optimizations */
+.education-icon {
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-out;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.education-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Breakpoint Optimizations */
+
+/* Mobile optimizations (< 768px) */
+@media (max-width: 767px) {
+
+  /* Ensure mobile variants display correctly */
+  picture source[media="(max-width: 767px)"] {
+    display: block;
+  }
+
+  /* Optimize mobile image rendering */
+  .tehnologija,
+  .project-screenshot,
+  .github-icon,
+  .skill-badge,
+  .education-icon {
+    /* Faster transitions on mobile */
+    transition: opacity 0.2s ease-in-out;
+    /* Optimize for mobile rendering */
+    image-rendering: auto;
+  }
+
+  /* Reduce hover effects on mobile */
+  .tehnologija:hover,
+  .project-screenshot:hover,
+  .github-icon:hover,
+  .skill-badge:hover,
+  .education-icon:hover {
+    transform: none;
+  }
+}
+
+/* Desktop optimizations (≥ 768px) */
+@media (min-width: 768px) {
+
+  /* Ensure desktop variants display correctly */
+  picture source:not([media]) {
+    display: block;
+  }
+
+  /* Enhanced hover effects on desktop */
+  .project-screenshot:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+  /* Ensure crisp rendering on high DPI displays */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Performance Optimizations */
+
+/* GPU acceleration for smooth animations */
+.project-screenshot,
+.tehnologija,
+.github-icon,
+.skill-badge,
+.education-icon {
+  /* Use GPU for transforms */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize for different color schemes */
+@media (prefers-color-scheme: dark) {
+
+  /* Dark mode loading states */
+  img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+    background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+  }
+
+  /* Dark mode error states */
+  img.lazy-error {
+    background-color: #4a2c2c;
+    border-color: #ff8a8a;
+  }
+}
+
+/* Accessibility Enhancements */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  img[loading="lazy"] {
+    transition: opacity 0.1s ease-in-out;
+    transform: none;
+  }
+
+  img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+    animation: none;
+    background: #f0f0f0;
+  }
+
+  .project-screenshot,
+  .tehnologija,
+  .github-icon,
+  .skill-badge,
+  .education-icon {
+    transition: none;
+  }
+
+  .project-screenshot:hover,
+  .tehnologija:hover,
+  .github-icon:hover,
+  .skill-badge:hover,
+  .education-icon:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  img.lazy-error {
+    border: 2px solid #ff0000;
+    filter: contrast(150%);
+  }
+
+  /* Ensure images have sufficient contrast */
+  img {
+    filter: contrast(110%);
+  }
+}
+
+/* Focus states for keyboard navigation */
+img[loading="lazy"]:focus,
+.project-screenshot:focus,
+.tehnologija:focus,
+.github-icon:focus,
+.skill-badge:focus,
+.education-icon:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Print optimizations */
+@media print {
+
+  /* Ensure images print correctly */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+
+  /* Hide loading states in print */
+  img[loading="lazy"]:not(.lazy-loaded) {
+    opacity: 1;
+    background: none;
+    animation: none;
+  }
+}
+
+/* Loading state for critical images (hero image) */
+img[fetchpriority="high"][loading="lazy"] {
+  /* Faster transition for critical images */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Flip container enhancements for WebP */
+.flip-container {
+  /* Ensure smooth 3D transforms work with picture elements */
+  perspective: 1000px;
+}
+
+.flip-container .flipper {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container .front,
+.flip-container .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flip-container .back {
+  transform: rotateY(180deg);
+}
+
+/* Ensure picture elements work correctly in flip containers */
+.flip-container picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-container picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* WebP format detection and fallback styling */
+.webp-supported picture source[type="image/webp"] {
+  /* Styles for when WebP is supported */
+  display: block;
+}
+
+.no-webp picture source[type="image/webp"] {
+  /* Hide WebP sources when not supported */
+  display: none;
+}
+
+/* Performance monitoring styles */
+.webp-performance-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 9999;
+  display: none;
+}
+
+.webp-performance-indicator.show {
+  display: block;
+}
+
+/* Ensure consistent aspect ratios across all image types */
+img {
+  /* Prevent layout shifts during loading */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize for different network conditions */
+@media (prefers-reduced-data: reduce) {
+
+  /* Reduce animations on slow connections */
+  img[loading="lazy"]:not(.lazy-loaded):not(.lazy-error) {
+    animation-duration: 3s;
+  }
+
+  /* Faster transitions to reduce perceived loading time */
+  img[loading="lazy"] {
+    transition-duration: 0.2s;
+  }
 }

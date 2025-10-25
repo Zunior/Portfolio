@@ -30,11 +30,11 @@ const WebsiteGallery = (function () {
   }
 
   /**
-   * Initialize the gallery by loading website data
+   * Initialize the gallery by loading website data (modern async version)
    */
-  function init() {
-    Utils.loadJSON("sajtovi.json", function (response) {
-      websitesData = JSON.parse(response);
+  async function init() {
+    try {
+      websitesData = await Utils.loadJSONAsync("sajtovi.json");
 
       // Load design items
       if (websitesData.web_dizajn) {
@@ -56,6 +56,55 @@ const WebsiteGallery = (function () {
           ]);
           maxGeneral++;
         }
+      }
+
+      console.log("Website gallery data loaded successfully");
+    } catch (error) {
+      console.error("Failed to initialize website gallery:", error);
+      // Fallback to empty arrays so the gallery still functions
+      designItems = [];
+      generalItems = [];
+      maxDesign = 0;
+      maxGeneral = 0;
+    }
+  }
+
+  /**
+   * Initialize the gallery (legacy callback version for backward compatibility)
+   */
+  function initLegacy() {
+    Utils.loadJSON("sajtovi.json", function (response) {
+      if (!response) {
+        console.error("Failed to load sajtovi.json");
+        return;
+      }
+
+      try {
+        websitesData = JSON.parse(response);
+
+        // Load design items
+        if (websitesData.web_dizajn) {
+          for (let i in websitesData.web_dizajn) {
+            designItems.push([
+              websitesData.web_dizajn[i].slika,
+              websitesData.web_dizajn[i].link,
+            ]);
+            maxDesign++;
+          }
+        }
+
+        // Load general items
+        if (websitesData.opšte) {
+          for (let i in websitesData.opšte) {
+            generalItems.push([
+              websitesData.opšte[i].slika,
+              websitesData.opšte[i].link,
+            ]);
+            maxGeneral++;
+          }
+        }
+      } catch (error) {
+        console.error("Error parsing sajtovi.json:", error);
       }
     });
   }
@@ -176,9 +225,19 @@ const WebsiteGallery = (function () {
     nextGeneralItem();
   }
 
+  /**
+   * Initialize and start the gallery (modern async version)
+   */
+  async function initAndStart() {
+    await init();
+    start();
+  }
+
   // Public API
   return {
     init: init,
+    initLegacy: initLegacy,
+    initAndStart: initAndStart,
     start: start,
     nextDesignItem: nextDesignItem,
     previousDesignItem: previousDesignItem,
@@ -187,8 +246,15 @@ const WebsiteGallery = (function () {
   };
 })();
 
-// Initialize gallery
-WebsiteGallery.init();
+// Initialize gallery using modern async pattern
+(async function () {
+  try {
+    await WebsiteGallery.init();
+  } catch (error) {
+    console.error("Gallery initialization failed, using legacy fallback");
+    WebsiteGallery.initLegacy();
+  }
+})();
 
 // Start on window load
 window.addEventListener("load", function () {

@@ -4,7 +4,7 @@
 
 const Utils = {
   /**
-   * Load JSON file using XMLHttpRequest
+   * Load JSON file using XMLHttpRequest (callback version for backward compatibility)
    * @param {string} file - Path to JSON file
    * @param {function} callback - Callback function to handle response
    */
@@ -18,10 +18,30 @@ const Utils = {
           callback(xobj.responseText);
         } else {
           console.error(`Failed to load ${file}: ${xobj.status}`);
+          callback(null);
         }
       }
     };
     xobj.send(null);
+  },
+
+  /**
+   * Load JSON file using modern async/await pattern
+   * @param {string} file - Path to JSON file
+   * @returns {Promise<Object>} Promise that resolves to parsed JSON data
+   */
+  loadJSONAsync: async function (file) {
+    try {
+      const response = await fetch(file);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const text = await response.text();
+      return JSON.parse(text);
+    } catch (error) {
+      console.error(`Failed to load ${file}:`, error);
+      throw error;
+    }
   },
 
   // Cache DOM elements for better performance
@@ -104,11 +124,46 @@ const Utils = {
   requestAnimFrame: function (callback) {
     const raf =
       window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
       function (callback) {
         window.setTimeout(callback, 1000 / 60);
       };
     return raf(callback);
+  },
+
+  /**
+   * Modern async wrapper for project initialization and display
+   * @param {string} type - Project type to show
+   */
+  showProjectAsync: async function (type) {
+    try {
+      if (typeof ProjectModal !== "undefined") {
+        await ProjectModal.initProjects();
+        await ProjectModal.showProject(type);
+        ProjectModal.openModal();
+        ProjectModal.currentSlide(1);
+      }
+    } catch (error) {
+      console.error("Failed to show project:", error);
+      // Fallback to legacy method
+      if (
+        typeof window.initProjects === "function" &&
+        typeof window.showProject === "function"
+      ) {
+        window.initProjects(function () {
+          window.showProject(type);
+          window.openModal();
+          window.currentSlide(1);
+        });
+      }
+    }
+  },
+
+  /**
+   * Create a promise that resolves after a delay
+   * @param {number} ms - Milliseconds to wait
+   * @returns {Promise} Promise that resolves after delay
+   */
+  delay: function (ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   },
 };

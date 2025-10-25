@@ -176,9 +176,31 @@ const App = (function () {
   }
 
   /**
-   * Initialize the application
+   * Initialize the application (modern async version)
    */
-  function init() {
+  async function init() {
+    cacheElements();
+    handleResize();
+    initFlickerAnimation();
+
+    // Show UI elements initially (menu should be visible on page load)
+    showUIElements();
+
+    // Pre-load projects data using modern async pattern
+    try {
+      if (typeof ProjectModal !== "undefined" && ProjectModal.initProjects) {
+        await ProjectModal.initProjects();
+        console.log("Projects data loaded successfully");
+      }
+    } catch (error) {
+      console.error("Failed to load projects data:", error);
+    }
+  }
+
+  /**
+   * Initialize the application (legacy version for backward compatibility)
+   */
+  function initLegacy() {
     cacheElements();
     handleResize();
     initFlickerAnimation();
@@ -188,8 +210,11 @@ const App = (function () {
 
     // Pre-load projects data (with delay to ensure ProjectModal is loaded)
     setTimeout(function () {
-      if (typeof ProjectModal !== "undefined" && ProjectModal.initProjects) {
-        ProjectModal.initProjects(function () {
+      if (
+        typeof ProjectModal !== "undefined" &&
+        ProjectModal.initProjectsLegacy
+      ) {
+        ProjectModal.initProjectsLegacy(function () {
           console.log("Projects data loaded successfully");
         });
       }
@@ -197,17 +222,37 @@ const App = (function () {
   }
 
   /**
-   * Start the application
+   * Start the application (modern async version)
    */
-  function start() {
+  async function start() {
+    // Small delay to ensure DOM is fully ready
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    await init();
+  }
+
+  /**
+   * Start the application (legacy version)
+   */
+  function startLegacy() {
     // Small delay to ensure DOM is fully ready
     setTimeout(function () {
-      init();
+      initLegacy();
     }, 50);
   }
 
   // Set up event listeners with performance optimizations
-  window.addEventListener("load", start);
+  window.addEventListener("load", async function () {
+    try {
+      await start();
+    } catch (error) {
+      console.error(
+        "Modern app initialization failed, using legacy fallback:",
+        error
+      );
+      startLegacy();
+    }
+  });
+
   window.addEventListener("resize", Utils.debounce(handleResize, 250));
   window.addEventListener("scroll", Utils.throttle(handleScroll, 16), {
     passive: true,
@@ -216,11 +261,13 @@ const App = (function () {
   // Public API
   return {
     init: init,
+    initLegacy: initLegacy,
     start: start,
+    startLegacy: startLegacy,
     handleResize: handleResize,
   };
 })();
 
 // Expose for backward compatibility
-window.init = App.init;
+window.init = App.initLegacy; // Keep legacy for onclick handlers
 window.handleResize = App.handleResize;

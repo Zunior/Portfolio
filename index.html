@@ -14,7 +14,7 @@
 	<meta http-equiv="Content-Security-Policy"
 		content="default-src 'self'; script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://player.vimeo.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://player.vimeo.com https://challenges.cloudflare.com; connect-src 'self' https://formspree.io;">
 	<meta http-equiv="X-Content-Type-Options" content="nosniff">
-	<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+
 	<meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
 	<!-- Enhanced SEO Meta Tags -->
@@ -23,6 +23,7 @@
 		content="Senior Full Stack Developer with 10+ years experience in Java, Angular, Spring Boot, and modern web technologies. View my projects and skills.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://sasapopovic.dev">
+	<!-- Social media meta tags use JPG for maximum platform compatibility -->
 	<meta property="og:image" content="https://sasapopovic.dev/assets/sasa.jpg">
 	<meta property="og:image:alt" content="Saša Popović - Senior Full Stack Developer">
 	<meta property="og:image:width" content="1200">
@@ -167,6 +168,14 @@
 	<!-- Preload Critical Resources -->
 	<link rel="preload" href="css/index.css" as="style">
 	<link rel="preload" href="js/utils.js" as="script">
+	<link rel="preload" href="js/webpLazyLoader.js" as="script">
+	<link rel="preload" href="js/webpPerformanceMonitor.js" as="script">
+	<!-- Preload hero image with responsive WebP optimization -->
+	<!-- Mobile WebP preload (< 768px) -->
+	<link rel="preload" href="assets/sasa-mobile.webp" as="image" type="image/webp" media="(max-width: 767px)">
+	<!-- Desktop WebP preload (≥ 768px) -->
+	<link rel="preload" href="assets/sasa.webp" as="image" type="image/webp" media="(min-width: 768px)">
+	<!-- Fallback preload for non-WebP browsers -->
 	<link rel="preload" href="assets/sasa.jpg" as="image">
 
 	<!-- Updated to latest stable versions for security and features -->
@@ -182,6 +191,7 @@
 	<!-- PWA Manifest -->
 	<link rel="manifest" href="manifest.json">
 	<meta name="theme-color" content="#000000">
+	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-title" content="Portfolio">
@@ -328,8 +338,23 @@
 
 	<main role="main">
 		<!-- <div class="col-xs-2"> -->
-		<a href="#" id="trigger"><img class="img-responsive" id="sasa" src="assets/sasa.jpg" alt="Saša Popović"
-				fetchpriority="high" onerror="this.style.display='none'" /></a>
+		<a href="#" id="trigger">
+			<picture>
+				<!-- Mobile WebP (< 768px) -->
+				<source media="(max-width: 767px)" srcset="assets/sasa-mobile.webp" type="image/webp">
+
+				<!-- Mobile Fallback (< 768px) -->
+				<source media="(max-width: 767px)" srcset="assets/sasa.jpg">
+
+				<!-- Desktop WebP (≥ 768px) -->
+				<source srcset="assets/sasa.webp" type="image/webp">
+
+				<!-- Desktop Fallback & Default -->
+				<img class="img-responsive" id="sasa" src="assets/sasa.jpg"
+					alt="Saša Popović - Senior Full Stack Developer" width="460" height="460" fetchpriority="high"
+					onerror="this.style.display='none'" />
+			</picture>
+		</a>
 		<!-- </div> -->
 		<div id="container">
 			<div id="halfclip">
@@ -375,9 +400,15 @@
 								<div class="grid grid-floated grid-flex">
 									<div id="slika" class="grid-golden-1">
 										<div class="grid-content">
-											<img class="skill-badge" loading="lazy" src="assets/fg_charisma.jpg"
-												alt="Charisma Skill Badge - Communication and Leadership" width="120"
-												height="120">
+											<picture>
+												<!-- WebP version -->
+												<source srcset="assets/fg_charisma.webp" type="image/webp">
+
+												<!-- Original fallback -->
+												<img class="skill-badge" loading="lazy" src="assets/fg_charisma.jpg"
+													alt="Charisma Skill Badge - Communication and Leadership"
+													width="120" height="120">
+											</picture>
 										</div>
 									</div>
 									<div id="tekst" class="grid-golden-2">
@@ -396,9 +427,15 @@
 								<div class="grid grid-floated grid-flex">
 									<div id="slika" class="grid-golden-1">
 										<div class="grid-content">
-											<img class="skill-badge" loading="lazy" src="assets/fg_perception.jpg"
-												alt="Perception Skill Badge - Problem Solving and Analysis" width="120"
-												height="120">
+											<picture>
+												<!-- WebP version -->
+												<source srcset="assets/fg_perception.webp" type="image/webp">
+
+												<!-- Original fallback -->
+												<img class="skill-badge" loading="lazy" src="assets/fg_perception.jpg"
+													alt="Perception Skill Badge - Problem Solving and Analysis"
+													width="120" height="120">
+											</picture>
 										</div>
 									</div>
 									<div id="tekst" class="grid-golden-2">
@@ -417,9 +454,15 @@
 								<div class="grid grid-floated grid-flex">
 									<div id="slika" class="grid-golden-1">
 										<div class="grid-content">
-											<img class="skill-badge" loading="lazy" src="assets/fg_strength.jpg"
-												alt="Strength Skill Badge - Technical Expertise and Persistence"
-												width="120" height="120">
+											<picture>
+												<!-- WebP version -->
+												<source srcset="assets/fg_strength.webp" type="image/webp">
+
+												<!-- Original fallback -->
+												<img class="skill-badge" loading="lazy" src="assets/fg_strength.jpg"
+													alt="Strength Skill Badge - Technical Expertise and Persistence"
+													width="120" height="120">
+											</picture>
 										</div>
 									</div>
 									<div id="tekst" class="grid-golden-2">
@@ -447,9 +490,22 @@
 						<div class="row donja_crta">
 							<div class="dvojka">
 								<div class="redjanje">
-									<img class="tehnologija" loading="lazy" src="assets/csharp.png"
-										alt="C# Programming Language - Desktop Application Development" width="180"
-										height="180">
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/csharp-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/csharp.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/csharp.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="tehnologija" loading="lazy" src="assets/csharp.png"
+											alt="C# Programming Language - Desktop Application Development" width="180"
+											height="180">
+									</picture>
 								</div>
 								<div class="redjanje1">
 									<iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player'
@@ -460,27 +516,66 @@
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
 									<a href="https://github.com/Zunior/WinApp_Vesti/" target="_blank"
-										rel="noopener noreferrer"><img class="github-icon"
-											alt="View C# News Application on GitHub" loading="lazy" src="assets/git.png"
-											width="100" height="100" /></a>
+										rel="noopener noreferrer">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img class="github-icon" alt="View C# News Application on GitHub"
+												loading="lazy" src="assets/git.png" width="100" height="100" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 										<div class="flipper">
 											<div class="front">
 												<!-- Modal -->
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/vesti/csharpcode.png"
-													alt="C# News Application - Source Code Preview" width="180"
-													height="135"
-													onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/vesti/csharpcode-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/vesti/csharpcode.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/vesti/csharpcode.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/vesti/csharpcode.png"
+														alt="C# News Application - Source Code Preview" width="180"
+														height="135"
+														onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+												</picture>
 											</div>
 											<div class="back">
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/vesti/vesti.png"
-													alt="C# News Application - User Interface Preview" width="180"
-													height="135"
-													onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/vesti/vesti-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/vesti/vesti.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/vesti/vesti.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/vesti/vesti.png"
+														alt="C# News Application - User Interface Preview" width="180"
+														height="135"
+														onclick="initProjects(function() { showProject('xaml');openModal();currentSlide(1) });" />
+												</picture>
 											</div>
 										</div>
 									</div>
@@ -490,8 +585,21 @@
 						<div class="row donja_crta">
 							<div class="dvojka">
 								<div class="redjanje">
-									<img class="tehnologija" loading="lazy" src="assets/sqlvbnet.png"
-										alt="SQL Server and VB.NET - Database Development" width="180" height="180">
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/sqlvbnet-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/sqlvbnet.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/sqlvbnet.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="tehnologija" loading="lazy" src="assets/sqlvbnet.png"
+											alt="SQL Server and VB.NET - Database Development" width="180" height="180">
+									</picture>
 								</div>
 								<div class="redjanje1">
 									<img class="project-screenshot hover-shadow cursor" loading="lazy"
@@ -502,9 +610,16 @@
 							</div>
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
-									<a href="#" target="_blank" onclick="return false;" rel="noopener noreferrer"><img
-											class="github-icon" alt="GitHub Repository (Private Project)" loading="lazy"
-											src="assets/git.png" width="100" height="100" /></a>
+									<a href="#" target="_blank" onclick="return false;" rel="noopener noreferrer">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img class="github-icon" alt="GitHub Repository (Private Project)"
+												loading="lazy" src="assets/git.png" width="100" height="100" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -528,8 +643,22 @@
 						<div class="row donja_crta">
 							<div class="dvojka">
 								<div class="redjanje">
-									<img class="tehnologija" loading="lazy" src="assets/cplusplus.png"
-										alt="C++ Programming Language - System Programming" width="180" height="180">
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/cplusplus-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/cplusplus.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/cplusplus.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="tehnologija" loading="lazy" src="assets/cplusplus.png"
+											alt="C++ Programming Language - System Programming" width="180"
+											height="180">
+									</picture>
 								</div>
 								<div class="redjanje1">
 									<iframe src="https://player.vimeo.com/video/219826438" id='vimeo-player'
@@ -540,25 +669,64 @@
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
 									<a href="https://github.com/Zunior/Milioner" target="_blank"
-										rel="noopener noreferrer"><img class="github-icon"
-											alt="View C++ Millionaire Game on GitHub" loading="lazy"
-											src="assets/git.png" width="100" height="100" /></a>
+										rel="noopener noreferrer">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img class="github-icon" alt="View C++ Millionaire Game on GitHub"
+												loading="lazy" src="assets/git.png" width="100" height="100" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 										<div class="flipper">
 											<div class="front">
 												<!-- Modal -->
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/milioner/pocetna.png"
-													alt="C++ Millionaire Game - Main Menu Preview" width="180"
-													height="135" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/milioner/pocetna-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/milioner/pocetna.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/milioner/pocetna.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/milioner/pocetna.png"
+														alt="C++ Millionaire Game - Main Menu Preview" width="180"
+														height="135" />
+												</picture>
 											</div>
 											<div class="back">
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/milioner/krajnja.png"
-													alt="C++ Millionaire Game - Final Screen Preview" width="180"
-													height="135" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/milioner/krajnja-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/milioner/krajnja.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/milioner/krajnja.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/milioner/krajnja.png"
+														alt="C++ Millionaire Game - Final Screen Preview" width="180"
+														height="135" />
+												</picture>
 											</div>
 										</div>
 									</div>
@@ -568,9 +736,22 @@
 						<div class="row donja_crta">
 							<div class="dvojka">
 								<div class="redjanje">
-									<img class="tehnologija" loading="lazy" src="assets/java.png"
-										alt="Java Programming Language - Enterprise Backend Development" width="180"
-										height="180">
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/java-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/java.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/java.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="tehnologija" loading="lazy" src="assets/java.png"
+											alt="Java Programming Language - Enterprise Backend Development" width="180"
+											height="180">
+									</picture>
 								</div>
 								<div class="redjanje1">
 									<iframe src="https://player.vimeo.com/video/209355763" id='vimeo-player'
@@ -581,27 +762,66 @@
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
 									<a href="https://github.com/Zunior/Zdravstvo" target="_blank"
-										rel="noopener noreferrer"><img class="github-icon"
-											alt="View Java Healthcare System on GitHub" loading="lazy"
-											src="assets/git.png" width="100" height="100" /></a>
+										rel="noopener noreferrer">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img class="github-icon" alt="View Java Healthcare System on GitHub"
+												loading="lazy" src="assets/git.png" width="100" height="100" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 										<div class="flipper">
 											<div class="front">
 												<!-- Modal -->
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/zdravstvo/javacode.png"
-													alt="Java Healthcare System - Source Code Preview" width="180"
-													height="135"
-													onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/zdravstvo/javacode-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/zdravstvo/javacode.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/zdravstvo/javacode.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/zdravstvo/javacode.png"
+														alt="Java Healthcare System - Source Code Preview" width="180"
+														height="135"
+														onclick="initProjects(function() { showProject('jsp');openModal();currentSlide(1) });" />
+												</picture>
 											</div>
 											<div class="back">
-												<img class="project-screenshot hover-shadow cursor" loading="lazy"
-													src="assets/Video/kratki/zdravstvo/login.png"
-													alt="Java Healthcare System - Login Interface Preview" width="180"
-													height="135"
-													onclick="initProjekti(function() { proj('jsp');openModal();currentSlide(1) });" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/zdravstvo/login-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/zdravstvo/login.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/zdravstvo/login.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img class="project-screenshot hover-shadow cursor" loading="lazy"
+														src="assets/Video/kratki/zdravstvo/login.png"
+														alt="Java Healthcare System - Login Interface Preview"
+														width="180" height="135"
+														onclick="initProjects(function() { showProject('jsp');openModal();currentSlide(1) });" />
+												</picture>
 											</div>
 										</div>
 									</div>
@@ -611,36 +831,105 @@
 						<div class="row donja_crta">
 							<div class="dvojka">
 								<div class="redjanje">
-									<img class="tehnologija" loading="lazy" src="assets/hcq.png"
-										alt="HTML5, CSS3, and jQuery - Frontend Web Development" width="180"
-										height="180">
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/hcq-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)" srcset="assets/hcq.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/hcq.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="tehnologija" loading="lazy" src="assets/hcq.png"
+											alt="HTML5, CSS3, and jQuery - Frontend Web Development" width="180"
+											height="180">
+									</picture>
 								</div>
 								<div class="redjanje1">
-									<img class="project-screenshot hover-shadow cursor" loading="lazy"
-										src="assets/Video/kratki/HTML/glavnazavideo.png"
-										alt="HTML5 Portfolio Website - Homepage Preview" width="180" height="135" />
+									<picture>
+										<!-- Mobile WebP (< 768px) -->
+										<source media="(max-width: 767px)"
+											srcset="assets/Video/kratki/HTML/glavnazavideo-mobile.webp"
+											type="image/webp">
+
+										<!-- Mobile Fallback (< 768px) -->
+										<source media="(max-width: 767px)"
+											srcset="assets/Video/kratki/HTML/glavnazavideo.png">
+
+										<!-- Desktop WebP (≥ 768px) -->
+										<source srcset="assets/Video/kratki/HTML/glavnazavideo.webp" type="image/webp">
+
+										<!-- Desktop Fallback & Default -->
+										<img class="project-screenshot hover-shadow cursor" loading="lazy"
+											src="assets/Video/kratki/HTML/glavnazavideo.png"
+											alt="HTML5 Portfolio Website - Homepage Preview" width="180" height="135" />
+									</picture>
 									<!-- <iframe src="https://player.vimeo.com/video/198974802" id='vimeo-player' height="120" width="220" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 								</div>
 							</div>
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
-									<a href="https://github.com/Zunior/Portfolio" target="_blank"><img id="github"
-											alt="View on GitHub" loading="lazy" style="height: 100%;"
-											src="assets/git.png" /></a>
+									<a href="https://github.com/Zunior/Portfolio" target="_blank">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img id="github" alt="View on GitHub" loading="lazy" style="height: 100%;"
+												src="assets/git.png" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 										<div class="flipper">
 											<div class="front">
 												<!-- Modal -->
-												<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
-													style="width: 180px;" src="assets/Video/kratki/HTML/pocetna.png"
-													alt="Animacija teksta" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/HTML/pocetna-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/HTML/pocetna.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/HTML/pocetna.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img id="animimg" loading="lazy"
+														class="tehnologija hover-shadow cursor" style="width: 180px;"
+														src="assets/Video/kratki/HTML/pocetna.png"
+														alt="HTML5 Portfolio Website - Start Screen Preview" />
+												</picture>
 											</div>
 											<div class="back">
-												<img id="animimg" loading="lazy" class="tehnologija hover-shadow cursor"
-													style="width: 180px;" src="assets/Video/kratki/HTML/krajnja.png"
-													alt="Animacija teksta" />
+												<picture>
+													<!-- Mobile WebP (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/HTML/krajnja-mobile.webp"
+														type="image/webp">
+
+													<!-- Mobile Fallback (< 768px) -->
+													<source media="(max-width: 767px)"
+														srcset="assets/Video/kratki/HTML/krajnja.png">
+
+													<!-- Desktop WebP (≥ 768px) -->
+													<source srcset="assets/Video/kratki/HTML/krajnja.webp"
+														type="image/webp">
+
+													<!-- Desktop Fallback & Default -->
+													<img id="animimg" loading="lazy"
+														class="tehnologija hover-shadow cursor" style="width: 180px;"
+														src="assets/Video/kratki/HTML/krajnja.png"
+														alt="HTML5 Portfolio Website - Final Screen Preview" />
+												</picture>
 											</div>
 										</div>
 									</div>
@@ -661,9 +950,16 @@
 							</div>
 							<div class="dvojka">
 								<div class="redjanje" id="proba">
-									<a href="https://github.com/Zunior" target="_blank"><img id="github"
-											alt="View on GitHub" loading="lazy" style="height: 100%;"
-											src="assets/git.png" /></a>
+									<a href="https://github.com/Zunior" target="_blank">
+										<picture>
+											<!-- WebP version -->
+											<source srcset="assets/git.webp" type="image/webp">
+
+											<!-- Original fallback -->
+											<img id="github" alt="View on GitHub" loading="lazy" style="height: 100%;"
+												src="assets/git.png" />
+										</picture>
+									</a>
 								</div>
 								<div class="redjanje1">
 									<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -692,9 +988,15 @@
 							<tspan id="projects-description1"></tspan>
 							<br><br>
 							<a href="http://www.viser.edu.rs" target="_blank">
-								<img loading="lazy" src="assets/bachelorhat.png"
-									alt="Bachelor's Degree in Information Technology" width="100" height="100"
-									class="education-icon" />
+								<picture>
+									<!-- WebP version -->
+									<source srcset="assets/bachelorhat.webp" type="image/webp">
+
+									<!-- Original fallback -->
+									<img loading="lazy" src="assets/bachelorhat.png"
+										alt="Bachelor's Degree in Information Technology" width="100" height="100"
+										class="education-icon" />
+								</picture>
 							</a>
 							<br><br><br>
 							<tspan id="projects-description2"></tspan>
@@ -819,8 +1121,15 @@
 				<a href="https://www.linkedin.com/in/saša-popović-98b15a2" target="_blank"
 					rel="noopener noreferrer"><img id="face" loading="lazy" src="assets/linkedin.png"
 						alt="LinkedIn Profile" /></a>
-				<a href="https://github.com/zunior" target="_blank" rel="noopener noreferrer"><img id="face"
-						loading="lazy" src="assets/git.png" alt="GitHub Profile" /></a>
+				<a href="https://github.com/zunior" target="_blank" rel="noopener noreferrer">
+					<picture>
+						<!-- WebP version -->
+						<source srcset="assets/git.webp" type="image/webp">
+
+						<!-- Original fallback -->
+						<img id="face" loading="lazy" src="assets/git.png" alt="GitHub Profile" />
+					</picture>
+				</a>
 				<!-- <div class="col-xs-6 col-xs-offset-3 col-md-3 col-md-offset-1"><img id="face" loading="lazy" src="assets/facebook.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div>
 			<div class="col-xs-6 col-md-3"><img id="face" loading="lazy" src="assets/linkedin.png" /></div> -->
@@ -1060,14 +1369,15 @@
 		crossorigin="anonymous"></script>
 
 	<!-- Application Scripts -->
-	<script src="js/utils.js" defer></script>
-	<script src="js/citajJSON.js" defer></script>
-	<script src="js/indexMODAL.js" defer></script>
-	<script src="js/indexJQ.js" defer></script>
-	<script src="js/indexJS.js" defer></script>
-	<script src="js/validatorNew.js" defer></script>
-	<script src="js/i18n.js" defer></script>
-	<script src="js/menuAnimation.js" defer></script>
+	<script src="js/utils.js"></script>
+	<script src="js/indexMODAL.js"></script>
+	<script src="js/citajJSON.js"></script>
+	<script src="js/indexJQ.js"></script>
+	<script src="js/indexJS.js"></script>
+	<script src="js/validatorNew.js"></script>
+	<script src="js/i18n.js"></script>
+	<script src="js/menuAnimation.js"></script>
+	<script src="js/modernHelpers.js"></script>
 
 	<!-- Force menu to be visible on desktop -->
 	<script>
@@ -1092,6 +1402,12 @@
 			window.addEventListener('load', showMenu);
 		})();
 	</script>
+
+	<!-- Enhanced WebP-Aware Lazy Loading -->
+	<script src="js/webpLazyLoader.js"></script>
+
+	<!-- WebP Performance Monitoring -->
+	<script src="js/webpPerformanceMonitor.js"></script>
 
 	<!-- Service Worker Registration -->
 	<script>
