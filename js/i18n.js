@@ -1,66 +1,55 @@
+/* i18n.js — localization via data-i18n attributes, EN/SR, localStorage */
 
-let currentTranslations = {};
-// This function runs when the page is ready
-document.addEventListener('DOMContentLoaded', () => {
-    // Find the language toggle checkbox by its ID
-    const langToggle = document.getElementById('language-toggle');
+export let currentTranslations = {};
+const listeners = new Set();
 
-    // --- Sync Toggle with Saved Language on Page Load ---
-    // Check if a language is already saved in local storage
-    const savedLang = localStorage.getItem('language') || 'sr'; // Default to Serbian
+/** Subscribe to language changes; callback receives the translations object. */
+export function onLanguageChange(cb) {
+  listeners.add(cb);
+  return () => listeners.delete(cb);
+}
 
-    // Set the initial state of the toggle based on the saved language
-    langToggle.checked = (savedLang === 'sr');
+export function t(key, fallback = '') {
+  return currentTranslations[key] ?? fallback;
+}
 
-    // Load the content for the initial language
-    loadLanguage(savedLang);
+async function loadLanguage(lang) {
+  try {
+    const res = await fetch(`lang/${lang}.json`);
+    const data = await res.json();
+    currentTranslations = data;
+    applyTranslations(data);
+    document.documentElement.lang = lang;
+    listeners.forEach((cb) => cb(data));
+  } catch (err) {
+    console.error(`Error loading language file: ${lang}.json`, err);
+  }
+}
 
-    // --- Add Event Listener to Handle Clicks ---
-    langToggle.addEventListener('change', () => {
-        let lang;
-        // Check if the toggle is "on" (checked) or "off"
-        if (langToggle.checked) {
-            lang = 'sr'; // Checked is Serbian
-        } else {
-            lang = 'en'; // Unchecked is English
-        }
+function applyTranslations(data) {
+  // textContent targets
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (key in data) el.textContent = data[key];
+  });
+  // placeholder targets
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key in data) el.setAttribute('placeholder', data[key]);
+  });
+}
 
-        // Save the new choice to local storage
-        localStorage.setItem('language', lang);
+export function initI18n() {
+  const toggle = document.getElementById('language-toggle');
+  const saved = localStorage.getItem('language') || 'sr';
 
-        // Load the new language content
-        loadLanguage(lang);
+  if (toggle) {
+    toggle.checked = saved === 'sr';
+    toggle.addEventListener('change', () => {
+      const lang = toggle.checked ? 'sr' : 'en';
+      localStorage.setItem('language', lang);
+      loadLanguage(lang);
     });
-});
-
-/**
- * Fetches the language JSON file and updates the page content.
- * @param {string} lang - The language code (e.g., 'en', 'sr').
- */
-function loadLanguage(lang) {
-    fetch(`lang/${lang}.json`)
-        .then(response => response.json())
-        .then(data => {
-            currentTranslations = data;
-            for (const key in data) {
-                // Check if the key is for a placeholder
-                if (key.endsWith('_placeholder')) {
-                    // Get the element ID by removing the suffix
-                    const elementId = key.replace('_placeholder', '');
-                    const element = document.getElementById(elementId);
-
-                    if (element) {
-                        // Set the placeholder attribute instead of textContent
-                        element.placeholder = data[key];
-                    }
-                } else {
-                    // This is the original logic for all other text elements
-                    const element = document.getElementById(key);
-                    if (element) {
-                        element.textContent = data[key];
-                    }
-                }
-            }
-        })
-        .catch(error => console.error(`Error loading language file: ${lang}.json`, error));
+  }
+  return loadLanguage(saved);
 }

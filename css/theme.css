@@ -1,0 +1,99 @@
+/* ============================================================
+   theme.css — design tokens, reset, base typography
+   Sci-fi HUD / holographic portfolio — Saša Popović
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* --- Palette --- */
+  --space-black:   #04060d;
+  --space-deep:    #070b18;
+  --space-panel:   rgba(10, 20, 38, 0.55);
+  --space-panel-solid: #0a1426;
+  --hud-cyan:      #22e0ff;
+  --hud-cyan-soft: #7af0ff;
+  --hud-magenta:   #ff3cac;
+  --hud-violet:    #8a5bff;
+  --hud-amber:     #ffcf5c;
+  --line-glow:     rgba(34, 224, 255, 0.55);
+  --line-faint:    rgba(34, 224, 255, 0.16);
+
+  --text-bright:   #eaf6ff;
+  --text:          #b9cbe0;
+  --text-dim:      #7186a3;
+
+  /* --- Typography --- */
+  --font-display: 'Oxanium', 'Rajdhani', sans-serif;
+  --font-ui:      'Rajdhani', 'Inter', sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'Rajdhani', ui-monospace, monospace;
+
+  /* --- Spacing / shape --- */
+  --radius:       4px;
+  --notch:        14px;       /* clipped-corner size for HUD panels */
+  --maxw:         1180px;
+  --gutter:       clamp(1rem, 4vw, 3rem);
+
+  /* --- Effects --- */
+  --glow-cyan:    0 0 12px rgba(34, 224, 255, 0.55), 0 0 28px rgba(34, 224, 255, 0.25);
+  --glow-magenta: 0 0 12px rgba(255, 60, 172, 0.55), 0 0 28px rgba(255, 60, 172, 0.25);
+  --panel-shadow: 0 8px 40px rgba(0, 0, 0, 0.55);
+
+  --ease-hud:     cubic-bezier(0.1, 0.2, 0.22, 1);
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--space-black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, iframe { display: block; max-width: 100%; }
+a { color: var(--hud-cyan); text-decoration: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+}
+
+::selection { background: var(--hud-cyan); color: var(--space-black); }
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--hud-cyan);
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--space-deep); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--hud-cyan), var(--hud-violet));
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

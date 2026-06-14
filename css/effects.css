@@ -1,0 +1,158 @@
+/* ============================================================
+   effects.css — background layers, glows, keyframes
+   ============================================================ */
+
+/* --- Fixed background stack (behind everything) --- */
+.bg-layers {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(34, 224, 255, 0.10), transparent 60%),
+    radial-gradient(ellipse 90% 70% at 90% 110%, rgba(138, 91, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 60% at 10% 100%, rgba(255, 60, 172, 0.08), transparent 55%),
+    var(--space-black);
+}
+
+/* Starfield canvas fills the background layer */
+#starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -9;
+  pointer-events: none;
+}
+
+/* Perspective grid floor */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -8;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: linear-gradient(transparent 55%, rgba(0,0,0,0.7) 100%);
+          mask-image: linear-gradient(transparent 55%, rgba(0,0,0,0.7) 100%);
+  opacity: 0.6;
+}
+
+/* Moving scanline overlay */
+.bg-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: -7;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  opacity: 0.5;
+  animation: scan 8s linear infinite;
+}
+@keyframes scan {
+  from { background-position-y: 0; }
+  to   { background-position-y: 100px; }
+}
+
+/* 3D spaceship flyby canvas (WebGL) */
+.ship-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -6;          /* above scanlines/grid, behind page content */
+  pointer-events: none;
+}
+
+/* Always-on name boxes + leader lines for flyby ships */
+.ship-tags {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;          /* background layer, just above the ship canvas (-6) */
+  pointer-events: none;
+  overflow: visible;
+}
+.ship-tags .ship-line {
+  fill: none;
+  stroke: var(--hud-cyan);
+  stroke-width: 1.4;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 3px rgba(34, 224, 255, 0.6));
+}
+.ship-tag {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -5;          /* background layer, behind all page content */
+  pointer-events: none;
+  padding: 0.32rem 0.62rem;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--hud-cyan);
+  background: rgba(6, 14, 26, 0.82);
+  border: 1px solid var(--hud-cyan);
+  box-shadow: var(--glow-cyan);
+  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+}
+
+/* --- Reusable keyframes --- */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: var(--glow-cyan); }
+  50%      { box-shadow: 0 0 18px rgba(34,224,255,.8), 0 0 40px rgba(34,224,255,.4); }
+}
+@keyframes ring-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes ring-spin-rev {
+  to { transform: rotate(-360deg); }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes sweep {
+  0%   { transform: translateY(-110%); opacity: 0; }
+  15%  { opacity: 1; }
+  100% { transform: translateY(210%); opacity: 0; }
+}
+@keyframes flicker-in {
+  0%   { opacity: 0; }
+  10%  { opacity: 0.6; }
+  12%  { opacity: 0.1; }
+  20%  { opacity: 0.8; }
+  25%  { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Reveal-on-scroll (toggled by reveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-hud), transform 0.7s var(--ease-hud);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: 0.10s; }
+.reveal-delay-2 { transition-delay: 0.20s; }
+.reveal-delay-3 { transition-delay: 0.30s; }
+
+/* Text glow helpers */
+.glow-cyan    { color: var(--hud-cyan);    text-shadow: 0 0 10px rgba(34,224,255,.6); }
+.glow-magenta { color: var(--hud-magenta); text-shadow: 0 0 10px rgba(255,60,172,.6); }

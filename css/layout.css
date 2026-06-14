@@ -1,0 +1,49 @@
+/* ============================================================
+   layout.css — sections, containers, responsive rules
+   ============================================================ */
+
+main { display: block; }
+
+.section {
+  position: relative;
+  padding: clamp(4rem, 10vw, 7rem) var(--gutter);
+}
+.section-inner { max-width: var(--maxw); margin-inline: auto; }
+
+/* alternate faint section tints for depth */
+.section--alt { background: linear-gradient(180deg, transparent, rgba(8,12,24,0.5), transparent); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .contact-wrap { grid-template-columns: 1fr; }
+  .code-modal .slide.active { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+  .nav-menu {
+    position: fixed;
+    top: 60px; right: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: min(260px, 80vw);
+    padding: 1.2rem;
+    background: rgba(4,6,13,0.97);
+    border-left: 1px solid var(--line-faint);
+    border-bottom: 1px solid var(--line-faint);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    transform: translateX(110%);
+    transition: transform 0.35s var(--ease-hud);
+    height: auto;
+  }
+  .nav-menu.open { transform: none; }
+  .nav-item { width: 100%; height: auto; justify-content: flex-start; }
+  .nav-link { opacity: 1 !important; }
+  .nav-ring { display: none; }   /* circling text is a desktop hover delight */
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .stat-panel { width: min(300px, 90vw); }
+}

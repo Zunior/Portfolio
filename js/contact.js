@@ -1,45 +1,43 @@
-$(function () {
+/* contact.js — Formspree submit via fetch with localized status messages */
 
-    // init the validator
-    // validator files are included in the download package
-    // otherwise download from http://1000hz.github.io/bootstrap-validator
+import { t } from './i18n.js';
 
-    $('#contact-form').validator();
+export function initContact() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  if (!form || !status) return;
 
+  const setStatus = (msg, kind) => {
+    status.textContent = msg;
+    status.className = 'form-status' + (kind ? ' ' + kind : '');
+  };
 
-    // when the form is submitted
-    $('#contact-form').on('submit', function (e) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        // if the validator does not prevent form submit
-        if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+    if (!form.checkValidity()) {
+      setStatus(t('form_validation_message', 'Please correct the highlighted fields.'), 'err');
+      form.reportValidity?.();
+      return;
+    }
 
-            // POST values in the background the the script URL
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function (data)
-                {
-                    // data = JSON object that contact.php returns
+    setStatus(t('form_sending_message', 'Sending…'), '');
 
-                    // we recieve the type of the message: success x danger and apply it to the 
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
-
-                    // let's compose Bootstrap alert box HTML
-                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                    
-                    // If we have messageAlert and messageText
-                    if (messageAlert && messageText) {
-                        // inject the alert to .messages div in our form
-                        $('#contact-form').find('.messages').html(alertBox);
-                        // empty the form
-                        $('#contact-form')[0].reset();
-                    }
-                }
-            });
-            return false;
-        }
-    })
-});
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setStatus(t('form_success_message', 'Thank you! Your message has been sent.'), 'ok');
+        form.reset();
+      } else {
+        setStatus(t('form_error_message', 'There was a problem submitting your form.'), 'err');
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      setStatus(t('form_networkerror_message', 'There was a network error.'), 'err');
+    }
+  });
+}
